@@ -24,20 +24,27 @@ jobs:
       - name: 安装依赖和测速工具
         run: |
           sudo apt-get update -qq
-          pip install requests --user
-          echo "下载 LiteSpeedTest..."
-          wget -q https://github.com/xxf098/LiteSpeedTest/releases/download/v0.15.0/lite-linux-amd64-v3-v0.15.0.gz -O litespeedtest.gz
-          gunzip litespeedtest.gz
-          mv lite-linux-amd64-v3-v0.15.0 litespeedtest
-          chmod +x litespeedtest
-          ./litespeedtest --version || echo "版本检查完成"
+          pip install requests --user || true
+          
+          echo "正在下载 LiteSpeedTest..."
+          wget -q https://github.com/xxf098/LiteSpeedTest/releases/download/v0.15.0/lite-linux-amd64-v3-v0.15.0.gz -O litespeedtest.gz || \
+          wget -q https://github.com/xxf098/LiteSpeedTest/releases/download/v0.15.0/lite-linux-amd64-v0.15.0.gz -O litespeedtest.gz
+          
+          gunzip -f litespeedtest.gz || echo "解压失败，跳过测速"
+          if [ -f lite-linux-amd64-v3-v0.15.0 ]; then
+            mv lite-linux-amd64-v3-v0.15.0 litespeedtest
+          elif [ -f lite-linux-amd64-v0.15.0 ]; then
+            mv lite-linux-amd64-v0.15.0 litespeedtest
+          fi
+          
+          chmod +x litespeedtest 2>/dev/null || echo "测速工具准备完成"
 
-      - name: 聚合 + 测速 + 筛选最佳100节点
+      - name: 聚合 + 测速 + 筛选
         env:
           SUBS_URLS: ${{ secrets.SUBS_URLS }}
         run: |
           cat << 'EOF' > main.py
-          import os, base64, urllib.request, json
+          import os, base64, urllib.request, json, time
 
           def fetch_url(url):
               try:
@@ -51,12 +58,13 @@ jobs:
           def decode_content(data):
               if not data: return ""
               text = data.decode('utf-8', errors='ignore').strip()
-              if '://' not in text[:150]:
+              if '://' not in text[:200]:
                   try:
                       return base64.b64decode(text + '===').decode('utf-8')
                   except: pass
               return text
 
+          # 主逻辑
           urls = [u.strip() for u in os.getenv('SUBS_URLS', '').splitlines() if u.strip()]
           all_nodes = []
           node_count = {}
@@ -69,44 +77,45 @@ jobs:
               if raw:
                   content = decode_content(raw)
                   nodes = [line.strip() for line in content.splitlines() 
-                          if line.strip() and any(line.strip().startswith(p) 
-                          for p in ['vmess://','vless://','trojan://','ss://','hysteria2://','tuic://'])]
+                           if line.strip() and any(line.strip().startswith(p) 
+                           for p in ['vmess://','vless://','trojan://','ss://','hysteria2://','tuic://'])]
                   all_nodes.extend(nodes)
                   node_count[url] = len(nodes)
-                  print(f"   → 获取到 {len(nodes)} 个节点")
+                  print(f"   → 获取到 **{len(nodes)}** 个节点")
 
-          # 去重
           unique_nodes = list(dict.fromkeys(all_nodes))
-          print(f"\n✅ 总共聚合去重后: {len(unique_nodes)} 个节点")
+          print(f"\n✅ 总聚合去重后: {len(unique_nodes)} 个节点")
 
-          print("\n各订阅贡献节点数:")
+          print("\n各订阅贡献情况：")
           for url, cnt in node_count.items():
-              print(f"   • {cnt} 个  ←  {url}")
+              print(f"   • {cnt} 个 ← {url}")
 
           # 保存所有节点
           with open('all_nodes.txt', 'w') as f:
               f.write('\n'.join(unique_nodes))
 
-          best_nodes = unique_nodes[:100]  # 默认先取前100
+          best_nodes = unique_nodes[:100]
 
           # 尝试测速
-          if len(unique_nodes) > 5:
-              print("\n🚀 开始测速（可能需要几分钟）...")
+          if len(unique_nodes) > 8 and os.path.exists('litespeedtest'):
+              print("\n🚀 开始测速...")
               try:
-                  os.system('./litespeedtest -c all_nodes.txt -t 25 -o result.json --speedtest 0 > speed.log 2>&1')
+                  os.system('./litespeedtest -c all_nodes.txt -t 20 -o result.json --speedtest 0 > /dev/null 2>&1')
+                  time.sleep(5)
                   if os.path.exists('result.json'):
                       with open('result.json') as f:
                           data = json.load(f)
-                      # 按延迟排序
-                      sorted_data = sorted(data, key=lambda x: float(x.get('delay', 9999)))
-                      best_nodes = [item['link'] for item in sorted_data[:100] if float(item.get('delay', 9999)) < 800]
-                      print(f"✅ 测速完成，筛选出 {len(best_nodes)} 个优质节点")
+                      sorted_nodes = sorted(data, key=lambda x: float(x.get('delay', 9999)))
+                      best_nodes = [n['link'] for n in sorted_nodes[:100] if float(n.get('delay', 9999)) < 900]
+                      print(f"✅ 测速成功，筛选出 {len(best_nodes)} 个优质节点")
                   else:
-                      print("测速结果文件未生成，使用前100个节点")
-              except Exception as e:
-                  print(f"测速异常: {e}，使用前100个节点")
+                      print("测速未生成结果，使用前100个节点")
+              except:
+                  print("测速异常，使用前100个节点")
+          else:
+              print("节点较少或测速工具不可用，直接使用前100个节点")
 
-          # 生成订阅文件
+          # 生成订阅
           combined = '\n'.join(best_nodes)
           encoded = base64.b64encode(combined.encode('utf-8')).decode('utf-8')
 
@@ -115,7 +124,7 @@ jobs:
           with open('sub_plain.txt', 'w') as f:
               f.write(combined)
 
-          print(f"✅ 最终生成 {len(best_nodes)} 个最佳节点")
+          print(f"✅ 最终输出 {len(best_nodes)} 个最佳节点")
           EOF
 
           python3 main.py
@@ -128,12 +137,13 @@ jobs:
           if [ -f sub.txt ]; then
             git add sub.txt sub_plain.txt
             if git diff --cached --quiet; then
-              echo "没有变化，跳过提交"
+              echo "没有新变化"
             else
-              git commit -m "Auto update + speedtest - Best 100 nodes $(date '+%Y-%m-%d %H:%M:%S UTC')"
+              git commit -m "Auto update Best 100 nodes $(date '+%Y-%m-%d %H:%M:%S UTC')"
               git push
               echo "✅ 成功推送！"
             fi
           else
-            echo "❌ 未生成 sub.txt"
+            echo "❌ 未生成订阅文件"
+            exit 1
           fi
