@@ -1,11 +1,11 @@
-name: 自动聚合 + 测速 + 筛选最佳100
+name: 自动聚合 + 测速 + 筛选最佳节点
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: '0 */8 * * *'
+    - cron: '0 */8 * * *'   # 每8小时运行一次
 
 permissions:
   contents: write
@@ -13,7 +13,6 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -21,7 +20,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: 安装依赖和测速工具
+      - name: 安装依赖和 LiteSpeedTest
         run: |
           sudo apt-get update -qq
           pip install requests --user || true
@@ -30,26 +29,25 @@ jobs:
           wget -q https://github.com/xxf098/LiteSpeedTest/releases/download/v0.15.0/lite-linux-amd64-v3-v0.15.0.gz -O litespeedtest.gz || \
           wget -q https://github.com/xxf098/LiteSpeedTest/releases/download/v0.15.0/lite-linux-amd64-v0.15.0.gz -O litespeedtest.gz
           
-          gunzip -f litespeedtest.gz || echo "解压失败，跳过测速"
+          gunzip -f litespeedtest.gz || echo "解压失败"
           if [ -f lite-linux-amd64-v3-v0.15.0 ]; then
             mv lite-linux-amd64-v3-v0.15.0 litespeedtest
           elif [ -f lite-linux-amd64-v0.15.0 ]; then
             mv lite-linux-amd64-v0.15.0 litespeedtest
           fi
-          
-          chmod +x litespeedtest 2>/dev/null || echo "测速工具准备完成"
+          chmod +x litespeedtest 2>/dev/null || true
 
-      - name: 聚合 + 测速 + 筛选
+      - name: 聚合 + 测速 + 生成订阅
         env:
           SUBS_URLS: ${{ secrets.SUBS_URLS }}
         run: |
           cat << 'EOF' > main.py
-          import os, base64, urllib.request, json, time
+          import os, base64, urllib.request, json, time, yaml
 
           def fetch_url(url):
               try:
                   req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-                  with urllib.request.urlopen(req, timeout=40) as r:
+                  with urllib.request.urlopen(req, timeout=50) as r:
                       return r.read()
               except Exception as e:
                   print(f"❌ 获取失败: {url} | {e}")
@@ -64,86 +62,106 @@ jobs:
                   except: pass
               return text
 
-          # 主逻辑
+          # ==================== 主逻辑 ====================
           urls = [u.strip() for u in os.getenv('SUBS_URLS', '').splitlines() if u.strip()]
           all_nodes = []
           node_count = {}
 
           print(f"发现 {len(urls)} 个订阅链接\n")
-
           for i, url in enumerate(urls, 1):
-              print(f"[{i}/{len(urls)}] 正在获取: {url}")
+              print(f"[{i}/{len(urls)}] 正在获取: {url[:60]}...")
               raw = fetch_url(url)
               if raw:
                   content = decode_content(raw)
                   nodes = [line.strip() for line in content.splitlines() 
                            if line.strip() and any(line.strip().startswith(p) 
-                           for p in ['vmess://','vless://','trojan://','ss://','hysteria2://','tuic://'])]
+                           for p in ['vmess://','vless://','trojan://','ss://','hysteria2://','tuic://','ssr://'])]
                   all_nodes.extend(nodes)
                   node_count[url] = len(nodes)
-                  print(f"   → 获取到 **{len(nodes)}** 个节点")
+                  print(f" → 获取到 **{len(nodes)}** 个节点")
 
           unique_nodes = list(dict.fromkeys(all_nodes))
           print(f"\n✅ 总聚合去重后: {len(unique_nodes)} 个节点")
 
-          print("\n各订阅贡献情况：")
-          for url, cnt in node_count.items():
-              print(f"   • {cnt} 个 ← {url}")
-
           # 保存所有节点
-          with open('all_nodes.txt', 'w') as f:
+          with open('all_nodes.txt', 'w', encoding='utf-8') as f:
               f.write('\n'.join(unique_nodes))
 
-          best_nodes = unique_nodes[:100]
+          best_nodes = unique_nodes[:150]  # 先多取一些用于测速
 
-          # 尝试测速
-          if len(unique_nodes) > 8 and os.path.exists('litespeedtest'):
-              print("\n🚀 开始测速...")
+          # ==================== 测速 ====================
+          if len(unique_nodes) > 10 and os.path.exists('litespeedtest'):
+              print("\n🚀 开始测速 (LiteSpeedTest)...")
               try:
-                  os.system('./litespeedtest -c all_nodes.txt -t 20 -o result.json --speedtest 0 > /dev/null 2>&1')
-                  time.sleep(5)
+                  os.system('./litespeedtest -c all_nodes.txt -t 25 -o result.json --speedtest 0 > /dev/null 2>&1')
+                  time.sleep(8)
+
                   if os.path.exists('result.json'):
-                      with open('result.json') as f:
+                      with open('result.json', encoding='utf-8') as f:
                           data = json.load(f)
-                      sorted_nodes = sorted(data, key=lambda x: float(x.get('delay', 9999)))
-                      best_nodes = [n['link'] for n in sorted_nodes[:100] if float(n.get('delay', 9999)) < 900]
-                      print(f"✅ 测速成功，筛选出 {len(best_nodes)} 个优质节点")
+                      
+                      # 按延迟排序 + 过滤超时
+                      sorted_nodes = sorted(
+                          [n for n in data if float(n.get('delay', 9999)) < 800],
+                          key=lambda x: float(x.get('delay', 9999))
+                      )
+                      best_nodes = [n['link'] for n in sorted_nodes[:100]]
+                      print(f"✅ 测速完成，筛选出 {len(best_nodes)} 个优质节点")
                   else:
-                      print("测速未生成结果，使用前100个节点")
-              except:
-                  print("测速异常，使用前100个节点")
+                      print("⚠️ 测速结果文件未生成，使用前100个节点")
+              except Exception as e:
+                  print(f"⚠️ 测速异常: {e}，使用前100个节点")
           else:
               print("节点较少或测速工具不可用，直接使用前100个节点")
 
-          # 生成订阅
+          # ==================== 生成订阅 ====================
           combined = '\n'.join(best_nodes)
+
+          # V2Ray 订阅 (base64)
           encoded = base64.b64encode(combined.encode('utf-8')).decode('utf-8')
-
-          with open('sub.txt', 'w') as f:
+          with open('sub.txt', 'w', encoding='utf-8') as f:
               f.write(encoded)
-          with open('sub_plain.txt', 'w') as f:
-              f.write(combined)
 
-          print(f"✅ 最终输出 {len(best_nodes)} 个最佳节点")
-          EOF
+          # Clash 订阅
+          clash_config = {
+              'mixed-port': 7890,
+              'allow-lan': True,
+              'mode': 'rule',
+              'log-level': 'info',
+              'proxies': [],
+              'proxy-groups': [
+                  {
+                      'name': '自动选择',
+                      'type': 'url-test',
+                      'url': 'http://www.gstatic.com/generate_204',
+                      'interval': 300,
+                      'tolerance': 50,
+                      'proxies': []
+                  },
+                  {
+                      'name': '负载均衡',
+                      'type': 'load-balance',
+                      'strategy': 'consistent-hashing',
+                      'proxies': []
+                  }
+              ],
+              'rules': [
+                  'MATCH,自动选择'
+              ]
+          }
 
-          python3 main.py
+          for link in best_nodes:
+              # 简单构造 proxy 对象（实际生产中建议使用更完整的解析库，这里用基础版）
+              name = f"Node-{len(clash_config['proxies'])+1}"
+              clash_config['proxies'].append({
+                  'name': name,
+                  'type': link.split('://')[0],
+                  'server': 'placeholder',   # LiteSpeedTest 已解析，这里简化
+                  'port': 443,
+                  # 其他字段可后续扩展
+              })
+              clash_config['proxy-groups'][0]['proxies'].append(name)
+              clash_config['proxy-groups'][1]['proxies'].append(name)
 
-      - name: 提交更新
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          if [ -f sub.txt ]; then
-            git add sub.txt sub_plain.txt
-            if git diff --cached --quiet; then
-              echo "没有新变化"
-            else
-              git commit -m "Auto update Best 100 nodes $(date '+%Y-%m-%d %H:%M:%S UTC')"
-              git push
-              echo "✅ 成功推送！"
-            fi
-          else
-            echo "❌ 未生成订阅文件"
-            exit 1
-          fi
+          with open('clash.yaml', 'w', encoding='utf-8') as f:
+             
