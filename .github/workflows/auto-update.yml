@@ -37,7 +37,7 @@ jobs:
           fi
           chmod +x litespeedtest 2>/dev/null || true
 
-      - name: 下载并安装 Subconverter (用于生成合规的 Clash 配置)
+      - name: 下载并安装 Subconverter
         run: |
           echo "正在下载 subconverter..."
           wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
@@ -47,8 +47,8 @@ jobs:
       - name: 聚合 + 测速 + 生成订阅
         env:
           SUBS_URLS: ${{ secrets.SUBS_URLS }}
-          REPO_NAME: ${{ github.repository }}
         run: |
+          # 修复了单引号、括号和重定向符号被 Linux Shell 误解析的问题
           cat << 'EOF' > main.py
           import os, base64, urllib.request, json, time, re
 
@@ -95,4 +95,44 @@ jobs:
           if len(unique_nodes) > 8 and os.path.exists('litespeedtest'):
               print("\n🚀 开始测速...")
               try:
-                  os.system('./litespeedtest -c all_nodes.txt -t 20 -o result.json --speedtest 0 > /dev/null
+                  os.system('./litespeedtest -c all_nodes.txt -t 20 -o result.json --speedtest 0')
+                  time.sleep(5)
+                  if os.path.exists('result.json'):
+                      with open('result.json', encoding='utf-8') as f:
+                          data = json.load(f)
+                      sorted_nodes = sorted([n for n in data if float(n.get('delay', 9999)) < 750], key=lambda x: float(x.get('delay', 9999)))
+                      best_nodes = [n['link'] for n in sorted_nodes[:100]]
+                      print(f"✅ 测速成功，筛选出 {len(best_nodes)} 个优质节点")
+              except Exception as e:
+                  print(f"测速异常: {e}")
+
+          combined = '\n'.join(best_nodes)
+          with open('sub.txt', 'w', encoding='utf-8') as f:
+              f.write(base64.b64encode(combined.encode()).decode())
+          with open('sub_plain.txt', 'w', encoding='utf-8') as f:
+              f.write(combined)
+          EOF
+
+          # 执行 Python 主程序
+          python3 main.py
+
+          # 执行标准的客户端配置文件转换
+          if [ -f sub_plain.txt ] && [ -s sub_plain.txt ]; then
+            echo "正在使用 subconverter 转换格式..."
+            ./subconverter/subconverter -g --source sub_plain.txt --target clash --output clash.yaml
+          else
+            echo "错误：未发现有效的节点数据"
+          fi
+
+      - name: 提交更新
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sub.txt sub_plain.txt clash.yaml all_nodes.txt
+          if git diff --cached --quiet; then
+            echo "没有新变化"
+          else
+            git commit -m "Auto update Best 100 nodes $(date '+%Y-%m-%d %H:%M:%S UTC')"
+            git push
+            echo "✅ 推送成功！"
+          fi
