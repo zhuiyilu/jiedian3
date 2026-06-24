@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: '0 */8 * * *'
+    - cron: '0 */8 * * *'   # 每8小时自动更新
 
 permissions:
   contents: write
@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: 安装依赖
+      - name: 安装依赖和测速工具
         run: |
           sudo apt-get update -qq
           pip install requests pyyaml --user || true
@@ -40,6 +40,7 @@ jobs:
       - name: 聚合 + 测速 + 生成订阅
         env:
           SUBS_URLS: ${{ secrets.SUBS_URLS }}
+          REPO_NAME: ${{ github.repository }}
         run: |
           cat << 'EOF' > main.py
           import os, base64, urllib.request, json, time, yaml, re
@@ -62,7 +63,7 @@ jobs:
                   except: pass
               return text
 
-          # 主逻辑
+          # ==================== 主逻辑 ====================
           urls = [u.strip() for u in os.getenv('SUBS_URLS', '').splitlines() if u.strip()]
           all_nodes = []
           print(f"发现 {len(urls)} 个订阅链接\n")
@@ -83,9 +84,9 @@ jobs:
           with open('all_nodes.txt', 'w', encoding='utf-8') as f:
               f.write('\n'.join(unique_nodes))
 
-          best_nodes = unique_nodes[:120]
+          best_nodes = unique_nodes[:150]
 
-          # 测速
+          # ==================== 测速 ====================
           if len(unique_nodes) > 8 and os.path.exists('litespeedtest'):
               print("\n🚀 开始测速...")
               try:
@@ -100,56 +101,71 @@ jobs:
                       )
                       best_nodes = [n['link'] for n in sorted_nodes[:100]]
                       print(f"✅ 测速成功，筛选出 {len(best_nodes)} 个优质节点")
+                  else:
+                      print("⚠️ 测速未生成结果，使用前100个节点")
               except Exception as e:
-                  print(f"测速异常: {e}，使用前100个")
+                  print(f"⚠️ 测速异常: {e}，使用前100个节点")
+          else:
+              print("节点较少或测速工具不可用，使用前100个节点")
 
-          # 生成订阅
+          # ==================== 生成订阅 ====================
           combined = '\n'.join(best_nodes)
 
-          # V2Ray 订阅
+          # V2Ray / Sing-box 订阅
           with open('sub.txt', 'w', encoding='utf-8') as f:
               f.write(base64.b64encode(combined.encode()).decode())
 
           with open('sub_plain.txt', 'w', encoding='utf-8') as f:
               f.write(combined)
 
-          # Clash 订阅（优化版）
-          clash = {
-              'port': 7890,
-              'socks-port': 7891,
+          # Clash 订阅 - Proxy Provider（最稳定方式）
+          repo = os.getenv('REPO_NAME', 'jiedian3/jiedian3')
+          sub_url = f"https://raw.githubusercontent.com/{repo}/main/sub.txt"
+
+          clash_config = {
+              'mixed-port': 7890,
               'allow-lan': True,
               'mode': 'rule',
-              'log-level': 'info',
+              'log-level': 'warning',
+              'ipv6': False,
               'proxies': [],
+              'proxy-providers': {
+                  'AutoNodes': {
+                      'type': 'http',
+                      'url': sub_url,
+                      'interval': 3600,
+                      'health-check': {
+                          'enable': True,
+                          'url': 'http://www.gstatic.com/generate_204',
+                          'interval': 300
+                      }
+                  }
+              },
               'proxy-groups': [
-                  {'name': '♻️ 自动选择', 'type': 'url-test', 'url': 'http://www.gstatic.com/generate_204', 'interval': 300, 'proxies': []},
-                  {'name': '🔄 负载均衡', 'type': 'load-balance', 'strategy': 'consistent-hashing', 'proxies': []},
-                  {'name': '🌍 全部节点', 'type': 'select', 'proxies': []}
+                  {
+                      'name': '♻️ 自动选择',
+                      'type': 'url-test',
+                      'use': ['AutoNodes'],
+                      'url': 'http://www.gstatic.com/generate_204',
+                      'interval': 300,
+                      'tolerance': 50
+                  },
+                  {
+                      'name': '🔄 手动选择',
+                      'type': 'select',
+                      'use': ['AutoNodes']
+                  }
               ],
-              'rules': ['MATCH,♻️ 自动选择']
+              'rules': [
+                  'MATCH,♻️ 自动选择'
+              ]
           }
 
-          for i, link in enumerate(best_nodes, 1):
-              proxy_name = f"节点 {i:03d}"
-              proxy_type = link.split('://')[0]
-              
-              clash['proxies'].append({
-                  'name': proxy_name,
-                  'type': proxy_type,
-                  'server': '127.0.0.1',   # 实际使用时会被客户端解析
-                  'port': 443,
-                  'udp': True
-              })
-              clash['proxy-groups'][0]['proxies'].append(proxy_name)
-              clash['proxy-groups'][1]['proxies'].append(proxy_name)
-              clash['proxy-groups'][2]['proxies'].append(proxy_name)
-
           with open('clash.yaml', 'w', encoding='utf-8') as f:
-              yaml.dump(clash, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+              yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
 
           print(f"🎉 生成完成！共 {len(best_nodes)} 个节点")
-          print("   📄 sub.txt        → V2Ray / Sing-box")
-          print("   📄 clash.yaml     → Clash Meta / Mihomo")
+          print(f"   📄 Clash 订阅地址: {sub_url.replace('/sub.txt', '/clash.yaml')}")
           EOF
 
           python3 main.py
