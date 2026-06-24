@@ -37,13 +37,20 @@ jobs:
           fi
           chmod +x litespeedtest 2>/dev/null || true
 
+      - name: 下载并安装 Subconverter (用于生成合规的 Clash 配置)
+        run: |
+          echo "正在下载 subconverter..."
+          wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
+          tar -xzf subconverter_linux64.tar.gz
+          chmod +x subconverter/subconverter
+
       - name: 聚合 + 测速 + 生成订阅
         env:
           SUBS_URLS: ${{ secrets.SUBS_URLS }}
           REPO_NAME: ${{ github.repository }}
         run: |
           cat << 'EOF' > main.py
-          import os, base64, urllib.request, json, time, yaml, re
+          import os, base64, urllib.request, json, time, re
 
           def fetch_url(url):
               try:
@@ -88,61 +95,4 @@ jobs:
           if len(unique_nodes) > 8 and os.path.exists('litespeedtest'):
               print("\n🚀 开始测速...")
               try:
-                  os.system('./litespeedtest -c all_nodes.txt -t 20 -o result.json --speedtest 0 > /dev/null 2>&1')
-                  time.sleep(8)
-                  if os.path.exists('result.json'):
-                      with open('result.json', encoding='utf-8') as f:
-                          data = json.load(f)
-                      sorted_nodes = sorted([n for n in data if float(n.get('delay', 9999)) < 750], key=lambda x: float(x.get('delay', 9999)))
-                      best_nodes = [n['link'] for n in sorted_nodes[:100]]
-                      print(f"✅ 测速成功，筛选出 {len(best_nodes)} 个优质节点")
-              except Exception as e:
-                  print(f"测速异常: {e}")
-
-          # 生成订阅（直接嵌入节点）
-          combined = '\n'.join(best_nodes)
-          with open('sub.txt', 'w', encoding='utf-8') as f:
-              f.write(base64.b64encode(combined.encode()).decode())
-          with open('sub_plain.txt', 'w', encoding='utf-8') as f:
-              f.write(combined)
-
-          clash_config = {
-              'mixed-port': 7890,
-              'allow-lan': True,
-              'mode': 'rule',
-              'log-level': 'warning',
-              'proxies': [],
-              'proxy-groups': [
-                  {'name': '自动选择', 'type': 'url-test', 'url': 'http://www.gstatic.com/generate_204', 'interval': 300, 'tolerance': 50, 'proxies': []},
-                  {'name': '手动选择', 'type': 'select', 'proxies': []}
-              ],
-              'rules': ['MATCH,自动选择']
-          }
-
-          for i, link in enumerate(best_nodes, 1):
-              proxy_name = f"节点 {i:03d}"
-              proxy_type = link.split('://')[0].lower()
-              clash_config['proxies'].append({'name': proxy_name, 'type': proxy_type, 'server': '127.0.0.1', 'port': 443, 'udp': True})
-              clash_config['proxy-groups'][0]['proxies'].append(proxy_name)
-              clash_config['proxy-groups'][1]['proxies'].append(proxy_name)
-
-          with open('clash.yaml', 'w', encoding='utf-8') as f:
-              yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
-
-          print(f"🎉 生成完成！共 {len(best_nodes)} 个节点")
-          EOF
-
-          python3 main.py
-
-      - name: 提交更新
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sub.txt sub_plain.txt clash.yaml all_nodes.txt
-          if git diff --cached --quiet; then
-            echo "没有新变化"
-          else
-            git commit -m "Auto update Best 100 nodes $(date '+%Y-%m-%d %H:%M:%S UTC')"
-            git push
-            echo "✅ 推送成功！"
-          fi
+                  os.system('./litespeedtest -c all_nodes.txt -t 20 -o result.json --speedtest 0 > /dev/null
