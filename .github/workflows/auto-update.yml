@@ -99,24 +99,22 @@ jobs:
           with open('sub_plain.txt', 'w', encoding='utf-8') as f:
               f.write(combined)
 
-          # 关键修改：直接为 subconverter 生成本地任务指令
-          ini_content = """[General]
-
-[Target]
-path=clash.yaml
-target=clash
-url=sub_plain.txt
-"""
-          with open('subconverter/generate.ini', 'w', encoding='utf-8') as f:
-              f.write(ini_content)
-
-          print("🎉 所有准备工作就绪，写入 generate.ini 成功")
+          print("🎉 Python 处理部分完成")
           EOF
 
           # 执行 Python
           python3 main.py
 
-          # 执行转换：强制让 subconverter 去跑我们刚刚生成的 generate.ini
+          # 安全地创建 subconverter 配置文件，规避 YAML 的方括号解析冲突
+          mkdir -p subconverter
+          echo "[General]" > subconverter/generate.ini
+          echo "" >> subconverter/generate.ini
+          echo "[Target]" >> subconverter/generate.ini
+          echo "path=../clash.yaml" >> subconverter/generate.ini
+          echo "target=clash" >> subconverter/generate.ini
+          echo "url=../sub_plain.txt" >> subconverter/generate.ini
+
+          # 执行转换
           if [ -f subconverter/generate.ini ]; then
             echo "正在启动 subconverter 转换 clash.yaml..."
             cd subconverter && ./subconverter -g && cd ..
