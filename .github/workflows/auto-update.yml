@@ -86,65 +86,48 @@ jobs:
           unique_nodes = list(dict.fromkeys(all_nodes))
           print(f"\n✅ 去重后共 {len(unique_nodes)} 个节点")
 
-          # 限制全节点文件体积（最高取前5000个），防止超过GitHub 50MB限制
+          # 限制全节点文件体积（最高取前5000个）
           with open('all_nodes.txt', 'w', encoding='utf-8') as f:
               f.write('\n'.join(unique_nodes[:5000]))
 
-          # 从中抽取前 1500 个节点参与测速（25万个不可能测得完）
-          test_nodes = unique_nodes[:1500]
-          with open('test_nodes.txt', 'w', encoding='utf-8') as f:
-              f.write('\n'.join(test_nodes))
-
-          # 默认兜底节点
           best_nodes = unique_nodes[:100]
 
-          if len(unique_nodes) > 5 and os.path.exists('litespeedtest'):
-              print("\n🚀 开始测速...")
-              try:
-                  # 修正新版 LiteSpeedTest 的命令行参数：使用 --test
-                  os.system('./litespeedtest --test test_nodes.txt --headless > /dev/null 2>&1')
-                  time.sleep(5)
-                  
-                  # 查找生成的 json 报告（新版名字可能带时间戳，进行模糊搜索）
-                  json_files = [f for f in os.listdir('.') if f.endswith('.json') and f != 'package.json']
-                  if json_files:
-                      report_file = json_files[0]
-                      with open(report_file, encoding='utf-8') as f:
-                          data = json.load(f)
-                      # 过滤并排序
-                      sorted_nodes = sorted([n for n in data if float(n.get('delay', 9999)) < 800], key=lambda x: float(x.get('delay', 9999)))
-                      if sorted_nodes:
-                          best_nodes = [n['link'] for n in sorted_nodes[:120]]
-                          print(f"✅ 测速成功，筛选出 {len(best_nodes)} 个优质节点")
-                  else:
-                      print("⚠️ 未找到测速 json 报告，使用默认前100个节点垫底")
-              except Exception as e:
-                  print(f"测速异常: {e}，使用默认节点垫底")
-
+          # 保存明文和密文
           combined = '\n'.join(best_nodes)
           with open('sub.txt', 'w', encoding='utf-8') as f:
               f.write(base64.b64encode(combined.encode()).decode())
           with open('sub_plain.txt', 'w', encoding='utf-8') as f:
               f.write(combined)
-          print("🎉 sub_plain.txt 和 sub.txt 筛选写入完成！")
+
+          # 关键修改：直接为 subconverter 生成本地任务指令
+          ini_content = """[General]
+
+[Target]
+path=clash.yaml
+target=clash
+url=sub_plain.txt
+"""
+          with open('subconverter/generate.ini', 'w', encoding='utf-8') as f:
+              f.write(ini_content)
+
+          print("🎉 所有准备工作就绪，写入 generate.ini 成功")
           EOF
 
-          # 执行 Python 主文件
+          # 执行 Python
           python3 main.py
 
-          # 执行标准的客户端配置文件转换
-          if [ -f sub_plain.txt ] && [ -s sub_plain.txt ]; then
-            echo "正在使用 subconverter 转换 clash.yaml..."
-            ./subconverter/subconverter -g --source sub_plain.txt --target clash --output clash.yaml
+          # 执行转换：强制让 subconverter 去跑我们刚刚生成的 generate.ini
+          if [ -f subconverter/generate.ini ]; then
+            echo "正在启动 subconverter 转换 clash.yaml..."
+            cd subconverter && ./subconverter -g && cd ..
           else
-            echo "错误：未发现有效的节点数据"
+            echo "错误：未发现配置文件"
           fi
 
       - name: 提交更新
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 移除了大体积的临时的 test_nodes.txt，只保留需要的成果
           git add sub.txt sub_plain.txt clash.yaml all_nodes.txt
           if git diff --cached --quiet; then
             echo "没有新变化"
