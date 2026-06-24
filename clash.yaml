@@ -150,7 +150,7 @@ proxies:
   port: 443
   udp: true
 - name: 节点 030
-  type: trojan
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
@@ -245,27 +245,27 @@ proxies:
   port: 443
   udp: true
 - name: 节点 049
-  type: trojan
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 050
-  type: trojan
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 051
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 052
-  type: trojan
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 053
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
@@ -280,12 +280,12 @@ proxies:
   port: 443
   udp: true
 - name: 节点 056
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 057
-  type: trojan
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
@@ -295,7 +295,7 @@ proxies:
   port: 443
   udp: true
 - name: 节点 059
-  type: trojan
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
@@ -305,7 +305,7 @@ proxies:
   port: 443
   udp: true
 - name: 节点 061
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
@@ -325,12 +325,12 @@ proxies:
   port: 443
   udp: true
 - name: 节点 065
-  type: trojan
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 066
-  type: trojan
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
@@ -350,37 +350,37 @@ proxies:
   port: 443
   udp: true
 - name: 节点 070
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 071
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 072
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 073
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 074
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 075
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 076
-  type: ss
+  type: vmess
   server: 127.0.0.1
   port: 443
   udp: true
@@ -395,12 +395,12 @@ proxies:
   port: 443
   udp: true
 - name: 节点 079
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 080
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
@@ -410,12 +410,12 @@ proxies:
   port: 443
   udp: true
 - name: 节点 082
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 083
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
@@ -425,7 +425,7 @@ proxies:
   port: 443
   udp: true
 - name: 节点 085
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
@@ -440,7 +440,7 @@ proxies:
   port: 443
   udp: true
 - name: 节点 088
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
@@ -450,22 +450,22 @@ proxies:
   port: 443
   udp: true
 - name: 节点 090
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 091
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 092
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 093
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
@@ -475,27 +475,27 @@ proxies:
   port: 443
   udp: true
 - name: 节点 095
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 096
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 097
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 098
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 099
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
@@ -505,12 +505,12 @@ proxies:
   port: 443
   udp: true
 - name: 节点 101
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 102
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
@@ -520,32 +520,32 @@ proxies:
   port: 443
   udp: true
 - name: 节点 104
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 105
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 106
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 107
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 108
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 109
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
@@ -570,37 +570,37 @@ proxies:
   port: 443
   udp: true
 - name: 节点 114
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 115
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 116
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 117
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 118
-  type: vmess
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 119
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 120
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
