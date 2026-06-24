@@ -105,21 +105,13 @@ jobs:
           # 执行 Python
           python3 main.py
 
-          # 安全地创建 subconverter 配置文件，规避 YAML 的方括号解析冲突
-          mkdir -p subconverter
-          echo "[General]" > subconverter/generate.ini
-          echo "" >> subconverter/generate.ini
-          echo "[Target]" >> subconverter/generate.ini
-          echo "path=../clash.yaml" >> subconverter/generate.ini
-          echo "target=clash" >> subconverter/generate.ini
-          echo "url=../sub_plain.txt" >> subconverter/generate.ini
-
-          # 执行转换
-          if [ -f subconverter/generate.ini ]; then
+          # 执行转换：直接将明文内容以本地文件流的形式喂给 subconverter 命令
+          if [ -f sub_plain.txt ] && [ -s sub_plain.txt ]; then
             echo "正在启动 subconverter 转换 clash.yaml..."
-            cd subconverter && ./subconverter -g && cd ..
+            # 使用官方标准的绝对路径文件传参方式进行转换
+            ./subconverter/subconverter -g --source "$(pwd)/sub_plain.txt" --target clash --output "$(pwd)/clash.yaml"
           else
-            echo "错误：未发现配置文件"
+            echo "错误：未发现有效节点数据"
           fi
 
       - name: 提交更新
