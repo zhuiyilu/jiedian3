@@ -145,12 +145,12 @@ proxies:
   port: 443
   udp: true
 - name: 节点 029
-  type: trojan
+  type: ss
   server: 127.0.0.1
   port: 443
   udp: true
 - name: 节点 030
-  type: vmess
+  type: trojan
   server: 127.0.0.1
   port: 443
   udp: true
