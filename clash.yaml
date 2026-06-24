@@ -2,28 +2,1066 @@ mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: warning
-ipv6: false
-proxies: []
-proxy-providers:
-  AutoNodes:
-    type: http
-    url: https://raw.githubusercontent.com/zhuiyilu/jiedian3/main/sub.txt
-    interval: 3600
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
+proxies:
+- name: 节点 001
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 002
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 003
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 004
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 005
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 006
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 007
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 008
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 009
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 010
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 011
+  type: ssr
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 012
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 013
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 014
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 015
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 016
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 017
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 018
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 019
+  type: ssr
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 020
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 021
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 022
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 023
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 024
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 025
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 026
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 027
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 028
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 029
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 030
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 031
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 032
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 033
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 034
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 035
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 036
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 037
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 038
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 039
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 040
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 041
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 042
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 043
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 044
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 045
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 046
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 047
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 048
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 049
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 050
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 051
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 052
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 053
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 054
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 055
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 056
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 057
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 058
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 059
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 060
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 061
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 062
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 063
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 064
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 065
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 066
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 067
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 068
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 069
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 070
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 071
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 072
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 073
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 074
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 075
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 076
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 077
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 078
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 079
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 080
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 081
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 082
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 083
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 084
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 085
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 086
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 087
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 088
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 089
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 090
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 091
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 092
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 093
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 094
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 095
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 096
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 097
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 098
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 099
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 100
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 101
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 102
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 103
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 104
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 105
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 106
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 107
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 108
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 109
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 110
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 111
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 112
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 113
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 114
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 115
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 116
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 117
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 118
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 119
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 120
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 121
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 122
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 123
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 124
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 125
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 126
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 127
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 128
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 129
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 130
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 131
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 132
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 133
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 134
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 135
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 136
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 137
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 138
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 139
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 140
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 141
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 142
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 143
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 144
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 145
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 146
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 147
+  type: trojan
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 148
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 149
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
+- name: 节点 150
+  type: vmess
+  server: 127.0.0.1
+  port: 443
+  udp: true
 proxy-groups:
-- name: ♻️ 自动选择
+- name: 自动选择
   type: url-test
-  use:
-  - AutoNodes
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
-- name: 🔄 手动选择
+  proxies:
+  - 节点 001
+  - 节点 002
+  - 节点 003
+  - 节点 004
+  - 节点 005
+  - 节点 006
+  - 节点 007
+  - 节点 008
+  - 节点 009
+  - 节点 010
+  - 节点 011
+  - 节点 012
+  - 节点 013
+  - 节点 014
+  - 节点 015
+  - 节点 016
+  - 节点 017
+  - 节点 018
+  - 节点 019
+  - 节点 020
+  - 节点 021
+  - 节点 022
+  - 节点 023
+  - 节点 024
+  - 节点 025
+  - 节点 026
+  - 节点 027
+  - 节点 028
+  - 节点 029
+  - 节点 030
+  - 节点 031
+  - 节点 032
+  - 节点 033
+  - 节点 034
+  - 节点 035
+  - 节点 036
+  - 节点 037
+  - 节点 038
+  - 节点 039
+  - 节点 040
+  - 节点 041
+  - 节点 042
+  - 节点 043
+  - 节点 044
+  - 节点 045
+  - 节点 046
+  - 节点 047
+  - 节点 048
+  - 节点 049
+  - 节点 050
+  - 节点 051
+  - 节点 052
+  - 节点 053
+  - 节点 054
+  - 节点 055
+  - 节点 056
+  - 节点 057
+  - 节点 058
+  - 节点 059
+  - 节点 060
+  - 节点 061
+  - 节点 062
+  - 节点 063
+  - 节点 064
+  - 节点 065
+  - 节点 066
+  - 节点 067
+  - 节点 068
+  - 节点 069
+  - 节点 070
+  - 节点 071
+  - 节点 072
+  - 节点 073
+  - 节点 074
+  - 节点 075
+  - 节点 076
+  - 节点 077
+  - 节点 078
+  - 节点 079
+  - 节点 080
+  - 节点 081
+  - 节点 082
+  - 节点 083
+  - 节点 084
+  - 节点 085
+  - 节点 086
+  - 节点 087
+  - 节点 088
+  - 节点 089
+  - 节点 090
+  - 节点 091
+  - 节点 092
+  - 节点 093
+  - 节点 094
+  - 节点 095
+  - 节点 096
+  - 节点 097
+  - 节点 098
+  - 节点 099
+  - 节点 100
+  - 节点 101
+  - 节点 102
+  - 节点 103
+  - 节点 104
+  - 节点 105
+  - 节点 106
+  - 节点 107
+  - 节点 108
+  - 节点 109
+  - 节点 110
+  - 节点 111
+  - 节点 112
+  - 节点 113
+  - 节点 114
+  - 节点 115
+  - 节点 116
+  - 节点 117
+  - 节点 118
+  - 节点 119
+  - 节点 120
+  - 节点 121
+  - 节点 122
+  - 节点 123
+  - 节点 124
+  - 节点 125
+  - 节点 126
+  - 节点 127
+  - 节点 128
+  - 节点 129
+  - 节点 130
+  - 节点 131
+  - 节点 132
+  - 节点 133
+  - 节点 134
+  - 节点 135
+  - 节点 136
+  - 节点 137
+  - 节点 138
+  - 节点 139
+  - 节点 140
+  - 节点 141
+  - 节点 142
+  - 节点 143
+  - 节点 144
+  - 节点 145
+  - 节点 146
+  - 节点 147
+  - 节点 148
+  - 节点 149
+  - 节点 150
+- name: 手动选择
   type: select
-  use:
-  - AutoNodes
+  proxies:
+  - 节点 001
+  - 节点 002
+  - 节点 003
+  - 节点 004
+  - 节点 005
+  - 节点 006
+  - 节点 007
+  - 节点 008
+  - 节点 009
+  - 节点 010
+  - 节点 011
+  - 节点 012
+  - 节点 013
+  - 节点 014
+  - 节点 015
+  - 节点 016
+  - 节点 017
+  - 节点 018
+  - 节点 019
+  - 节点 020
+  - 节点 021
+  - 节点 022
+  - 节点 023
+  - 节点 024
+  - 节点 025
+  - 节点 026
+  - 节点 027
+  - 节点 028
+  - 节点 029
+  - 节点 030
+  - 节点 031
+  - 节点 032
+  - 节点 033
+  - 节点 034
+  - 节点 035
+  - 节点 036
+  - 节点 037
+  - 节点 038
+  - 节点 039
+  - 节点 040
+  - 节点 041
+  - 节点 042
+  - 节点 043
+  - 节点 044
+  - 节点 045
+  - 节点 046
+  - 节点 047
+  - 节点 048
+  - 节点 049
+  - 节点 050
+  - 节点 051
+  - 节点 052
+  - 节点 053
+  - 节点 054
+  - 节点 055
+  - 节点 056
+  - 节点 057
+  - 节点 058
+  - 节点 059
+  - 节点 060
+  - 节点 061
+  - 节点 062
+  - 节点 063
+  - 节点 064
+  - 节点 065
+  - 节点 066
+  - 节点 067
+  - 节点 068
+  - 节点 069
+  - 节点 070
+  - 节点 071
+  - 节点 072
+  - 节点 073
+  - 节点 074
+  - 节点 075
+  - 节点 076
+  - 节点 077
+  - 节点 078
+  - 节点 079
+  - 节点 080
+  - 节点 081
+  - 节点 082
+  - 节点 083
+  - 节点 084
+  - 节点 085
+  - 节点 086
+  - 节点 087
+  - 节点 088
+  - 节点 089
+  - 节点 090
+  - 节点 091
+  - 节点 092
+  - 节点 093
+  - 节点 094
+  - 节点 095
+  - 节点 096
+  - 节点 097
+  - 节点 098
+  - 节点 099
+  - 节点 100
+  - 节点 101
+  - 节点 102
+  - 节点 103
+  - 节点 104
+  - 节点 105
+  - 节点 106
+  - 节点 107
+  - 节点 108
+  - 节点 109
+  - 节点 110
+  - 节点 111
+  - 节点 112
+  - 节点 113
+  - 节点 114
+  - 节点 115
+  - 节点 116
+  - 节点 117
+  - 节点 118
+  - 节点 119
+  - 节点 120
+  - 节点 121
+  - 节点 122
+  - 节点 123
+  - 节点 124
+  - 节点 125
+  - 节点 126
+  - 节点 127
+  - 节点 128
+  - 节点 129
+  - 节点 130
+  - 节点 131
+  - 节点 132
+  - 节点 133
+  - 节点 134
+  - 节点 135
+  - 节点 136
+  - 节点 137
+  - 节点 138
+  - 节点 139
+  - 节点 140
+  - 节点 141
+  - 节点 142
+  - 节点 143
+  - 节点 144
+  - 节点 145
+  - 节点 146
+  - 节点 147
+  - 节点 148
+  - 节点 149
+  - 节点 150
 rules:
-- MATCH,♻️ 自动选择
+- MATCH,自动选择
