@@ -1,4 +1,4 @@
-name: 自动聚合 + 测速 + 筛选最佳节点
+name: 自动聚合 + 测速 + 筛选最佳100
 
 on:
   push:
@@ -13,6 +13,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -20,109 +21,389 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: 安装依赖和测速工具
+      - name: 安装依赖
         run: |
-          sudo apt-get update -qq
-          pip install requests pyyaml --user || true
+          pip install --quiet --break-system-packages pyyaml || pip install --quiet pyyaml
 
-          echo "正在下载 LiteSpeedTest..."
-          wget -q https://github.com/xxf098/LiteSpeedTest/releases/download/v0.15.0/lite-linux-amd64-v3-v0.15.0.gz -O litespeedtest.gz || \
-          wget -q https://github.com/xxf098/LiteSpeedTest/releases/download/v0.15.0/lite-linux-amd64-v0.15.0.gz -O litespeedtest.gz
-          
-          gunzip -f litespeedtest.gz || echo "解压失败"
-          if [ -f lite-linux-amd64-v3-v0.15.0 ]; then
-            mv lite-linux-amd64-v3-v0.15.0 litespeedtest
-          elif [ -f lite-linux-amd64-v0.15.0 ]; then
-            mv lite-linux-amd64-v0.15.0 litespeedtest
-          fi
-          chmod +x litespeedtest 2>/dev/null || true
-
-      - name: 下载并安装 Subconverter
-        run: |
-          echo "正在下载 subconverter..."
-          wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
-          tar -xzf subconverter_linux64.tar.gz
-          chmod +x subconverter/subconverter
-
-      - name: 聚合 + 测速 + 生成订阅
+      - name: 聚合 + 测速 + 筛选 + 生成订阅
         env:
           SUBS_URLS: ${{ secrets.SUBS_URLS }}
         run: |
           cat << 'EOF' > main.py
-          import os, base64, urllib.request, json, time, re
+          import os, base64, json, time, socket
+          import urllib.request
+          from urllib.parse import urlparse, unquote, parse_qs
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          import yaml
+
+          # ---------- 基础工具 ----------
 
           def fetch_url(url):
               try:
                   req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-                  with urllib.request.urlopen(req, timeout=50) as r:
+                  with urllib.request.urlopen(req, timeout=40) as r:
                       return r.read()
               except Exception as e:
                   print(f"❌ 获取失败: {url} | {e}")
                   return None
 
           def decode_content(data):
-              if not data: return ""
+              if not data:
+                  return ""
               text = data.decode('utf-8', errors='ignore').strip()
               if '://' not in text[:200]:
                   try:
-                      return base64.b64decode(text + '===').decode('utf-8', errors='ignore')
-                  except: pass
+                      return base64.b64decode(text + '===').decode('utf-8')
+                  except Exception:
+                      pass
               return text
+
+          def b64_pad_decode(s):
+              s = s.strip().replace('-', '+').replace('_', '/')
+              return base64.b64decode(s + '=' * (-len(s) % 4))
+
+          # ---------- 测速：从链接中取出 host/port 做 TCP 连通性测试 ----------
+
+          def get_host_port(link):
+              try:
+                  if link.startswith('vmess://'):
+                      raw = b64_pad_decode(link[len('vmess://'):])
+                      info = json.loads(raw.decode('utf-8', errors='ignore'))
+                      return info.get('add'), int(info.get('port'))
+                  parsed = urlparse(link)
+                  if parsed.hostname and parsed.port:
+                      return parsed.hostname, parsed.port
+                  if link.startswith('ss://'):
+                      body = link[len('ss://'):].split('#')[0]
+                      decoded = b64_pad_decode(body).decode('utf-8', errors='ignore')
+                      if '@' in decoded:
+                          hostport = decoded.rsplit('@', 1)[-1]
+                          host, port = hostport.split(':')
+                          return host, int(port)
+              except Exception:
+                  pass
+              return None, None
+
+          def tcp_ping(link, timeout=4):
+              host, port = get_host_port(link)
+              if not host or not port:
+                  return link, None
+              try:
+                  start = time.time()
+                  with socket.create_connection((host, port), timeout=timeout):
+                      pass
+                  return link, round((time.time() - start) * 1000, 1)
+              except Exception:
+                  return link, None
+
+          # ---------- 节点链接 -> Clash 代理字典 ----------
+
+          def safe_name(name, used_names):
+              name = (name or "").strip() or "节点"
+              base, i = name, 2
+              while name in used_names:
+                  name = f"{base}-{i}"
+                  i += 1
+              used_names.add(name)
+              return name
+
+          def parse_uri_style(link):
+              parsed = urlparse(link)
+              query = {k: v[0] for k, v in parse_qs(parsed.query).items()}
+              frag = unquote(parsed.fragment) if parsed.fragment else ''
+              return parsed, query, frag
+
+          def vmess_to_proxy(link, used_names):
+              try:
+                  raw = b64_pad_decode(link[len('vmess://'):])
+                  info = json.loads(raw.decode('utf-8', errors='ignore'))
+                  name = safe_name(unquote(str(info.get('ps', 'vmess'))), used_names)
+                  proxy = {
+                      'name': name, 'type': 'vmess',
+                      'server': info.get('add'), 'port': int(info.get('port')),
+                      'uuid': info.get('id'), 'alterId': int(info.get('aid', 0) or 0),
+                      'cipher': info.get('scy') or 'auto', 'udp': True,
+                  }
+                  net = info.get('net', 'tcp')
+                  if net and net != 'tcp':
+                      proxy['network'] = net
+                  if info.get('tls') in ('tls', 'reality'):
+                      proxy['tls'] = True
+                      if info.get('sni'):
+                          proxy['servername'] = info.get('sni')
+                  if net == 'ws':
+                      proxy['ws-opts'] = {'path': info.get('path') or '/',
+                                           'headers': {'Host': info.get('host')} if info.get('host') else {}}
+                  elif net == 'grpc':
+                      proxy['grpc-opts'] = {'grpc-service-name': info.get('path') or ''}
+                  return proxy
+              except Exception:
+                  return None
+
+          def vless_to_proxy(link, used_names):
+              try:
+                  parsed, q, frag = parse_uri_style(link)
+                  if not (parsed.hostname and parsed.port and parsed.username):
+                      return None
+                  name = safe_name(frag or 'vless', used_names)
+                  proxy = {'name': name, 'type': 'vless', 'server': parsed.hostname,
+                            'port': parsed.port, 'uuid': parsed.username, 'udp': True}
+                  net = q.get('type', 'tcp')
+                  if net and net != 'tcp':
+                      proxy['network'] = net
+                  security = q.get('security', 'none')
+                  if security in ('tls', 'reality'):
+                      proxy['tls'] = True
+                      if q.get('sni'):
+                          proxy['servername'] = q.get('sni')
+                      if q.get('fp'):
+                          proxy['client-fingerprint'] = q.get('fp')
+                      if security == 'reality':
+                          proxy['reality-opts'] = {'public-key': q.get('pbk', ''), 'short-id': q.get('sid', '')}
+                  if q.get('flow'):
+                      proxy['flow'] = q.get('flow')
+                  if net == 'ws':
+                      proxy['ws-opts'] = {'path': unquote(q.get('path', '/')),
+                                           'headers': {'Host': q.get('host')} if q.get('host') else {}}
+                  elif net == 'grpc':
+                      proxy['grpc-opts'] = {'grpc-service-name': q.get('serviceName', '')}
+                  return proxy
+              except Exception:
+                  return None
+
+          def trojan_to_proxy(link, used_names):
+              try:
+                  parsed, q, frag = parse_uri_style(link)
+                  if not (parsed.hostname and parsed.port and parsed.username):
+                      return None
+                  name = safe_name(frag or 'trojan', used_names)
+                  proxy = {'name': name, 'type': 'trojan', 'server': parsed.hostname,
+                            'port': parsed.port, 'password': parsed.username, 'udp': True}
+                  sni = q.get('sni') or q.get('peer')
+                  if sni:
+                      proxy['sni'] = sni
+                  if q.get('allowInsecure') == '1' or q.get('insecure') == '1':
+                      proxy['skip-cert-verify'] = True
+                  net = q.get('type', 'tcp')
+                  if net == 'ws':
+                      proxy['network'] = 'ws'
+                      proxy['ws-opts'] = {'path': unquote(q.get('path', '/')),
+                                           'headers': {'Host': q.get('host')} if q.get('host') else {}}
+                  elif net == 'grpc':
+                      proxy['network'] = 'grpc'
+                      proxy['grpc-opts'] = {'grpc-service-name': q.get('serviceName', '')}
+                  return proxy
+              except Exception:
+                  return None
+
+          def ss_to_proxy(link, used_names):
+              try:
+                  parsed, q, frag = parse_uri_style(link)
+                  method = password = None
+                  host, port = parsed.hostname, parsed.port
+                  if parsed.username and host and port:
+                      try:
+                          userinfo = b64_pad_decode(unquote(parsed.username)).decode('utf-8', errors='ignore')
+                          method, password = userinfo.split(':', 1)
+                      except Exception:
+                          if ':' in unquote(parsed.username):
+                              method, password = unquote(parsed.username).split(':', 1)
+                  if not (method and password and host and port):
+                      body = link[len('ss://'):].split('#')[0]
+                      decoded = b64_pad_decode(body).decode('utf-8', errors='ignore')
+                      methodpass, hostport = decoded.rsplit('@', 1)
+                      method, password = methodpass.split(':', 1)
+                      host, port = hostport.split(':')
+                      port = int(port)
+                  if not (method and password and host and port):
+                      return None
+                  name = safe_name(frag or 'ss', used_names)
+                  return {'name': name, 'type': 'ss', 'server': host, 'port': int(port),
+                          'cipher': method, 'password': password, 'udp': True}
+              except Exception:
+                  return None
+
+          def hysteria2_to_proxy(link, used_names):
+              try:
+                  parsed, q, frag = parse_uri_style(link)
+                  if not (parsed.hostname and parsed.port):
+                      return None
+                  name = safe_name(frag or 'hysteria2', used_names)
+                  proxy = {'name': name, 'type': 'hysteria2', 'server': parsed.hostname,
+                            'port': parsed.port,
+                            'password': unquote(parsed.username) if parsed.username else q.get('auth', ''),
+                            'udp': True}
+                  sni = q.get('sni') or q.get('peer')
+                  if sni:
+                      proxy['sni'] = sni
+                  if q.get('insecure') == '1':
+                      proxy['skip-cert-verify'] = True
+                  if q.get('obfs'):
+                      proxy['obfs'] = q.get('obfs')
+                      proxy['obfs-password'] = q.get('obfs-password', '')
+                  return proxy
+              except Exception:
+                  return None
+
+          def tuic_to_proxy(link, used_names):
+              try:
+                  parsed, q, frag = parse_uri_style(link)
+                  if not (parsed.hostname and parsed.port):
+                      return None
+                  name = safe_name(frag or 'tuic', used_names)
+                  proxy = {'name': name, 'type': 'tuic', 'server': parsed.hostname,
+                            'port': parsed.port, 'udp': True}
+                  if parsed.username and parsed.password:
+                      proxy['uuid'], proxy['password'] = parsed.username, parsed.password
+                  else:
+                      proxy['uuid'] = parsed.username or q.get('uuid', '')
+                      proxy['password'] = q.get('password', '')
+                  if q.get('sni'):
+                      proxy['sni'] = q.get('sni')
+                  if q.get('alpn'):
+                      proxy['alpn'] = [q.get('alpn')]
+                  if q.get('allow_insecure') == '1':
+                      proxy['skip-cert-verify'] = True
+                  return proxy
+              except Exception:
+                  return None
+
+          def link_to_clash_proxy(link, used_names):
+              if link.startswith('vmess://'):
+                  return vmess_to_proxy(link, used_names)
+              if link.startswith('vless://'):
+                  return vless_to_proxy(link, used_names)
+              if link.startswith('trojan://'):
+                  return trojan_to_proxy(link, used_names)
+              if link.startswith('ss://'):
+                  return ss_to_proxy(link, used_names)
+              if link.startswith('hysteria2://') or link.startswith('hy2://'):
+                  return hysteria2_to_proxy(link, used_names)
+              if link.startswith('tuic://'):
+                  return tuic_to_proxy(link, used_names)
+              return None
+
+          # ---------- 主逻辑 ----------
 
           urls = [u.strip() for u in os.getenv('SUBS_URLS', '').splitlines() if u.strip()]
           all_nodes = []
+          node_count = {}
+
           print(f"发现 {len(urls)} 个订阅链接\n")
 
           for i, url in enumerate(urls, 1):
-              print(f"[{i}/{len(urls)}] 获取: {url[:70]}...")
+              print(f"[{i}/{len(urls)}] 正在获取: {url}")
               raw = fetch_url(url)
               if raw:
                   content = decode_content(raw)
-                  nodes = [line.strip() for line in content.splitlines() 
-                           if line.strip() and re.match(r'^(vmess|vless|trojan|ss|hysteria2|tuic|ssr)://', line.strip())]
+                  nodes = [line.strip() for line in content.splitlines()
+                           if line.strip() and any(line.strip().startswith(p)
+                           for p in ['vmess://', 'vless://', 'trojan://', 'ss://', 'hysteria2://', 'hy2://', 'tuic://'])]
                   all_nodes.extend(nodes)
-                  print(f" → 获得 {len(nodes)} 个节点")
+                  node_count[url] = len(nodes)
+                  print(f"   → 获取到 {len(nodes)} 个节点")
 
           unique_nodes = list(dict.fromkeys(all_nodes))
-          print(f"\n✅ 去重后共 {len(unique_nodes)} 个节点")
+          print(f"\n✅ 总聚合去重后: {len(unique_nodes)} 个节点")
 
-          # 限制全节点文件体积（最高取前5000个）
-          with open('all_nodes.txt', 'w', encoding='utf-8') as f:
-              f.write('\n'.join(unique_nodes[:5000]))
+          print("\n各订阅贡献情况：")
+          for url, cnt in node_count.items():
+              print(f"   • {cnt} 个 ← {url}")
+
+          with open('all_nodes.txt', 'w') as f:
+              f.write('\n'.join(unique_nodes))
 
           best_nodes = unique_nodes[:100]
 
-          # 保存明文和密文
+          if unique_nodes:
+              print(f"\n🚀 开始 TCP 连通性/延迟测速（{len(unique_nodes)} 个节点）...")
+              results = []
+              with ThreadPoolExecutor(max_workers=100) as pool:
+                  futures = [pool.submit(tcp_ping, link) for link in unique_nodes]
+                  done = 0
+                  for fut in as_completed(futures):
+                      link, delay = fut.result()
+                      done += 1
+                      if delay is not None:
+                          results.append((link, delay))
+                      if done % 50 == 0 or done == len(unique_nodes):
+                          print(f"   进度 {done}/{len(unique_nodes)}，存活 {len(results)} 个")
+
+              results.sort(key=lambda x: x[1])
+              print(f"\n✅ 测速完成，{len(results)}/{len(unique_nodes)} 个节点可连通")
+
+              best_nodes = [link for link, _ in results[:100]]
+              if len(best_nodes) < 100:
+                  tested_set = set(link for link, _ in results)
+                  for link in unique_nodes:
+                      if len(best_nodes) >= 100:
+                          break
+                      if link not in tested_set and link not in best_nodes:
+                          best_nodes.append(link)
+          else:
+              print("没有聚合到任何节点")
+
+          # ---------- 输出 txt / base64 订阅 ----------
+
           combined = '\n'.join(best_nodes)
-          with open('sub.txt', 'w', encoding='utf-8') as f:
-              f.write(base64.b64encode(combined.encode()).decode())
-          with open('sub_plain.txt', 'w', encoding='utf-8') as f:
+          encoded = base64.b64encode(combined.encode('utf-8')).decode('utf-8')
+
+          with open('sub.txt', 'w') as f:
+              f.write(encoded)
+          with open('sub_plain.txt', 'w') as f:
               f.write(combined)
 
-          print("🎉 Python 处理部分完成")
+          # ---------- 输出 Clash YAML 订阅 ----------
+
+          used_names = set()
+          proxies = []
+          for link in best_nodes:
+              p = link_to_clash_proxy(link, used_names)
+              if p:
+                  proxies.append(p)
+
+          proxy_names = [p['name'] for p in proxies]
+
+          clash_config = {
+              'mixed-port': 7890,
+              'allow-lan': False,
+              'mode': 'rule',
+              'log-level': 'info',
+              'proxies': proxies,
+              'proxy-groups': [
+                  {'name': '🚀 节点选择', 'type': 'select',
+                   'proxies': ['♻️ 自动选择', 'DIRECT'] + proxy_names},
+                  {'name': '♻️ 自动选择', 'type': 'url-test',
+                   'url': 'https://www.gstatic.com/generate_204',
+                   'interval': 300, 'proxies': proxy_names},
+              ],
+              'rules': ['MATCH,🚀 节点选择'],
+          }
+
+          with open('sub.yaml', 'w', encoding='utf-8') as f:
+              yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False)
+
+          print(f"\n✅ 最终输出 {len(best_nodes)} 个最佳节点")
+          print(f"✅ 其中 {len(proxies)} 个成功转换为 Clash YAML 格式")
           EOF
 
-          # 执行 Python
           python3 main.py
-
-          # 执行转换：直接将明文内容以本地文件流的形式喂给 subconverter 命令
-          if [ -f sub_plain.txt ] && [ -s sub_plain.txt ]; then
-            echo "正在启动 subconverter 转换 clash.yaml..."
-            # 使用官方标准的绝对路径文件传参方式进行转换
-            ./subconverter/subconverter -g --source "$(pwd)/sub_plain.txt" --target clash --output "$(pwd)/clash.yaml"
-          else
-            echo "错误：未发现有效节点数据"
-          fi
 
       - name: 提交更新
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sub.txt sub_plain.txt clash.yaml all_nodes.txt
-          if git diff --cached --quiet; then
-            echo "没有新变化"
+
+          if [ -f sub.txt ] && [ -f sub.yaml ]; then
+            git add sub.txt sub_plain.txt sub.yaml
+            if git diff --cached --quiet; then
+              echo "没有新变化"
+            else
+              git commit -m "Auto update Best 100 nodes $(date '+%Y-%m-%d %H:%M:%S UTC')"
+              git push
+              echo "✅ 成功推送！"
+            fi
           else
-            git commit -m "Auto update Best 100 nodes $(date '+%Y-%m-%d %H:%M:%S UTC')"
-            git push
-            echo "✅ 推送成功！"
+            echo "❌ 未生成订阅文件"
+            exit 1
           fi
