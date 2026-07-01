@@ -3,537 +3,229 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: EPODONIOS
+- name: By EbraSha 🧿
   type: vless
-  server: 192.71.82.2
-  port: 443
-  uuid: a5c05c1e-aa68-443f-8598-09800244bd4b
-  udp: true
-  network: ws
-  tls: true
-  servername: kingcloud.biack.ir
-  client-fingerprint: chrome
-  ws-opts:
-    path: /LiL?ed
-    headers: {}
-- name: By EbraSha 👑
-  type: vless
-  server: 188.164.248.193
-  port: 2087
-  uuid: 623615c5-9ede-43ab-819a-11291ce1969a
-  udp: true
-  network: ws
-  tls: true
-  servername: nova-river-cloud-dace.znzzzzz.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: nova-river-cloud-dace.znzzzzz.workers.dev
-- name: By EbraSha 🕷️
-  type: vless
-  server: 172.67.172.153
+  server: 172.67.223.190
   port: 2086
-  uuid: 2737560d-1867-47fa-aa80-351c36d771c7
+  uuid: e6bad6ca-ab7c-4bdd-b07e-5c8ec407decd
   udp: true
   network: ws
   ws-opts:
-    path: /?ed=2560
+    path: /eyJqdW5rIjoidGpkTkY2VHk0bE1pV3AiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0=
     headers:
-      Host: 0118.kznyoum2.workers.dev
-- name: By EbraSha ⚙️
-  type: vless
-  server: 172.67.67.199
-  port: 443
-  uuid: 9794d18f-9280-3553-a7a5-a23da75aca76
-  udp: true
-  network: xhttp
-  tls: true
-  servername: db8727a3s2316.sspcccdn.xyz
-  client-fingerprint: firefox
-- name: By EbraSha 💻
-  type: vless
-  server: 141.193.213.10
-  port: 2083
-  uuid: 1cbcff42-845a-4ee9-aefa-4c771cbbee77
-  udp: true
-  network: ws
-  tls: true
-  servername: clapi.onewinvip.ir
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: clapi.onewinvip.ir
-- name: By EbraSha 🐺
-  type: trojan
-  server: 104.17.87.167
-  port: 443
-  password: blue2024
-  udp: true
-  sni: hb.lii2010.us.kg
-- name: By EbraSha 🧲
-  type: vless
-  server: 172.67.196.100
-  port: 443
-  uuid: b4c97223-8d5d-4ffd-af6f-d5a59b575ffc
-  udp: true
-  network: ws
-  tls: true
-  servername: join-midas-x-x----join-midas-x-x.join-midas-x-x-ab13.workers.dev
-  client-fingerprint: randomized
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: join-midas-x-x----join-midas-x-x.join-midas-x-x-ab13.workers.dev
-- name: By EbraSha 🧬
-  type: vless
-  server: 198.41.203.222
-  port: 443
-  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
-  udp: true
-  network: ws
-  tls: true
-  servername: al.ylks.xyz
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: al.ylks.xyz
-- name: By EbraSha 🧪
-  type: vless
-  server: 172.66.3.252
-  port: 2096
-  uuid: 9f2ecebe-3a52-460e-80ac-74a21fffdaf7
-  udp: true
-  network: ws
-  tls: true
-  servername: gxgdjtgdt.fatehuiolk.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /v2ngnet--v2ngnet--v2ngnet--v2ngnet--v2ngnet--v2ngnet--v2ngnet--v2ngnet
-    headers:
-      Host: gxgdjtgdt.fatehuiolk.workers.dev
-- name: By EbraSha 🔌
-  type: vless
-  server: 66.235.200.186
-  port: 8880
-  uuid: 583ceab3-4022-4553-9158-9bedc625ad4e
-  udp: true
-  network: ws
-  ws-opts:
-    path: /TelegramU0001F1E8U0001F1F3
-    headers:
-      Host: ip.langmanshanxi.top
-- name: By EbraSha 🦅
-  type: trojan
-  server: 172.67.160.28
-  port: 443
-  password: auto
-  udp: true
-  sni: trojanmz.pages.dev
-  network: ws
-  ws-opts:
-    path: /trojanmz.pages.dev/?ed=2560
-    headers:
-      Host: trojanmz.pages.dev
-- name: By EbraSha 🧠
-  type: vless
-  server: 185.146.173.63
-  port: 80
-  uuid: 2f1f7fbf-f37d-4275-c014-298a83f4e5a8
-  udp: true
-  network: httpupgrade
-- name: By EbraSha 🃏
-  type: vless
-  server: 104.19.47.146
-  port: 443
-  uuid: b0437161-402e-483d-8462-65215b245b07
-  udp: true
-  network: ws
-  tls: true
-  servername: edt2.cray.mom
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: edt2.cray.mom
-- name: By EbraSha 🌌
-  type: vless
-  server: 173.245.59.115
-  port: 443
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  udp: true
-  network: ws
-  tls: true
-  servername: lm.kpcloud.eu.org
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: lm.kpcloud.eu.org
-- name: By EbraSha 🚬
-  type: vless
-  server: 199.232.0.0
-  port: 443
-  uuid: 8ff9fb56-a63c-5ec8-a4ac-3be008369bfd
-  udp: true
-  network: ws
-  tls: true
-  servername: ChaNnel-iD-ELiV2rAY.nEt
-  client-fingerprint: edge
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: channel-id-eliv2ray.net
-- name: By EbraSha 🖥️
-  type: vless
-  server: 5.10.214.177
-  port: 8880
-  uuid: 583ceab3-4022-4553-9158-9bedc625ad4e
-  udp: true
-  network: ws
-  ws-opts:
-    path: /TelegramU0001F1E8U0001F1F3
-    headers:
-      Host: ip.langmanshanxi.top
+      Host: cool-hill-7fe5.thenewata.workers.dev
 - name: By EbraSha 🧊
   type: trojan
-  server: 104.16.90.120
+  server: 104.21.91.112
+  port: 443
+  password: 8800c518-e68a-4441-a45c-cd678n55h7%D8%AA84c8
+  udp: true
+  sni: jp1.sanfen001.pics
+- name: By EbraSha 🌐
+  type: trojan
+  server: 141.101.123.43
+  port: 443
+  password: NISHIKUITAN222
+  udp: true
+- name: By EbraSha 🧠
+  type: vmess
+  server: 198.41.203.3
+  port: 443
+  uuid: 33aa57df-1c93-4318-9fce-e850437ee781
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /dongtaiwang.com
+    headers: {}
+- name: EPODONIOS
+  type: trojan
+  server: 104.21.40.34
   port: 443
   password: humanity
   udp: true
-  sni: www.creationlong.org
+  sni: www.gossipglove.com
+  skip-cert-verify: true
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.creationlong.org
-- name: By EbraSha 💻-2
+      Host: www.gossipglove.com
+- name: By EbraSha 🐺
   type: vless
-  server: 141.11.203.171
-  port: 443
-  uuid: cc6b985d-0362-4129-8763-38564174fb3e
-  udp: true
-  network: grpc
-  tls: true
-  servername: iryiccyne.wwtraveler.com
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: michi
-- name: By EbraSha 🧊-2
-  type: vless
-  server: 151.101.0.223
-  port: 443
-  uuid: 85e5d269-af01-4739-b6de-361ac74ceae3
-  udp: true
-  network: ws
-  tls: true
-  servername: python.org.
-  client-fingerprint: chrome
-  ws-opts:
-    path: /lW0tvTq4oSbHyKeRM?ed=2560
-    headers:
-      Host: itsaze.ir
-- name: By EbraSha 🦂
-  type: vless
-  server: 160.79.105.118
-  port: 443
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  udp: true
-  network: ws
-  tls: true
-  servername: lo.kpcloud.eu.org
-  ws-opts:
-    path: /blue
-    headers:
-      Host: lo.kpcloud.eu.org
-- name: By EbraSha 🧲-2
-  type: trojan
-  server: 104.25.76.106
-  port: 443
-  password: NISHIKUITAN222
-  udp: true
-- name: By EbraSha 🌐
-  type: vless
-  server: 172.67.66.216
-  port: 443
-  uuid: 9794d18f-9280-3553-a7a5-a23da75aca76
-  udp: true
-  network: xhttp
-  tls: true
-  servername: db8727a3s2316.sspcccdn.xyz
-  client-fingerprint: firefox
-- name: By EbraSha 🧲-3
-  type: vless
-  server: 172.66.47.140
-  port: 8443
-  uuid: 3c918c19-a5bd-4f2c-9b30-03c681c93ddc
-  udp: true
-  network: ws
-  tls: true
-  servername: V2RayMinER.PAGeS.Dev
-  client-fingerprint: randomized
-  ws-opts:
-    path: /WwPEDup8yShFB1Wp/NzguNDYuNzMuNDk=?ed=2560
-    headers:
-      Host: v2rayminer.pages.dev
-- name: By EbraSha 🧪-2
-  type: vless
-  server: 45.130.125.166
-  port: 8443
-  uuid: 2e7062e5-260b-4139-b221-21f2ae7dce21
-  udp: true
-  network: xhttp
-  tls: true
-  servername: spp.nimhub.ir
-  client-fingerprint: chrome
-- name: By EbraSha 🧊-3
-  type: vless
-  server: 46.202.30.255
-  port: 443
-  uuid: 9a98146a-235c-40ed-9633-a67fe3bf9f18
-  udp: true
-  network: xhttp
-  tls: true
-  servername: cloudflare.dns.xn--q9jyb4c
-- name: By EbraSha 🔐
-  type: trojan
-  server: 172.66.47.53
-  port: 443
-  password: bpb-trojan
-  udp: true
-  sni: 403b3611-99bC-43b7-88D7-26ED5D0825A9-3.pagES.DEv
-- name: By EbraSha 📶
-  type: vless
-  server: 104.17.25.173
-  port: 2053
-  uuid: e5f8a9f6-f164-479b-b3b5-b90f213c7145
-  udp: true
-  network: ws
-  tls: true
-  servername: ir1.airpanel.top
-  ws-opts:
-    path: /
-    headers:
-      Host: ir1.airpanel.top
-- name: By EbraSha 🧨
-  type: vless
-  server: 94.247.142.131
-  port: 443
-  uuid: 71ed6628-5870-4d19-8a52-f2a3ba3d4898
-  udp: true
-  network: ws
-  tls: true
-  servername: va.zhuk.us.kg
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: va.zhuk.us.kg
-- name: By EbraSha 🐺-2
-  type: vless
-  server: 162.159.153.222
-  port: 2096
-  uuid: 9755cc88-09d8-437f-bd89-d4a89915d9ae
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: keji.madcity.lol
-- name: By EbraSha 🪬
-  type: vless
-  server: 104.16.225.238
-  port: 443
-  uuid: a9bc52a0-7993-4bd8-9326-0330b1a7f698
-  udp: true
-  network: ws
-  tls: true
-  servername: 8.kongcheng666.dpdns.org
-  client-fingerprint: chrome
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: 8.kongcheng666.dpdns.org
-- name: By EbraSha ⚔️
-  type: vless
-  server: 108.162.195.45
-  port: 2096
-  uuid: 3f0f36f5-f091-45c5-88c9-4bcc545b922c
-  udp: true
-  network: ws
-  tls: true
-  servername: hetz.x-smm.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /45.76.183.217=49292
-    headers:
-      Host: hetz.x-smm.com
-- name: By EbraSha 🕹️
-  type: vless
-  server: 173.245.59.212
-  port: 8443
-  uuid: 76c1cf10-8cef-47ce-ba03-076ada44d4c4
-  udp: true
-  network: ws
-  tls: true
-  servername: join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram,VPNCUSTOMIZE?ed=8080
-    headers:
-      Host: join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de
-- name: By EbraSha 🌪️
-  type: vless
-  server: 104.17.147.12
-  port: 2083
-  uuid: c083563c-ef33-48ef-8e4c-45755f3d07e5
-  udp: true
-  network: ws
-  tls: true
-  servername: forsale.talebivpn.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /?u=26a759936a
-    headers:
-      Host: forsale.talebivpn.workers.dev
-- name: By EbraSha 🧬-2
-  type: vless
-  server: 47.89.234.217
-  port: 20000
-  uuid: 00000000-0000-4000-8000-000000000000
-  udp: true
-  network: ws
-  tls: true
-  servername: g1ixej-urdn-dlqnu1ol.gespz5p7nm04ej96ia7qc9tvsktgtx.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: g1ixej-urdn-dlqnu1ol.gespz5p7nm04ej96ia7qc9tvsktgtx.workers.dev
-- name: By EbraSha ♣️
-  type: vless
-  server: 185.238.228.164
-  port: 80
-  uuid: b2448f21-a3d4-43c4-b4ac-858f544cbe7f
-  udp: true
-  network: ws
-  ws-opts:
-    path: /backup
-    headers:
-      Host: NamE.DIVar.pRO
-- name: By EbraSha 🕶️
-  type: ss
-  server: 104.21.48.1
-  port: 443
-  cipher: "\x1CMx4"
-  password: o>w{
-  udp: true
-- name: By EbraSha 🧿
-  type: vless
-  server: 141.101.90.101
-  port: 8443
-  uuid: 12c181c7-5801-4c21-943d-d315017ae004
-  udp: true
-  network: xhttp
-  tls: true
-  servername: network-cpp-cloudnet.vexaservice.ir
-  client-fingerprint: chrome
-- name: By EbraSha 🔐-2
-  type: vless
-  server: 104.25.124.193
-  port: 443
-  uuid: 0fd65b6f-ea4d-4294-ad24-da45a86740db
-  udp: true
-  network: ws
-  tls: true
-  servername: m.moeinslip.online
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: m.moeinslip.online
-- name: By EbraSha 👾
-  type: vless
-  server: 156.243.83.247
-  port: 8880
-  uuid: d60fc3c5-9f07-4cdb-b81f-70af27936bdc
-  udp: true
-  network: ws
-  ws-opts:
-    path: /Telegram🇨🇳
-    headers:
-      Host: ex.sue.x10.mx
-- name: By EbraSha 🦅-2
-  type: vless
-  server: 170.153.144.244
-  port: 443
-  uuid: 3639eeca-11eb-d25d-7f1d-e5c99e437bed
-  udp: true
-  network: xhttp
-  tls: true
-  servername: saminob.lezzatcore.ir
-  client-fingerprint: chrome
-- name: By EbraSha 🌃
-  type: vless
-  server: 45.131.7.64
-  port: 80
-  uuid: 53fa8faf-ba4b-4322-9c69-a3e5b1555049
-  udp: true
-  network: ws
-  ws-opts:
-    path: '/Channel id: @ShadowProxy66/?ed=2560'
-    headers:
-      Host: reedfree8mahsang2.redorg.ir
-- name: By EbraSha 🥷
-  type: vless
-  server: 162.159.152.0
-  port: 2053
-  uuid: b0437161-402e-483d-8462-65215b245b07
-  udp: true
-  network: ws
-  tls: true
-  servername: edt2.cray.mom
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: edt2.cray.mom
-- name: By EbraSha ⌨️
-  type: vless
-  server: 172.67.155.193
-  port: 8443
-  uuid: 245a420e-7811-4296-b347-59bf12bcfc5b
-  udp: true
-  network: ws
-  tls: true
-  servername: ger39.vlessgroup.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /images
-    headers:
-      Host: ger39.vlessgroup.com
-- name: By EbraSha 🦂-2
-  type: vless
-  server: 104.21.61.23
-  port: 2083
-  uuid: 2730487f-0ed5-4f04-92d5-f95f9253d4f4
-  udp: true
-  network: ws
-  tls: true
-  ws-opts:
-    path: /ws
-    headers:
-      Host: v2ngfast-v2ngfast-v2ngfast-v2ngfast.jovego2551.workers.dev
-- name: By EbraSha 📼
-  type: vless
-  server: 91.193.58.127
+  server: 167.68.11.63
   port: 8880
   uuid: fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf
   udp: true
   network: ws
   ws-opts:
-    path: /Telegram🇨🇳 @MxlShare @WangCai2 /
+    path: /Telegram🇨🇳 @WangCai2 /?ed=2560fp=chrome
     headers:
-      Host: sk.laoyoutiao.link
+      Host: jp.laoyoutiao.link
+- name: By EbraSha 🌐-2
+  type: vless
+  server: 190.93.246.132
+  port: 443
+  uuid: 48198295-b7ba-4b5c-8d85-085d55a6c869
+  udp: true
+  network: ws
+  tls: true
+  servername: aj.ylks.xyz
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: aj.ylks.xyz
+- name: By EbraSha 🪬
+  type: vless
+  server: 45.130.125.160
+  port: 2053
+  uuid: 3a785934-ca53-49f2-82ae-b77fabfb29cf
+  udp: true
+  network: ws
+  tls: true
+  servername: pass68future.rz0045er.ir
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?ed#TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed=512
+    headers:
+      Host: 3wZrJxpkNJ.rz0045er.ir.
+- name: By EbraSha 🛰️
+  type: vmess
+  server: 188.114.99.10
+  port: 443
+  uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /5QNROSRV
+    headers: {}
+- name: By EbraSha ♣️
+  type: vless
+  server: 198.41.193.151
+  port: 80
+  uuid: 4307e484-6c8b-46d0-9df4-8b3983ab27b4
+  udp: true
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoibWNPczJHelJTUmpXIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOlsiNzcuMjM4LjIzMS4xNzkiLCIzMS40NC4yLjU3Il19?ed=2560
+    headers:
+      Host: 029.electrocellco-cf-029.workers.dev
+- name: By EbraSha ⚡
+  type: vless
+  server: 162.159.61.158
+  port: 80
+  uuid: 97ddf9a6-de5b-4229-bc41-4627321eff43
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: potifar.kravend4.workers.dev
+- name: By EbraSha ✨
+  type: vless
+  server: 199.232.0.57
+  port: 443
+  uuid: 31c31d58-4bba-5b7f-b9e1-adea99a1accd
+  udp: true
+  network: ws
+  tls: true
+  servername: JOiN-TeLeGRaM-ELiV2RAY.cOm
+  client-fingerprint: qq
+  ws-opts:
+    path: /ELenaThe GreatDictator?ed=2560
+    headers:
+      Host: join-telegram-eliv2ray.com
+- name: By EbraSha 🦅
+  type: trojan
+  server: 172.64.146.102
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.gossipglove.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.gossipglove.com
+- name: By EbraSha ♣️-2
+  type: vless
+  server: 104.17.124.173
+  port: 80
+  uuid: b3fbf377-2344-4b7e-a06b-bf4e767374b2
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ez-97b75a.ubetsjvz7.workers.dev
+- name: By EbraSha 🪐
+  type: vless
+  server: 141.193.213.20
+  port: 8080
+  uuid: d4951d91-23e0-4301-a1ea-5300e0b5ec67
+  udp: true
+  network: ws
+  ws-opts:
+    path: /free-server.techsonic.me
+    headers:
+      Host: free-server.techsonic.me
+- name: EPODONIOS-2
+  type: trojan
+  server: 104.20.42.250
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.calmloud.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmloud.com
+- name: By EbraSha 🧬
+  type: trojan
+  server: 141.101.123.110
+  port: 443
+  password: 6f04c17a-4cbe-654c-7514-61cdc49ae95c
+  udp: true
+  sni: tiny-voice-4de8.arandomdude1.workers.dev
+  network: ws
+  ws-opts:
+    path: /darvazeh
+    headers:
+      Host: tiny-voice-4de8.arandomdude1.workers.dev
+- name: By EbraSha ✨-2
+  type: vless
+  server: 172.67.180.184
+  port: 443
+  uuid: 61b3cbba-e6ac-485a-9481-976a5415eab9
+  udp: true
+  network: ws
+  tls: true
+  servername: lINgeRIng-dARKneSs-0D00.deTACag555.WorkeRS.Dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: lIngerInG-dARKnESs-0D00.detAcaG555.WorKErS.dEV
+- name: By EbraSha 👾
+  type: vless
+  server: 104.18.150.114
+  port: 443
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  udp: true
+  network: ws
+  tls: true
+  servername: t1s1.rittbo.kdns.fr
+  ws-opts:
+    path: /
+    headers:
+      Host: t1s1.rittbo.kdns.fr
 - name: By EbraSha 🗿
   type: vless
   server: 208.103.161.24
@@ -544,202 +236,150 @@ proxies:
   tls: true
   servername: pump.lezzatcore.ir
   client-fingerprint: chrome
-- name: By EbraSha 🪐
-  type: trojan
-  server: 104.16.75.127
-  port: 443
-  password: '%6D%69%74%69%76%70%6E'
+- name: By EbraSha 🛡️
+  type: vmess
+  server: 104.31.16.52
+  port: 80
+  uuid: 8abe9496-5e24-4e49-b566-dcf86116017d
+  alterId: 0
+  cipher: auto
   udp: true
-  sni: www.www.www.www.95r.ir
   network: ws
   ws-opts:
-    path: /720f09dba195249b423f771661162528/workers/services/view/mitivpn/production/settings
+    path: /i99LgvSaslbsPLLQQ7j6Z
     headers: {}
-- name: By EbraSha 🚧
+- name: By EbraSha 🐉
   type: vless
-  server: 151.101.192.84
-  port: 443
-  uuid: 47b65c00-d158-4ba4-897f-689f0e59f09d
-  udp: true
-  tls: true
-- name: By EbraSha 🔌-2
-  type: vless
-  server: 45.130.125.198
-  port: 2096
-  uuid: 5559572d-65a1-4c7c-b04f-43e5c40067e1
+  server: 103.116.7.19
+  port: 8880
+  uuid: 53fa8faf-ba4b-4322-9c69-a3e5b1555049
   udp: true
   network: ws
-  tls: true
-  servername: de.iranfibernet.com
   ws-opts:
-    path: /
+    path: '/Telegram🇨🇳 @pgkj666 '
     headers:
-      Host: de.iranfibernet.com
-- name: By EbraSha 🌌-2
+      Host: reedfree8mahsang2.redorg.ir
+- name: By EbraSha ⌨️
   type: trojan
-  server: 172.67.201.36
+  server: 172.66.44.156
   port: 443
-  password: 6757b7d6-fa32-4708-b5d1-30e3cf928b51
+  password: bpb-trojan
   udp: true
-  sni: ggGGGGgggGGgGggy.FReevPN2026.DpDNS.Org
-  network: ws
-  ws-opts:
-    path: /l96MZ8se5Kl2p8BiMhP42l
-    headers:
-      Host: ggGGGGgggGGgGggy.FReevPN2026.DpDNS.Org
-- name: By EbraSha 🦇
-  type: trojan
-  server: 172.67.176.206
-  port: 2053
-  password: ZJU29smXwp
-  udp: true
-  sni: damn-mci-again-3.danesh-bonyan.Store
-- name: By EbraSha 🦇-2
+  sni: BPB-wOrkeR-pANel1-E4P.pageS.DeV
+- name: By EbraSha ⚡-2
   type: vless
-  server: 104.18.82.238
+  server: 173.245.58.52
   port: 443
-  uuid: 9794d18f-9280-3553-a7a5-a23da75aca76
-  udp: true
-  network: xhttp
-  tls: true
-  servername: 2dd066f2s226.sspcccdn.xyz
-  client-fingerprint: firefox
-- name: By EbraSha 🎯
-  type: vless
-  server: 130.250.137.138
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  uuid: a6f1755f-0140-4bea-8727-0db1bed7c4df
   udp: true
   network: ws
   tls: true
-  servername: sni.111000.indevs.in
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.111000.indevs.in
-- name: By EbraSha 🌐-2
-  type: vless
-  server: 104.26.6.119
-  port: 443
-  uuid: e1272d7a-507d-4b39-bd7d-453f7c194214
-  udp: true
-  network: ws
-  tls: true
-  servername: yelubdu0vdouvdan.lastronin.cloudns.org
-  client-fingerprint: random
-  ws-opts:
-    path: /VLESS/uk-full.privateip.net/?ed=@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi,@alpha_v2ray_fazayi
-    headers:
-      Host: yelan.lastronin.cloudns.org
-- name: By EbraSha 🛸
-  type: vless
-  server: 91.193.58.79
-  port: 2086
-  uuid: 346b6e85-8874-4f58-870b-2539b4354dba
-  udp: true
-  network: xhttp
-- name: By EbraSha 🧪-3
-  type: vless
-  server: 198.41.200.99
-  port: 443
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  udp: true
-  network: ws
-  tls: true
-  servername: cg.ylks.xyz
-  ws-opts:
-    path: /blue
-    headers:
-      Host: cg.ylks.xyz
-- name: By EbraSha ♣️-2
-  type: trojan
-  server: 104.21.71.131
-  port: 443
-  password: 4069c35c-54ea-48ee-9ffa-05d9a0302043
-  udp: true
-  sni: m5rt.999854.xyz
-  network: ws
-  ws-opts:
-    path: /GawgMugyRDAQXp6e0CScyGqcQZW
-    headers: {}
-- name: By EbraSha 🦅-3
-  type: vless
-  server: 91.193.58.140
-  port: 443
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  tls: true
-  servername: sni.111000.v6.rocks
+  servername: juzi.qea.ccwu.cc
   client-fingerprint: chrome
   ws-opts:
-    path: /?https://t.me/WangCai2🇨🇳=
-    headers:
-      Host: sni.111000.v6.rocks
-- name: By EbraSha ⚡
+    path: /
+    headers: {}
+- name: By EbraSha 🖥️
   type: vless
-  server: 104.17.154.130
+  server: 162.251.82.165
+  port: 443
+  uuid: 1944d068-8610-4e3f-a900-a7e5ee79037b
+  udp: true
+  network: xhttp
+  tls: true
+  servername: vvv.alibaba1405.org
+  client-fingerprint: chrome
+- name: By EbraSha 🗿-2
+  type: vless
+  server: 199.34.228.167
+  port: 443
+  uuid: cc3a15eb-0a63-486c-8e12-c7be717ebcd4
+  udp: true
+  network: ws
+  tls: true
+  servername: bpB005.paGeS.DEv
+  ws-opts:
+    path: /1bd7yey9071nu9bu/mtuyljy3ljiznc40oq==?ed=2560
+    headers:
+      Host: bpB005.paGeS.DEv
+- name: By EbraSha 🌑
+  type: trojan
+  server: 170.114.46.56
+  port: 443
+  password: blue2024
+  udp: true
+  sni: ta.promote.icu
+- name: By EbraSha 🚬
+  type: vless
+  server: 104.18.139.67
+  port: 2053
+  uuid: 29218b86-d685-4f56-ab2b-1d39969c63c2
+  udp: true
+  network: ws
+  tls: true
+  servername: 6e71d998f5b1589f.fairit.ir
+  client-fingerprint: chrome
+  ws-opts:
+    path: /dashfair?ed=2560
+    headers:
+      Host: forgermany.fairit.ir
+- name: By EbraSha 📼
+  type: vless
+  server: 45.67.215.176
+  port: 443
+  uuid: 627c3a7a-29a7-41d1-9d9e-9f809b690988
+  udp: true
+- name: By EbraSha 🦈
+  type: vless
+  server: 104.21.39.145
+  port: 2095
+  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+  udp: true
+  network: ws
+  ws-opts:
+    path: /fp=randomized
+    headers:
+      Host: cnmfangbinxing.cnmfangbinxing-a.workers.dev
+- name: By EbraSha ♣️-3
+  type: vless
+  server: 104.18.90.95
+  port: 443
+  uuid: ee2bb495-2632-445b-b1f8-3c476a50b78b
+  udp: true
+  network: ws
+  tls: true
+  servername: dl1-de-cdn.easy-upload.org
+  ws-opts:
+    path: /
+    headers: {}
+- name: By EbraSha 🕷️
+  type: vless
+  server: 172.64.147.2
   port: 80
-  uuid: 435bda4c-fe5e-42c9-a3ad-15334943b38a
+  uuid: 478cc26d-16b3-4fdd-be64-60d5a58c1622
   udp: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: us3.rtacg.com
-- name: By EbraSha 🌍
+      Host: tt.andishehparenting.com
+- name: By EbraSha 🧠-2
   type: vless
-  server: 185.148.104.245
-  port: 80
+  server: 172.66.44.73
+  port: 443
   uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
   udp: true
   network: ws
-  ws-opts:
-    path: /Telegram:@ShadowProxy66/?ed=2560
-    headers:
-      Host: uuhUHYygEsdFGH.UYHJHGvgFcjGUJhbUIlbVFDxDxM.xyz
-- name: By EbraSha 🌌-3
-  type: trojan
-  server: 104.17.135.199
-  port: 443
-  password: d8bc8425-5e80-4c26-bd93-af634c033e2d
-  udp: true
-  sni: purnet.gmijcp.workers.dev
-  network: ws
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: purnet.gmijcp.workers.dev
-- name: By EbraSha 👾-2
-  type: vless
-  server: 104.26.9.216
-  port: 443
-  uuid: 3e06720a-86f0-49b9-8f00-062681e3b385
-  udp: true
-  network: ws
   tls: true
-  servername: g1.nzjlerhb.icu
-  client-fingerprint: ios
-  ws-opts:
-    path: /app/hk7
-    headers: {}
-- name: By EbraSha 🔥
-  type: vless
-  server: 172.66.47.159
-  port: 443
-  uuid: 40ec65b6-8d67-4dc4-a96c-2784a2ef86c7
-  udp: true
-  network: ws
-  tls: true
-  servername: CHannEl-moSiv2.PAgES.DEV
+  servername: mahDiSErvER-7q5.PAGes.Dev
   client-fingerprint: randomized
   ws-opts:
-    path: /
+    path: /qd1qts5NrKnihChG?ed=2560
     headers:
-      Host: channel-mosiv2.pages.dev
-- name: By EbraSha 🦾
+      Host: mAHdIServer-7q5.pAGES.DEV
+- name: By EbraSha 🦈-2
   type: vless
-  server: 104.16.148.11
+  server: 104.16.149.11
   port: 443
   uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
   udp: true
@@ -750,200 +390,257 @@ proxies:
     path: /
     headers:
       Host: xy430.albertabobbi.ndjp.net
-- name: By EbraSha 🧠-2
+- name: By EbraSha 🌪️
   type: vless
-  server: 172.64.146.43
-  port: 80
-  uuid: 478cc26d-16b3-4fdd-be64-60d5a58c1622
+  server: 89.116.161.251
+  port: 8880
+  uuid: 0132166f-e702-48ed-a9e7-b07af768faf8
   udp: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: tt.andishehparenting.com
-- name: By EbraSha 📟
+      Host: cf.d3z.net
+- name: By EbraSha ⌨️-2
+  type: trojan
+  server: 104.18.42.244
+  port: 2087
+  password: 0YQjdidwRZf8WDcxYVpp
+  udp: true
+  sni: BB2233.XfAn1986.dPdnS.Org
+  network: ws
+  ws-opts:
+    path: /tr9PVY1UXDOhBNe9HZ/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbQ==
+    headers:
+      Host: bb2233.xfan1986.dpdns.org
+- name: By EbraSha 🦅-2
   type: vless
-  server: 104.18.19.20
+  server: 172.67.138.17
   port: 443
-  uuid: 0fd65b6f-ea4d-4294-ad24-da45a86740db
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
   udp: true
   network: ws
   tls: true
-  servername: m.moeinslip.online
+  servername: t1s1.rittbo.kdns.fr
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
-      Host: m.moeinslip.online
-- name: By EbraSha 🥷-2
-  type: ss
-  server: 23.251.121.242
-  port: 8080
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
-  udp: true
-- name: By EbraSha 🧨-2
-  type: trojan
-  server: 104.16.255.10
-  port: 443
-  password: blue2024
-  udp: true
-  sni: ta.promote.icu
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: ta.promote.icu
-- name: By EbraSha 🕷️-2
+      Host: t1s1.rittbo.kdns.fr
+- name: By EbraSha 🚨
   type: vless
-  server: 172.67.156.192
-  port: 2083
-  uuid: d69b66cb-5fe2-40b9-842b-1951982f80ae
-  udp: true
-  network: ws
-  tls: true
-  servername: zebelkhan30.quysc64868.workers.dev
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: zebelkhan30.quysc64868.workers.dev
-- name: By EbraSha 🥷-3
-  type: vless
-  server: 172.64.35.157
-  port: 443
-  uuid: 8909af53-a87c-47a2-835a-30ff7a7225eb
-  udp: true
-  network: ws
-  tls: true
-  servername: 1b5ujx.alligator27app.com
-  ws-opts:
-    path: /wss
-    headers:
-      Host: 1b5ujx.alligator27app.com
-- name: By EbraSha 🛡️
-  type: vless
-  server: 104.21.53.252
-  port: 8443
-  uuid: 88d0d440-6863-41a4-9031-4fa8c8112ba9
-  udp: true
-  network: grpc
-  tls: true
-  servername: a70.bluebana.info
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: ''
-- name: By EbraSha ♣️-3
-  type: trojan
-  server: 104.19.156.145
-  port: 443
-  password: blue2024
-  udp: true
-  sni: ta.promote.icu
-- name: By EbraSha 🧊-4
-  type: vless
-  server: 104.17.216.60
-  port: 443
-  uuid: 6f450914-bde8-46f7-8fcc-bb2b701a4558
-  udp: true
-  tls: true
-  servername: web.max.ru
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 7ReQIe2kMtP4rCrptgH5glkOM-JGcSAPzHNxOED-Z0s
-    short-id: 247fd6dab1a34a48
-  flow: xtls-rprx-vision
-- name: By EbraSha 🌪️-2
-  type: vless
-  server: 91.193.59.187
-  port: 2082
-  uuid: 5b97592b-1e9c-7747-e571-b4291f98c6ab
-  udp: true
-  network: httpupgrade
-- name: By EbraSha 🦾-2
-  type: vmess
-  server: 104.19.46.22
-  port: 2086
-  uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip13.freegradely.xyz
-- name: By EbraSha 💣
-  type: vless
-  server: 198.41.203.219
-  port: 2086
-  uuid: a1231b43-48aa-4e5b-895a-7f52309ba582
-  udp: true
-  network: xhttp
-- name: By EbraSha 🛜
-  type: vless
-  server: 173.245.59.27
+  server: 188.114.99.254
   port: 443
   uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
   udp: true
   network: ws
   tls: true
-  servername: lg.kpcloud.eu.org
+  servername: dn.ylks.xyz
+  ws-opts:
+    path: /blue
+    headers:
+      Host: dn.ylks.xyz
+- name: By EbraSha 🔮
+  type: vless
+  server: 190.93.247.168
+  port: 443
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  udp: true
+  network: ws
+  tls: true
+  servername: lm.kpcloud.eu.org
   ws-opts:
     path: /?ed=2048
     headers:
-      Host: lg.kpcloud.eu.org
-- name: By EbraSha 🧠-3
+      Host: lm.kpcloud.eu.org
+- name: By EbraSha ⌨️-3
   type: vless
-  server: 154.218.15.26
+  server: 172.66.44.78
+  port: 443
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  udp: true
+  network: ws
+  tls: true
+  servername: BPFAv2.PAgES.DEV
+  ws-opts:
+    path: /PHgb0hvZsjBDxZTq?ed=2560
+    headers:
+      Host: bPfaV2.PAgeS.DEv
+- name: By EbraSha ⚔️
+  type: vless
+  server: 104.16.33.150
+  port: 2096
+  uuid: 29187857-4a1f-4d1e-88eb-0016771e0dbb
+  udp: true
+  network: ws
+  tls: true
+  servername: vless.hubp.de
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vless.hubp.de
+- name: By EbraSha 🛜
+  type: vless
+  server: 198.41.214.229
+  port: 2052
+  uuid: f0d584bc-342f-4443-ba24-79e4d0e504b1
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: late-tooth.granzinhannah.workers.dev
+- name: By EbraSha 🤖
+  type: vless
+  server: 91.193.59.37
+  port: 2053
+  uuid: f775978b-6e22-41a8-ae5e-5f9779e6745f
+  udp: true
+  network: ws
+  tls: true
+  servername: juzibaipiao.5112233.xyz
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: juzibaipiao.5112233.xyz
+- name: By EbraSha 🔥
+  type: trojan
+  server: 104.19.159.10
+  port: 443
+  password: ce8b8b30ebba45f2a38dd608b85e8628
+  udp: true
+  sni: jobscareerfortoday.com
+- name: By EbraSha 🌑-2
+  type: vless
+  server: 155.46.213.82
   port: 8880
   uuid: b99590df-eda0-4e34-e1a9-3d1118faed83
   udp: true
   network: httpupgrade
-- name: By EbraSha 🦈
+- name: By EbraSha 🧬-2
   type: vless
-  server: 91.209.253.225
-  port: 2053
-  uuid: 0d974d97-fc0f-4e31-9f86-d4972c37b565
-  udp: true
-  network: xhttp
-  tls: true
-  servername: cdn.dns.xn--q9jyb4c
-- name: By EbraSha 🌐-3
-  type: vless
-  server: 104.17.121.253
-  port: 443
-  uuid: 8b310a73-4563-4e04-b0f7-b974a87cf0cf
+  server: 25.25.25.254
+  port: 8880
+  uuid: 34c01e61-f4f3-4afb-a83b-406caf8caa33
   udp: true
   network: ws
-  tls: true
-  servername: 37.27.200.55
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws
-    headers:
-      Host: 37.27.200.55
-- name: By EbraSha 🪖
-  type: vless
-  server: 104.31.16.65
-  port: 2096
-  uuid: 281a5a7c-6530-4cd6-b0f2-a2666e6c3b36
-  udp: true
-- name: By EbraSha 🩸
-  type: vless
-  server: 147.78.140.238
-  port: 2096
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  tls: true
-  servername: sni.jpmj.dev
   ws-opts:
     path: /
     headers:
-      Host: sni.jpmj.dev
-- name: By EbraSha 🐉
+      Host: yg.bantony199.top
+- name: By EbraSha 📟
+  type: trojan
+  server: 188.114.98.138
+  port: 2053
+  password: bpb-trojan
+  udp: true
+  sni: G1-21N.paGEs.dev
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: g1-21n.pages.dev
+- name: By EbraSha 🕶️
+  type: trojan
+  server: 104.19.185.248
+  port: 443
+  password: blue2024
+  udp: true
+  sni: td.promote.icu
+- name: By EbraSha 🦂
   type: vless
-  server: 190.93.244.32
+  server: 198.41.223.28
+  port: 2087
+  uuid: 226cbc0f-409b-4df3-828c-6061cb701a7e
+  udp: true
+  network: ws
+  tls: true
+  servername: salam.xdmmd12.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: salam.xdmmd12.workers.dev
+- name: By EbraSha 🚧
+  type: vless
+  server: 104.19.229.91
+  port: 443
+  uuid: 47db5676-3e2b-44fd-bd14-9134da8db30d
+  udp: true
+  network: ws
+  tls: true
+  servername: yelfuif8fbrb3j3an.thelastronin.cloudns.org
+  client-fingerprint: random
+  ws-opts:
+    path: /VLESS/se-full.privateip.net
+    headers:
+      Host: yelan.thelastronin.cloudns.org
+- name: By EbraSha 📼-2
+  type: vless
+  server: 104.156.81.200
+  port: 443
+  uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  udp: true
+  network: ws
+  tls: true
+  servername: Sanjeshp.Ir
+  client-fingerprint: randomized
+  ws-opts:
+    path: /H?ed=2560
+    headers:
+      Host: Sanjeshp.Ir
+- name: By EbraSha 🛸
+  type: vless
+  server: 172.67.196.16
+  port: 8080
+  uuid: 6caab115-c88f-4e8b-bdab-d66865b681c8
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: zeus-panel-6bt45h.ftgwyie7w8321.workers.dev
+- name: By EbraSha 📶
+  type: vless
+  server: 141.193.213.195
+  port: 443
+  uuid: cc6b985d-0362-4129-8763-38564174fb3e
+  udp: true
+  network: grpc
+  tls: true
+  servername: iryiccyne.wwtraveler.com
+  client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: 👨‍🚀Free👨‍🚀
+- name: By EbraSha 🧲
+  type: vless
+  server: 94.140.0.100
+  port: 80
+  uuid: 73bb419b-743f-4502-bfb5-08211272a325
+  udp: true
+  network: ws
+  ws-opts:
+    path: /nexus
+    headers:
+      Host: your.nexuschat.fun
+- name: By EbraSha 🚬-2
+  type: vless
+  server: 104.21.64.59
+  port: 8080
+  uuid: 86e083f2-ec74-43dc-974e-bf90c833bdb3
+  udp: true
+  network: httpupgrade
+- name: By EbraSha 🕶️-2
+  type: ss
+  server: 104.17.134.62
+  port: 443
+  cipher: "����m��ݸ��4�_��~{Ƽ\x7FW�델"
+  password: "����m��ݸ��4�_��~{Ƽ\x7FW�델"
+  udp: true
+- name: By EbraSha 🧪
+  type: vless
+  server: 141.101.113.150
   port: 443
   uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
   udp: true
@@ -954,380 +651,700 @@ proxies:
     path: /blue
     headers:
       Host: cg.ylks.xyz
-- name: By EbraSha 👾-3
+- name: By EbraSha 🌃
   type: vless
-  server: 198.71.232.21
-  port: 2052
-  uuid: 42e0d02c-b75c-4b9d-bc15-773aa3cbe6bd
-  udp: true
-  network: xhttp
-- name: By EbraSha 🗿-2
-  type: vless
-  server: 104.26.13.101
-  port: 443
-  uuid: ac7bcf0a-ef69-4949-aff2-a93630021826
+  server: 104.17.254.122
+  port: 80
+  uuid: 781a8eb4-c4f7-4f99-9dee-e80369dbf1ec
   udp: true
   network: ws
-  tls: true
-  servername: 0C9CF137-telegRAM-CaSsIUsvpn-tElegrAm-cAsSIusvpn-teLEgrAm.eamOnN-120.workers.DEV
-  client-fingerprint: randomized
-  ws-opts:
-    path: /qmMTvZWWZJIvtX37/My43MC4yMTkuMTk2?ed=2560
-    headers:
-      Host: 0c9cf137-telegram-cassiusvpn-telegram-cassiusvpn-telegram.eamonn-120.workers.dev
-- name: By EbraSha 🪬-2
-  type: vless
-  server: 172.67.251.233
-  port: 443
-  uuid: a3e2f3fc-9604-4093-8d92-c4303d822fad
-  udp: true
-  network: ws
-  tls: true
-  servername: rocket-panel-pearl-313895.nova-5e4426f8.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /?u=f37c2ef95c
-    headers:
-      Host: rocket-panel-pearl-313895.nova-5e4426f8.workers.dev
-- name: By EbraSha ⚙️-2
-  type: vless
-  server: 45.40.151.40
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: vms.lifetime42.workers.dev
-- name: By EbraSha 💎
-  type: vless
-  server: 198.62.62.208
-  port: 443
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
-  udp: true
-  network: ws
-  tls: true
-  servername: lp.ylks.us.kg
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: lp.ylks.us.kg
-- name: By EbraSha 🕹️-2
-  type: vless
-  server: 150.230.35.200
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /danfengsecurity=tls
-    headers:
-      Host: psp09.data.chinav.eu.org
-- name: By EbraSha 🚬-2
-  type: vless
-  server: 104.25.162.133
-  port: 443
-  uuid: 0be43f1d-a456-4d5c-b83e-628883eee49a
-  udp: true
-- name: By EbraSha 🌀
-  type: vless
-  server: 172.67.169.132
-  port: 2087
-  uuid: 9e769ce1-34be-4e3f-b0a6-823f30eb8f69
-  udp: true
-  network: ws
-  tls: true
-  servername: smart.v2plusify.org
-  client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
-      Host: smart.v2plusify.org
-- name: By EbraSha 🦾-3
-  type: trojan
-  server: 141.193.213.60
-  port: 443
-  password: 5e40c007-9ea9-470f-8824-cdf4eaa6441f
-  udp: true
-  sni: hfaw9h34.bpca2026.top
-  network: ws
-  ws-opts:
-    path: /images
-    headers: {}
-- name: By EbraSha 🌍-2
-  type: trojan
-  server: 104.16.28.13
-  port: 443
-  password: NISHIKUITAN222
-  udp: true
-  skip-cert-verify: true
-- name: By EbraSha 🚬-3
+      Host: us1.rtacg.com
+- name: By EbraSha ♠️
   type: vless
-  server: 154.83.2.237
+  server: 31.43.179.213
   port: 2053
   uuid: ee2bb495-2632-445b-b1f8-3c476a50b78b
   udp: true
   network: ws
   tls: true
-  servername: dl1-uk-cdn.easy-upload.org
+  servername: dl1-tr-cdn.easy-upload.org
   ws-opts:
     path: /
     headers:
-      Host: dl1-uk-cdn.easy-upload.org
-- name: By EbraSha 📛
+      Host: dl1-tr-cdn.easy-upload.org
+- name: By EbraSha 🪐-2
   type: vless
-  server: 104.17.52.20
-  port: 2083
-  uuid: 07073a15-006a-47ac-8ed5-ddadf7c93a36
+  server: 45.131.209.98
+  port: 2053
+  uuid: ee2bb495-2632-445b-b1f8-3c476a50b78b
   udp: true
   network: ws
   tls: true
-  servername: test0.testregular0.workers.dev
+  servername: dl1-pl-cdn.easy-upload.org
   client-fingerprint: random
   ws-opts:
-    path: /?u=0999a8fa74
+    path: /
     headers:
-      Host: test0.testregular0.workers.dev
-- name: By EbraSha 🥷-4
-  type: trojan
-  server: 172.67.145.94
-  port: 443
-  password: bpb-trojan
-  udp: true
-  sni: bpb.my79801.com
-  skip-cert-verify: true
-- name: By EbraSha 🚨
+      Host: dl1-pl-cdn.easy-upload.org
+- name: By EbraSha 🚨-2
   type: vless
-  server: 173.245.58.92
-  port: 2087
-  uuid: ad40a583-2d59-44ff-88cf-b5db0e1e00a7
+  server: 172.67.172.86
+  port: 80
+  uuid: 14e1775b-d92c-455b-8db3-e6c6d61909e0
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vpnpro.eshghiabolfazl2009.workers.dev
+- name: By EbraSha 🤖-2
+  type: vless
+  server: 188.114.96.182
+  port: 443
+  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
   udp: true
   network: ws
   tls: true
-  servername: edgetunnel.kalmevebto.workers.dev
+  servername: ln.ylks01.eu.org
+  ws-opts:
+    path: /blue
+    headers:
+      Host: ln.ylks01.eu.org
+- name: By EbraSha ⛓️
+  type: vless
+  server: 45.135.235.140
+  port: 80
+  uuid: f9255507-1b65-433f-bfd8-193b35e068e2
+  udp: true
+  network: ws
+  ws-opts:
+    path: Telegram🇨🇳 @WangCai2
+    headers:
+      Host: s5.868001.xyz
+- name: By EbraSha 🪬-2
+  type: vless
+  server: 172.67.214.147
+  port: 80
+  uuid: 58867710-6dd3-42b6-a7be-1fdf1c5efd19
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2configlab.v2configlab9.workers.dev
+- name: By EbraSha 🗿-3
+  type: vless
+  server: 104.18.0.3
+  port: 443
+  uuid: c135158e-5869-4397-8116-6695ca18cd48
+  udp: true
+  network: ws
+  tls: true
+  servername: cfnode-1xg.pages.dev
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
-      Host: edgetunnel.kalmevebto.workers.dev
-- name: By EbraSha ⚙️-3
-  type: vless
-  server: 172.67.148.26
-  port: 80
-  uuid: 95de071f-747c-dc07-36ac-5c0854a9e50e
+      Host: cfnode-1xg.pages.dev
+- name: By EbraSha 🧨
+  type: vmess
+  server: 141.101.122.190
+  port: 2095
+  uuid: 417d27fb-cb93-3bd8-9bf7-71cd91319821
+  alterId: 0
+  cipher: auto
   udp: true
   network: ws
   ws-opts:
+    path: /hgcefomn
+    headers: {}
+- name: By EbraSha 🧬-3
+  type: trojan
+  server: 154.219.5.242
+  port: 2053
+  password: Aimer
+  udp: true
+  sni: epgc.aimercc.dpdns.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: epgc.aimercc.dpdns.org
+- name: By EbraSha 🚨-3
+  type: vless
+  server: 104.21.16.169
+  port: 443
+  uuid: 71dce9af-d790-4b38-a1fd-7745e0923bd3
+  udp: true
+  network: ws
+  tls: true
+  servername: uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev
+  ws-opts:
+    path: -@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/?ed=2047
+    headers:
+      Host: uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev
+- name: By EbraSha 🧪-2
+  type: vless
+  server: 104.17.27.62
+  port: 443
+  uuid: 554fd140-b914-4c6a-8975-51f7f32a834b
+  udp: true
+  network: ws
+  tls: true
+  servername: nova-orbit-bridge-a44f.nova-c6c0a6.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?u=2200a5220e
+    headers:
+      Host: nova-orbit-bridge-a44f.nova-c6c0a6.workers.dev
+- name: By EbraSha 🕷️-2
+  type: trojan
+  server: 66.235.200.253
+  port: 443
+  password: 8r%3C%5B9%27l6hAO%238ZQi
+  udp: true
+  sni: Koma-YT.PAGeS.Dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /trTelegram
+    headers:
+      Host: Koma-YT.PAGeS.Dev
+- name: By EbraSha 🦈-3
+  type: vless
+  server: 151.101.34.144
+  port: 443
+  uuid: 527561c6-bed1-44c5-8404-f322fbf7ced2
+  udp: true
+  network: xhttp
+  tls: true
+  servername: speedtest.net
+  client-fingerprint: firefox
+- name: By EbraSha 👾-2
+  type: trojan
+  server: 198.41.223.136
+  port: 443
+  password: NISHIKUITAN111
+  udp: true
+- name: By EbraSha 🌪️-2
+  type: vless
+  server: 104.24.7.239
+  port: 2096
+  uuid: e42eb18a-6620-49b2-a578-820da4adcee8
+  udp: true
+  network: ws
+  tls: true
+  servername: cD.rXtEaMoNbToP.qZz.iO
+  client-fingerprint: chrome
+  ws-opts:
+    path: /eyJqdW5rIjoia09KQkRyT1VnUDVHIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ==?ed=2560
+    headers:
+      Host: cd.rxteamonbtop.qzz.io
+- name: By EbraSha 🧠-3
+  type: trojan
+  server: 172.66.47.33
+  port: 443
+  password: bba5ce00-09e4-4fce-8d26-35db5b4e38d4
+  udp: true
+  sni: cfpage-39t.pages.dev
+  network: ws
+  ws-opts:
+    path: /Telegram@V2ray_Alpha/?ed=2560
+    headers:
+      Host: cfpage-39t.pages.dev
+- name: By EbraSha 🌪️-3
+  type: trojan
+  server: 45.95.241.101
+  port: 2083
+  password: Go5e2nKM8P
+  udp: true
+  sni: aa.v2jey.fun
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: aa.v2jey.fun
+- name: By EbraSha 🖥️-2
+  type: vless
+  server: 160.79.105.63
+  port: 8880
+  uuid: fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf
+  udp: true
+  network: ws
+  ws-opts:
+    path: /Telegram🇨🇳
+    headers:
+      Host: jp.laoyoutiao.link
+- name: By EbraSha 🎛️
+  type: vless
+  server: 102.177.189.1
+  port: 8880
+  uuid: 730f02b4-a187-4498-b3fa-9e9f1dccf47c
+  udp: true
+  network: httpupgrade
+- name: By EbraSha 📛
+  type: vless
+  server: 159.246.55.251
+  port: 8880
+  uuid: 0132166f-e702-48ed-a9e7-b07af768faf8
+  udp: true
+  network: ws
+  ws-opts:
+    path: /Telegram
+    headers:
+      Host: cf.d3z.net
+- name: By EbraSha 🦂-2
+  type: vless
+  server: 172.67.212.226
+  port: 80
+  uuid: b8be6118-0dd7-4402-ae1a-69b2816f3a7f
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: br.presskiwi.dpdns.org
+- name: By EbraSha 💣
+  type: vless
+  server: 63.141.128.37
+  port: 443
+  uuid: 55520747-311e-4015-83ce-be46e2060ce3
+  udp: true
+  network: ws
+  tls: true
+  servername: re.vs2024.us.kg
+  client-fingerprint: chrome
+  ws-opts:
+    path: / re.vs2024.us.kg
+    headers: {}
+- name: By EbraSha 🪬-3
+  type: vless
+  server: 104.18.12.149
+  port: 2053
+  uuid: 5d5b12de-0da5-3243-f674-e75a691053f3
+  udp: true
+  network: ws
+  tls: true
+  servername: daltun.daltunads.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
     path: /sync
     headers:
-      Host: restless-boat-ebf2.moha102030.workers.dev
+      Host: daltun.daltunads.workers.dev
+- name: By EbraSha 🩸
+  type: vless
+  server: 185.148.105.225
+  port: 8443
+  uuid: f775978b-6e22-41a8-ae5e-5f9779e6745f
+  udp: true
+  network: ws
+  tls: true
+  servername: juzibaipiao.5112233.xyz
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: juzibaipiao.5112233.xyz
+- name: By EbraSha 🌌
+  type: trojan
+  server: 194.76.18.122
+  port: 443
+  password: 6884d714-d3c4-4b49-aa20-767ea92837d6
+  udp: true
+  sni: icecream.955850.xyz
+  network: ws
+  ws-opts:
+    path: /proxyip=194.76.18.122:443
+    headers: {}
+- name: By EbraSha 🐉-2
+  type: vless
+  server: 162.159.252.5
+  port: 8443
+  uuid: 40168c82-d975-4cdb-867b-59d5e8f42f26
+  udp: true
+  network: ws
+  tls: true
+  servername: pages.dev.
+  client-fingerprint: chrome
+  ws-opts:
+    path: /pTM44aQNGIM7FTIm/ZGUucmFkaWNhbGx5LnBybw==?ed=2560
+    headers:
+      Host: yechiv2ray-x-cgygfxddewaw345556.pages.dev
+- name: By EbraSha 🌍
+  type: vless
+  server: 104.16.125.175
+  port: 2083
+  uuid: 10699622-1b25-499c-a424-58f8f4dfb7f7
+  udp: true
+  network: ws
+  tls: true
+  servername: id-falcunargo.sociy12386.workers.dev
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: id-falcunargo.sociy12386.workers.dev
+- name: By EbraSha 🔋
+  type: vless
+  server: 45.80.108.123
+  port: 443
+  uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+  udp: true
+  network: ws
+  tls: true
+  servername: notls.lukongtou.eu.org
+  ws-opts:
+    path: Telegram-WangCai2
+    headers:
+      Host: notls.lukongtou.eu.org
+- name: By EbraSha 🔐
+  type: vless
+  server: 69.84.182.18
+  port: 8080
+  uuid: 527a7c04-9a2c-4fdb-aa18-37337e62e917
+  udp: true
+  network: ws
+  ws-opts:
+    path: /profile/telegram@ssrsub
+    headers:
+      Host: cdn-node-oss-99.paofu.de
+- name: By EbraSha 🦇
+  type: vless
+  server: 162.159.36.93
+  port: 443
+  uuid: da28fdc1-9cc3-48c1-8569-140c744c0174
+  udp: true
+  network: ws
+  tls: true
+  servername: forsale.sirknavab.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?u=a30c88da9f
+    headers:
+      Host: forsale.sirknavab.workers.dev
+- name: By EbraSha ⛓️-2
+  type: vless
+  server: 45.81.58.168
+  port: 443
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+  udp: true
+  network: grpc
+  tls: true
+  servername: pqh24v3.hiddendom.shop
+  grpc-opts:
+    grpc-service-name: ''
+- name: By EbraSha ♦️
+  type: trojan
+  server: 188.114.97.25
+  port: 443
+  password: NISHIKUITAN222
+  udp: true
+- name: By EbraSha ♣️-4
+  type: ss
+  server: 104.31.16.36
+  port: 443
+  cipher: ߾εg
+  password: 㿽>|}sZ
+  udp: true
+- name: By EbraSha 🚧-2
+  type: vless
+  server: 104.16.118.137
+  port: 2096
+  uuid: 3d9c0733-375e-4b11-8784-a948ad248b98
+  udp: true
+  network: ws
+  tls: true
+  servername: DEY.sodogodping.ir
+  ws-opts:
+    path: /
+    headers:
+      Host: DEY.sodogodping.ir
+- name: By EbraSha 🥷
+  type: vless
+  server: 103.133.1.21
+  port: 2052
+  uuid: 42e0d02c-b75c-4b9d-bc15-773aa3cbe6bd
+  udp: true
+  network: xhttp
+- name: By EbraSha 🖥️-3
+  type: vless
+  server: 102.177.189.251
+  port: 8880
+  uuid: 0132166f-e702-48ed-a9e7-b07af768faf8
+  udp: true
+  network: ws
+  ws-opts:
+    path: /Telegram
+    headers: {}
+- name: By EbraSha 🔐-2
+  type: trojan
+  server: 162.159.192.163
+  port: 443
+  password: 89b3cbba-e6ac-485a-9481-976a0415eab9
+  udp: true
+  sni: blOOM-cHh.pAges.DeV
+- name: By EbraSha 🕶️-3
+  type: vless
+  server: 172.67.75.28
+  port: 443
+  uuid: ae0dd58e-e222-40bf-84ae-365a97532737
+  udp: true
+  network: ws
+  tls: true
+  servername: pagescm.freen31.cc.cd
+  client-fingerprint: chrome
+  ws-opts:
+    path: /dh/images/group
+    headers:
+      Host: pagescm.freen31.cc.cd
+- name: By EbraSha 🎯
+  type: trojan
+  server: 77.75.199.86
+  port: 443
+  password: NISHIKUITAN111
+  udp: true
+  sni: za.ylks.xyz
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: //
+    headers:
+      Host: za.ylks.xyz
+- name: By EbraSha 🌪️-4
+  type: vmess
+  server: 172.67.155.82
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: kristin.makeup
+- name: By EbraSha 🕷️-3
+  type: vless
+  server: 172.67.152.188
+  port: 443
+  uuid: 897a4bec-26b8-11e8-94be-00505695472c
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: xv6.jpmj.dpdns.org
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - EPODONIOS
-  - By EbraSha 👑
-  - By EbraSha 🕷️
-  - By EbraSha ⚙️
-  - By EbraSha 💻
-  - By EbraSha 🐺
-  - By EbraSha 🧲
-  - By EbraSha 🧬
-  - By EbraSha 🧪
-  - By EbraSha 🔌
-  - By EbraSha 🦅
-  - By EbraSha 🧠
-  - By EbraSha 🃏
-  - By EbraSha 🌌
-  - By EbraSha 🚬
-  - By EbraSha 🖥️
-  - By EbraSha 🧊
-  - By EbraSha 💻-2
-  - By EbraSha 🧊-2
-  - By EbraSha 🦂
-  - By EbraSha 🧲-2
-  - By EbraSha 🌐
-  - By EbraSha 🧲-3
-  - By EbraSha 🧪-2
-  - By EbraSha 🧊-3
-  - By EbraSha 🔐
-  - By EbraSha 📶
-  - By EbraSha 🧨
-  - By EbraSha 🐺-2
-  - By EbraSha 🪬
-  - By EbraSha ⚔️
-  - By EbraSha 🕹️
-  - By EbraSha 🌪️
-  - By EbraSha 🧬-2
-  - By EbraSha ♣️
-  - By EbraSha 🕶️
   - By EbraSha 🧿
-  - By EbraSha 🔐-2
-  - By EbraSha 👾
-  - By EbraSha 🦅-2
-  - By EbraSha 🌃
-  - By EbraSha 🥷
-  - By EbraSha ⌨️
-  - By EbraSha 🦂-2
-  - By EbraSha 📼
-  - By EbraSha 🗿
-  - By EbraSha 🪐
-  - By EbraSha 🚧
-  - By EbraSha 🔌-2
-  - By EbraSha 🌌-2
-  - By EbraSha 🦇
-  - By EbraSha 🦇-2
-  - By EbraSha 🎯
+  - By EbraSha 🧊
+  - By EbraSha 🌐
+  - By EbraSha 🧠
+  - EPODONIOS
+  - By EbraSha 🐺
   - By EbraSha 🌐-2
-  - By EbraSha 🛸
-  - By EbraSha 🧪-3
-  - By EbraSha ♣️-2
-  - By EbraSha 🦅-3
+  - By EbraSha 🪬
+  - By EbraSha 🛰️
+  - By EbraSha ♣️
   - By EbraSha ⚡
-  - By EbraSha 🌍
-  - By EbraSha 🌌-3
-  - By EbraSha 👾-2
-  - By EbraSha 🔥
-  - By EbraSha 🦾
-  - By EbraSha 🧠-2
-  - By EbraSha 📟
-  - By EbraSha 🥷-2
-  - By EbraSha 🧨-2
-  - By EbraSha 🕷️-2
-  - By EbraSha 🥷-3
+  - By EbraSha ✨
+  - By EbraSha 🦅
+  - By EbraSha ♣️-2
+  - By EbraSha 🪐
+  - EPODONIOS-2
+  - By EbraSha 🧬
+  - By EbraSha ✨-2
+  - By EbraSha 👾
+  - By EbraSha 🗿
   - By EbraSha 🛡️
-  - By EbraSha ♣️-3
-  - By EbraSha 🧊-4
-  - By EbraSha 🌪️-2
-  - By EbraSha 🦾-2
-  - By EbraSha 💣
-  - By EbraSha 🛜
-  - By EbraSha 🧠-3
-  - By EbraSha 🦈
-  - By EbraSha 🌐-3
-  - By EbraSha 🪖
-  - By EbraSha 🩸
   - By EbraSha 🐉
-  - By EbraSha 👾-3
+  - By EbraSha ⌨️
+  - By EbraSha ⚡-2
+  - By EbraSha 🖥️
   - By EbraSha 🗿-2
-  - By EbraSha 🪬-2
-  - By EbraSha ⚙️-2
-  - By EbraSha 💎
-  - By EbraSha 🕹️-2
-  - By EbraSha 🚬-2
-  - By EbraSha 🌀
-  - By EbraSha 🦾-3
-  - By EbraSha 🌍-2
-  - By EbraSha 🚬-3
-  - By EbraSha 📛
-  - By EbraSha 🥷-4
+  - By EbraSha 🌑
+  - By EbraSha 🚬
+  - By EbraSha 📼
+  - By EbraSha 🦈
+  - By EbraSha ♣️-3
+  - By EbraSha 🕷️
+  - By EbraSha 🧠-2
+  - By EbraSha 🦈-2
+  - By EbraSha 🌪️
+  - By EbraSha ⌨️-2
+  - By EbraSha 🦅-2
   - By EbraSha 🚨
-  - By EbraSha ⚙️-3
+  - By EbraSha 🔮
+  - By EbraSha ⌨️-3
+  - By EbraSha ⚔️
+  - By EbraSha 🛜
+  - By EbraSha 🤖
+  - By EbraSha 🔥
+  - By EbraSha 🌑-2
+  - By EbraSha 🧬-2
+  - By EbraSha 📟
+  - By EbraSha 🕶️
+  - By EbraSha 🦂
+  - By EbraSha 🚧
+  - By EbraSha 📼-2
+  - By EbraSha 🛸
+  - By EbraSha 📶
+  - By EbraSha 🧲
+  - By EbraSha 🚬-2
+  - By EbraSha 🕶️-2
+  - By EbraSha 🧪
+  - By EbraSha 🌃
+  - By EbraSha ♠️
+  - By EbraSha 🪐-2
+  - By EbraSha 🚨-2
+  - By EbraSha 🤖-2
+  - By EbraSha ⛓️
+  - By EbraSha 🪬-2
+  - By EbraSha 🗿-3
+  - By EbraSha 🧨
+  - By EbraSha 🧬-3
+  - By EbraSha 🚨-3
+  - By EbraSha 🧪-2
+  - By EbraSha 🕷️-2
+  - By EbraSha 🦈-3
+  - By EbraSha 👾-2
+  - By EbraSha 🌪️-2
+  - By EbraSha 🧠-3
+  - By EbraSha 🌪️-3
+  - By EbraSha 🖥️-2
+  - By EbraSha 🎛️
+  - By EbraSha 📛
+  - By EbraSha 🦂-2
+  - By EbraSha 💣
+  - By EbraSha 🪬-3
+  - By EbraSha 🩸
+  - By EbraSha 🌌
+  - By EbraSha 🐉-2
+  - By EbraSha 🌍
+  - By EbraSha 🔋
+  - By EbraSha 🔐
+  - By EbraSha 🦇
+  - By EbraSha ⛓️-2
+  - By EbraSha ♦️
+  - By EbraSha ♣️-4
+  - By EbraSha 🚧-2
+  - By EbraSha 🥷
+  - By EbraSha 🖥️-3
+  - By EbraSha 🔐-2
+  - By EbraSha 🕶️-3
+  - By EbraSha 🎯
+  - By EbraSha 🌪️-4
+  - By EbraSha 🕷️-3
 - name: ♻️ 自动选择
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - EPODONIOS
-  - By EbraSha 👑
-  - By EbraSha 🕷️
-  - By EbraSha ⚙️
-  - By EbraSha 💻
-  - By EbraSha 🐺
-  - By EbraSha 🧲
-  - By EbraSha 🧬
-  - By EbraSha 🧪
-  - By EbraSha 🔌
-  - By EbraSha 🦅
-  - By EbraSha 🧠
-  - By EbraSha 🃏
-  - By EbraSha 🌌
-  - By EbraSha 🚬
-  - By EbraSha 🖥️
-  - By EbraSha 🧊
-  - By EbraSha 💻-2
-  - By EbraSha 🧊-2
-  - By EbraSha 🦂
-  - By EbraSha 🧲-2
-  - By EbraSha 🌐
-  - By EbraSha 🧲-3
-  - By EbraSha 🧪-2
-  - By EbraSha 🧊-3
-  - By EbraSha 🔐
-  - By EbraSha 📶
-  - By EbraSha 🧨
-  - By EbraSha 🐺-2
-  - By EbraSha 🪬
-  - By EbraSha ⚔️
-  - By EbraSha 🕹️
-  - By EbraSha 🌪️
-  - By EbraSha 🧬-2
-  - By EbraSha ♣️
-  - By EbraSha 🕶️
   - By EbraSha 🧿
-  - By EbraSha 🔐-2
-  - By EbraSha 👾
-  - By EbraSha 🦅-2
-  - By EbraSha 🌃
-  - By EbraSha 🥷
-  - By EbraSha ⌨️
-  - By EbraSha 🦂-2
-  - By EbraSha 📼
-  - By EbraSha 🗿
-  - By EbraSha 🪐
-  - By EbraSha 🚧
-  - By EbraSha 🔌-2
-  - By EbraSha 🌌-2
-  - By EbraSha 🦇
-  - By EbraSha 🦇-2
-  - By EbraSha 🎯
+  - By EbraSha 🧊
+  - By EbraSha 🌐
+  - By EbraSha 🧠
+  - EPODONIOS
+  - By EbraSha 🐺
   - By EbraSha 🌐-2
-  - By EbraSha 🛸
-  - By EbraSha 🧪-3
-  - By EbraSha ♣️-2
-  - By EbraSha 🦅-3
+  - By EbraSha 🪬
+  - By EbraSha 🛰️
+  - By EbraSha ♣️
   - By EbraSha ⚡
-  - By EbraSha 🌍
-  - By EbraSha 🌌-3
-  - By EbraSha 👾-2
-  - By EbraSha 🔥
-  - By EbraSha 🦾
-  - By EbraSha 🧠-2
-  - By EbraSha 📟
-  - By EbraSha 🥷-2
-  - By EbraSha 🧨-2
-  - By EbraSha 🕷️-2
-  - By EbraSha 🥷-3
+  - By EbraSha ✨
+  - By EbraSha 🦅
+  - By EbraSha ♣️-2
+  - By EbraSha 🪐
+  - EPODONIOS-2
+  - By EbraSha 🧬
+  - By EbraSha ✨-2
+  - By EbraSha 👾
+  - By EbraSha 🗿
   - By EbraSha 🛡️
-  - By EbraSha ♣️-3
-  - By EbraSha 🧊-4
-  - By EbraSha 🌪️-2
-  - By EbraSha 🦾-2
-  - By EbraSha 💣
-  - By EbraSha 🛜
-  - By EbraSha 🧠-3
-  - By EbraSha 🦈
-  - By EbraSha 🌐-3
-  - By EbraSha 🪖
-  - By EbraSha 🩸
   - By EbraSha 🐉
-  - By EbraSha 👾-3
+  - By EbraSha ⌨️
+  - By EbraSha ⚡-2
+  - By EbraSha 🖥️
   - By EbraSha 🗿-2
-  - By EbraSha 🪬-2
-  - By EbraSha ⚙️-2
-  - By EbraSha 💎
-  - By EbraSha 🕹️-2
-  - By EbraSha 🚬-2
-  - By EbraSha 🌀
-  - By EbraSha 🦾-3
-  - By EbraSha 🌍-2
-  - By EbraSha 🚬-3
-  - By EbraSha 📛
-  - By EbraSha 🥷-4
+  - By EbraSha 🌑
+  - By EbraSha 🚬
+  - By EbraSha 📼
+  - By EbraSha 🦈
+  - By EbraSha ♣️-3
+  - By EbraSha 🕷️
+  - By EbraSha 🧠-2
+  - By EbraSha 🦈-2
+  - By EbraSha 🌪️
+  - By EbraSha ⌨️-2
+  - By EbraSha 🦅-2
   - By EbraSha 🚨
-  - By EbraSha ⚙️-3
+  - By EbraSha 🔮
+  - By EbraSha ⌨️-3
+  - By EbraSha ⚔️
+  - By EbraSha 🛜
+  - By EbraSha 🤖
+  - By EbraSha 🔥
+  - By EbraSha 🌑-2
+  - By EbraSha 🧬-2
+  - By EbraSha 📟
+  - By EbraSha 🕶️
+  - By EbraSha 🦂
+  - By EbraSha 🚧
+  - By EbraSha 📼-2
+  - By EbraSha 🛸
+  - By EbraSha 📶
+  - By EbraSha 🧲
+  - By EbraSha 🚬-2
+  - By EbraSha 🕶️-2
+  - By EbraSha 🧪
+  - By EbraSha 🌃
+  - By EbraSha ♠️
+  - By EbraSha 🪐-2
+  - By EbraSha 🚨-2
+  - By EbraSha 🤖-2
+  - By EbraSha ⛓️
+  - By EbraSha 🪬-2
+  - By EbraSha 🗿-3
+  - By EbraSha 🧨
+  - By EbraSha 🧬-3
+  - By EbraSha 🚨-3
+  - By EbraSha 🧪-2
+  - By EbraSha 🕷️-2
+  - By EbraSha 🦈-3
+  - By EbraSha 👾-2
+  - By EbraSha 🌪️-2
+  - By EbraSha 🧠-3
+  - By EbraSha 🌪️-3
+  - By EbraSha 🖥️-2
+  - By EbraSha 🎛️
+  - By EbraSha 📛
+  - By EbraSha 🦂-2
+  - By EbraSha 💣
+  - By EbraSha 🪬-3
+  - By EbraSha 🩸
+  - By EbraSha 🌌
+  - By EbraSha 🐉-2
+  - By EbraSha 🌍
+  - By EbraSha 🔋
+  - By EbraSha 🔐
+  - By EbraSha 🦇
+  - By EbraSha ⛓️-2
+  - By EbraSha ♦️
+  - By EbraSha ♣️-4
+  - By EbraSha 🚧-2
+  - By EbraSha 🥷
+  - By EbraSha 🖥️-3
+  - By EbraSha 🔐-2
+  - By EbraSha 🕶️-3
+  - By EbraSha 🎯
+  - By EbraSha 🌪️-4
+  - By EbraSha 🕷️-3
 rules:
 - MATCH,🚀 节点选择
