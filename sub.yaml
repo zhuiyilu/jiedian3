@@ -3,533 +3,43 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: By EbraSha 🔋
-  type: vless
-  server: 151.101.66.133
-  port: 443
-  uuid: 25b8f4b0-4f7d-400f-bc4a-f10e5b8796a2
+- name: By EbraSha 🌍
+  type: vmess
+  server: 8.8.8.8
+  port: 53
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
   udp: true
+  network: tcp,udp
 - name: EPODONIOS
   type: vless
-  server: 151.101.1.57
-  port: 80
-  uuid: InternetAzadRobot
+  server: 151.101.65.242
+  port: 443
+  uuid: 0d03e44f-f60f-41b6-8ad7-13445af164fd
   udp: true
-  network: xhttp
+  network: ws
+  tls: true
+  servername: adheres-scruple.quick-cdn.net
+  client-fingerprint: chrome
+  ws-opts:
+    path: /ws
+    headers:
+      Host: adheres-scruple.quick-cdn.net
+- name: 🏁RELAY-162.159.135.42-2544
+  type: vmess
+  server: 162.159.135.42
+  port: 443
+  uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /A2DJOPFT
+    headers: {}
 - name: 美国(yudou789.top 玉豆免费节点)
-  type: vless
-  server: 188.164.248.40
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-    headers:
-      Host: vms.lifetime26.workers.dev
-- name: 🏁RELAY-162.159.248.30-7714
-  type: vmess
-  server: 162.159.248.30
-  port: 2095
-  uuid: 417d27fb-cb93-3bd8-9bf7-71cd91319821
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: /hgcefomn
-    headers: {}
-- name: 🏳️_未知_236
-  type: vless
-  server: 104.21.78.48
-  port: 443
-  uuid: 2240d8f8-898f-4988-8c08-ac724aa06ddb
-  udp: true
-  network: ws
-  tls: true
-  servername: 8-m9.5f67a3d6-2963-45ab-8313-7d02d224d2a0.kdns.fr
-  ws-opts:
-    path: /BzuntJ8qZN0TRKbC8TveMxJ0
-    headers:
-      Host: 8-m9.5f67a3d6-2963-45ab-8313-7d02d224d2a0.kdns.fr
-- name: 🇺🇸US_3|3.1MB/s
-  type: vless
-  server: 104.21.52.75
-  port: 443
-  uuid: 2240d8f8-898f-4988-8c08-ac724aa06ddb
-  udp: true
-  network: ws
-  ws-opts:
-    path: /BzuntJ8qZN0TRKbC8TveMxJ0security=tls
-    headers:
-      Host: 1-m9.pattaya-4.kdns.fr
-- name: 未知 VLESS-1480 | free-nodes
-  type: vless
-  server: 104.19.12.0
-  port: 443
-  uuid: 41f4cb15-5a3f-3934-89fe-b4177146adf4
-  udp: true
-  network: xhttp
-  tls: true
-  servername: b33ec4a1s226.fuhuovps.xyz
-  client-fingerprint: ios
-- name: '@Hope_Net-join-us-on-Telegram'
-  type: vless
-  server: 104.19.54.50
-  port: 443
-  uuid: f5a58d0d-7e5e-4948-913b-e87d3f7dd6c5
-  udp: true
-  network: ws
-  tls: true
-  servername: 2A0Ns2-V2ray.digitalcity7.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: 2A0Ns2-V2ray.digitalcity7.com
-- name: 美国+CloudFlare节点
-  type: trojan
-  server: 104.18.152.143
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers: {}
-- name: By EbraSha 💎
-  type: vless
-  server: 151.101.56.105
-  port: 80
-  uuid: bb9fccb8-4d50-43a4-8bf1-359a3775b6f3
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2048
-    headers:
-      Host: edu.tabligh.au
-- name: EPODONIOS-2
-  type: vless
-  server: 199.232.78.159
-  port: 80
-  uuid: 24a3853d-01c7-4fae-a0cc-97ef0f25a455
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 7wwwspeedtestnet.global.ssl.fastly.net
-- name: 美国(yudou789.top 玉豆免费节点)-2
-  type: vless
-  server: 188.164.248.30
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-    headers:
-      Host: vms.lifetime26.workers.dev
-- name: 🏁RELAY-104.25.227.40-8007
-  type: vmess
-  server: 104.25.227.40
-  port: 443
-  uuid: 927094d3-d678-4763-8591-e240d0bcae87
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-opts:
-    path: /vus3.0bad.com/chat
-    headers: {}
-- name: 🏳️_未知_252
-  type: vless
-  server: 104.21.51.163
-  port: 443
-  uuid: 1aa96574-c28b-4ee9-855d-ebdbbf1f7e90
-  udp: true
-  network: ws
-  tls: true
-  servername: 4-M13.0Dcb525d-9Bf8-452C-a465-5546541729d1.kdns.fr
-  ws-opts:
-    path: /ED3ZQPu7lqyeDGD58KabZ
-    headers:
-      Host: 4-M13.0dcB525D-9bF8-452C-A465-5546541729d1.KDns.FR
-- name: US_speednode_0142
-  type: vless
-  server: 155.117.199.13
-  port: 39211
-  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
-  udp: true
-  tls: true
-  servername: cdnjs.cloudflare.com
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision-udp443
-- name: 未知 VLESS-1474 | free-nodes
-  type: vless
-  server: 104.21.207.202
-  port: 443
-  uuid: 41f4cb15-5a3f-3934-89fe-b4177146adf4
-  udp: true
-  network: xhttp
-  tls: true
-  servername: b33ec4a1s226.fuhuovps.xyz
-  client-fingerprint: ios
-- name: '@Hope_Net-join-us-on-Telegram-2'
-  type: vless
-  server: 104.21.69.44
-  port: 8080
-  uuid: f2bf488a-72fc-420f-bd5e-35a5884f55b0
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: Mainv.2.r.a.r.mralpha-vpn.COM.
-- name: 美国+CloudFlare节点-2
-  type: trojan
-  server: 104.18.152.152
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-- name: By EbraSha 🛡️
-  type: vless
-  server: 140.248.181.77
-  port: 80
-  uuid: 6df06f5f-fd45-417b-bd44-2dca325c4fab
-  udp: true
-  network: ws
-  ws-opts:
-    path: /@Daily_Configs--@Daily_Configs--@Daily_Configs--@Daily_Configs--@Daily_Configs--@Daily_Configs?ed=2056
-    headers:
-      Host: joinbedeee-daily-configs.net
-- name: EPODONIOS-3
-  type: vless
-  server: 199.232.237.245
-  port: 443
-  uuid: 8e9cbf76-b74a-46b3-8270-9453e281e613
-  udp: true
-  network: xhttp
-  tls: true
-  servername: global.fastly.com
-  client-fingerprint: chrome
-- name: 美国(yudou789.top 玉豆免费节点)-3
-  type: vless
-  server: 188.164.248.50
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-    headers:
-      Host: vms.lifetime26.workers.dev
-- name: 🏁RELAY-190.93.246.195-2417
-  type: vmess
-  server: 190.93.246.195
-  port: 443
-  uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-opts:
-    path: /IYKLD53M
-    headers: {}
-- name: 🏳️_未知_223
-  type: vless
-  server: 104.21.64.209
-  port: 443
-  uuid: 1aa96574-c28b-4ee9-855d-ebdbbf1f7e90
-  udp: true
-  network: ws
-  tls: true
-  servername: 8-m13.0ee25773-D3d3-479d-A8ff-3F51D1d20031.KDNs.FR
-  ws-opts:
-    path: /ED3ZQPu7lqyeDGD58KabZ
-    headers:
-      Host: 8-M13.0EE25773-D3D3-479d-a8fF-3f51d1D20031.kdNs.FR
-- name: US_speednode_0136
-  type: vless
-  server: 155.117.199.13
-  port: 29893
-  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
-  udp: true
-  tls: true
-  servername: cdnjs.cloudflare.com
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision-udp443
-- name: 未知 VLESS-1456 | free-nodes
-  type: vless
-  server: 104.27.0.121
-  port: 443
-  uuid: 41f4cb15-5a3f-3934-89fe-b4177146adf4
-  udp: true
-  network: xhttp
-  tls: true
-  servername: b33ec4a1s226.fuhuovps.xyz
-  client-fingerprint: ios
-- name: 🇺🇸 Join+Telegram:@Farah_VPN 🇺🇸
-  type: vless
-  server: 104.21.83.140
-  port: 443
-  uuid: ef5c5d5c-08c6-4549-b05e-d1ff29ecc8ba
-  udp: true
-  network: ws
-  tls: true
-  servername: 0-m16.ChIANG-maI2032.kdNS.fr
-  ws-opts:
-    path: /JRr6VGcSLFc034DC6sDbwyWJLbB
-    headers:
-      Host: 0-m16.ChIAng-Mai2032.kdnS.fR
-- name: 美国+CloudFlare节点-3
-  type: trojan
-  server: 104.16.174.121
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers: {}
-- name: By EbraSha 🛜
-  type: vless
-  server: 151.101.194.228
-  port: 80
-  uuid: a1de8ce5-1a51-4dad-8993-1839447adef4
-  udp: true
-  network: ws
-  ws-opts:
-    path: /@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy?ed=2048
-    headers:
-      Host: joinshhproxybedeeeeeee.ir
-- name: EPODONIOS-4
-  type: vless
-  server: 151.101.129.57
-  port: 80
-  uuid: InternetAzadRobot-AliKiller
-  udp: true
-  network: xhttp
-- name: 美国(yudou789.top 玉豆免费节点)-4
-  type: vless
-  server: 91.206.71.50
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-    headers:
-      Host: vms.lifetime15.workers.dev
-- name: 🏁RELAY-172.64.155.200-0467
-  type: vmess
-  server: 172.64.155.200
-  port: 443
-  uuid: a8030afd-812a-4afe-a766-9c76ff3eddd4
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-opts:
-    path: /
-    headers:
-      Host: lg4.zhujicn2.com
-- name: 🏳️_未知_221
-  type: vless
-  server: 104.21.5.156
-  port: 443
-  uuid: 1aa96574-c28b-4ee9-855d-ebdbbf1f7e90
-  udp: true
-  network: ws
-  tls: true
-  servername: 5-M13.1332afdc-0737-4BB1-8CA8-EE4F0cd20Bc6.KdNs.FR
-  ws-opts:
-    path: /ED3ZQPu7lqyeDGD58KabZ
-    headers:
-      Host: 5-m13.1332aFDC-0737-4bB1-8cA8-Ee4f0cD20bC6.Kdns.fR
-- name: US_speednode_0137
-  type: vless
-  server: 155.117.199.13
-  port: 39399
-  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
-  udp: true
-  tls: true
-  servername: cdnjs.cloudflare.com
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision-udp443
-- name: US美国(mibei77.com 米贝节点分享)
-  type: vless
-  server: 50.62.195.4
-  port: 80
-  uuid: e382b6dd-2dac-49c5-b16f-1cd0a6b73bf2
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: raspy-feather-12ec.137-257.workers.dev
-- name: '@Hope_Net-join-us-on-Telegram-3'
-  type: vless
-  server: 172.67.204.84
-  port: 8443
-  uuid: cacc23f0-d900-4350-b9d5-d3c7616fec56
-  udp: true
-  network: grpc
-  tls: true
-  servername: ch.bo3kot.com
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: '@MxV2ray,@MxV2ray,@MxV2ray,@MxV2ray'
-- name: 美国+V2CROSS.COM
-  type: vless
-  server: 45.40.149.50
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: vms.lifetime39.workers.dev
-- name: By EbraSha 👑
-  type: vless
-  server: 199.232.255.29
-  port: 443
-  uuid: d872a387-b8e9-4e94-ba95-df5ce7aca552
-  udp: true
-  network: ws
-  tls: true
-  servername: Channel.E-L-i-V-2-R-A-Y.io
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: Channel.E-L-i-V-2-R-A-Y.io
-- name: EPODONIOS-5
-  type: vless
-  server: 104.18.26.90
-  port: 2087
-  uuid: 213426db-afb7-48d1-ae51-5093317212df
-  udp: true
-  network: ws
-  tls: true
-  servername: iopl90nn.bingnet.online
-  ws-opts:
-    path: /
-    headers:
-      Host: iopl90nn.bingnet.online
-- name: 美国(yudou789.top 玉豆免费节点)-5
-  type: vless
-  server: 192.200.160.50
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560&https://t.me/WangCai2🇨🇳
-    headers:
-      Host: vms.lifetime43.workers.dev
-- name: 🏁RELAY-104.18.28.109-8067
-  type: vmess
-  server: 104.18.28.109
-  port: 443
-  uuid: be74ca03-6a7c-4c88-edc2-c6434ead0cfa
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-opts:
-    path: /16575
-    headers: {}
-- name: 🏳️_未知_242
-  type: vless
-  server: 104.21.90.154
-  port: 443
-  uuid: 7700ff6d-cefb-4768-a806-ec4f63fe3b38
-  udp: true
-  network: ws
-  tls: true
-  servername: 3-m13.286BF07b-D934-42D2-918F-a749478cF4bf.KDnS.fR
-  ws-opts:
-    path: /ED3ZQPu7lqyeDGD58KabZ
-    headers:
-      Host: 3-m13.286bf07B-D934-42d2-918F-A749478CF4bf.kDnS.fr
-- name: 🇺🇸US_4|3.8MB/s
-  type: vless
-  server: 38.246.229.58
-  port: 47642
-  uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
-  udp: true
-  tls: true
-  servername: sega.com
-  client-fingerprint: firefox
-- name: US美国(mibei77.com 米贝节点分享)-2
-  type: vless
-  server: 50.62.198.30
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: vms.lifetime39.workers.dev
-- name: 🇸🇬 Join+Telegram:@Farah_VPN 🇸🇬
-  type: vless
-  server: 162.159.152.205
-  port: 443
-  uuid: c98a16e4-0dc5-42f0-b3db-30f04525c123
-  udp: true
-  network: ws
-  tls: true
-  servername: vless2-8vx.pages.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: vless2-8vx.pages.dev
-- name: 美国+CloudFlare节点-4
-  type: trojan
-  server: 104.18.152.229
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers: {}
-- name: By EbraSha 🕶️
-  type: vless
-  server: 151.101.66.219
-  port: 80
-  uuid: 14ff1c99-0b15-4d12-8a2e-b71374d38b85
-  udp: true
-  network: xhttp
-- name: EPODONIOS-6
-  type: vless
-  server: 162.159.152.4
-  port: 8080
-  uuid: 21c6169f-1e1b-48d1-9273-3b371b8d4e69
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: its-legendaryking.com.www.zula.ir-so.ir-whereareyoumylady.xn--9iqtb0z3kmg58ejur6wfbwf9muugk7rck30b0frbqkvk2bye0bm1a.mozdozari.bUzz.
-- name: 美国(yudou789.top 玉豆免费节点)-6
   type: vless
   server: 94.140.0.40
   port: 8880
@@ -540,152 +50,56 @@ proxies:
     path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
     headers:
       Host: vms.lifetime26.workers.dev
-- name: 🏁RELAY-23.227.38.20-0781
-  type: vmess
-  server: 23.227.38.20
-  port: 443
-  uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
-  alterId: 0
-  cipher: auto
+- name: 🇭🇰HK香港節點丨yoyapai.com
+  type: vless
+  server: 91.193.58.93
+  port: 80
+  uuid: f2d55510-fa3c-4e3b-adfc-2d96fa399c19
   udp: true
   network: ws
-  tls: true
   ws-opts:
-    path: /AUIKN8AU
+    path: /pyip=Telegram🇨🇳+@WangCai2
     headers:
-      Host: oplg1.cfcdn2.xyz
-- name: 🏳️_未知_257
+      Host: plain-darkness-90ea.259.workers.dev
+- name: 🏳️_未知_50
   type: vless
-  server: 104.21.39.176
+  server: 104.21.14.84
   port: 443
   uuid: 1aa96574-c28b-4ee9-855d-ebdbbf1f7e90
   udp: true
   network: ws
   tls: true
-  servername: 5-m13.AYutThAyA.kDnS.FR
+  servername: ASsETS-CdN-M13-3.taIpei108.dPDNs.OrG
   ws-opts:
     path: /ED3ZQPu7lqyeDGD58KabZ
     headers:
-      Host: 5-M13.AyuTThAyA.KdNS.FR
-- name: 🇨🇦CA_2|3.9MB/s
-  type: ss
-  server: 35.183.81.172
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇩🇪DE德国丨yoyapai.com
-  type: vless
-  server: 217.163.76.118
-  port: 2086
-  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
-  udp: true
-  network: xhttp
-- name: '@Hope_Net-join-us-on-Telegram-4'
-  type: vless
-  server: 198.41.202.5
-  port: 8080
-  uuid: ac5c3b9b-01cd-42c6-b3f0-cc5d95717b3f
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: unlimiteddev-vpn.unlimiteddev.Community.
-- name: 立陶宛+V2CROSS.COM
-  type: trojan
-  server: 86.38.214.205
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers: {}
-- name: By EbraSha 🤖
-  type: vless
-  server: 151.101.3.147
-  port: 80
-  uuid: 24d49ddd-67c1-4821-b5b9-f12107366978
-  udp: true
-  network: xhttp
-- name: EPODONIOS-7
-  type: vless
-  server: 151.101.65.57
-  port: 80
-  uuid: 96eec36e-2c44-5b09-898e-6f0f0526e57f
-  udp: true
-  network: xhttp
-- name: 美国(yudou789.top 玉豆免费节点)-7
-  type: vless
-  server: 109.176.239.50
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  network: ws
-  ws-opts:
-    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-    headers:
-      Host: vms.lifetime03.workers.dev
-- name: 🏁RELAY-203.30.191.20-1633
+      Host: AssETs-CdN-m13-3.tAIpEi108.dpDns.ORG
+- name: 🏁RELAY-203.30.191.191-0186
   type: vmess
-  server: 203.30.191.20
+  server: 203.30.191.191
   port: 443
-  uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+  uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
   alterId: 0
   cipher: auto
   udp: true
   network: ws
   tls: true
   ws-opts:
-    path: /dongtaiwang.com
-    headers: {}
-- name: 🏳️_未知_220
-  type: vless
-  server: 172.67.210.53
-  port: 443
-  uuid: 7700ff6d-cefb-4768-a806-ec4f63fe3b38
-  udp: true
-  network: ws
-  tls: true
-  servername: 3-m13.38c4495b-7E6D-4aAA-8A0A-3139Ff704e1F.KDnS.FR
-  ws-opts:
-    path: /ED3ZQPu7lqyeDGD58KabZ
-    headers:
-      Host: 3-M13.38c4495B-7E6d-4AaA-8A0A-3139ff704E1f.kdns.FR
-- name: 🇮🇪IE_1|3.6MB/s
-  type: ss
-  server: 54.246.193.66
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇫🇷法國丨yoyapai.com
-  type: vless
-  server: 94.140.0.100
-  port: 8880
-  uuid: 78e6619e-e82a-cd8d-b482-0973d8498305
-  udp: true
-  network: ws
-  ws-opts:
-    path: /sync
-    headers:
-      Host: silent-pine-a674.jfadwkglaugul.workers.dev
-- name: '@Hope_Net-join-us-on-Telegram-5'
-  type: vless
-  server: 185.146.173.32
-  port: 2095
-  uuid: ab5f1192-2680-40d6-9c29-2bd27301337a
-  udp: true
-  network: ws
-  ws-opts:
     path: /
-    headers:
-      Host: V2ray-_-_-_-_-_-ShhProxy.TelegramChannelJoinBede.com.
-- name: 美国+CloudFlare节点-5
+    headers: {}
+- name: US_speednode_0136
+  type: vless
+  server: 155.117.199.13
+  port: 29893
+  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
+  udp: true
+  tls: true
+  servername: cdnjs.cloudflare.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision-udp443
+- name: 美国+CloudFlare节点
   type: trojan
-  server: 104.18.152.77
+  server: 172.67.74.2
   port: 443
   password: humanity
   udp: true
@@ -695,169 +109,48 @@ proxies:
     path: /assignment
     headers:
       Host: www.ignitelimit.com
-- name: By EbraSha 🦂
+- name: By EbraSha 💎
   type: vless
-  server: 151.101.193.6
+  server: 151.101.194.219
   port: 80
-  uuid: 271d139e-b41b-5338-b306-32f66450140b
+  uuid: 2aa24fff-1d13-41cd-a724-b8a613c19cd9
+  udp: true
+  network: xhttp
+- name: EPODONIOS-2
+  type: trojan
+  server: 151.101.0.0
+  port: 80
+  password: Mitivpn
   udp: true
   network: ws
   ws-opts:
-    path: /
+    path: '@SylphNet'
     headers:
-      Host: PABLOO-MOSTAFA.COM
-- name: EPODONIOS-8
+      Host: '@SylphNet'
+- name: 🏁RELAY-154.92.9.73-7756
   type: vmess
-  server: 165.140.216.142
+  server: 154.92.9.73
   port: 443
-  uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
-  alterId: 0
-  cipher: auto
-  udp: true
-- name: 美国(yudou789.top 玉豆免费节点)-8
-  type: vless
-  server: 162.159.39.157
-  port: 2087
-  uuid: 4859c235-2530-4062-9a0b-ea859cbbf861
-  udp: true
-  network: ws
-  tls: true
-  servername: 1.proxy2.us.ci
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: 1.proxy2.us.ci
-- name: 🏁RELAY-172.67.199.34-0422
-  type: vmess
-  server: 172.67.199.34
-  port: 443
-  uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+  uuid: dd41b5cb-b72e-4a8c-c75a-3ecc928d6eb3
   alterId: 0
   cipher: auto
   udp: true
   network: ws
   tls: true
-  servername: sg2-v2ray.sshkit.org
   ws-opts:
-    path: /sshkit/1350195536/63a625eb069d5/
+    path: /blue
     headers: {}
-- name: 🏳️_未知_241
+- name: 美国(yudou789.top 玉豆免费节点)-2
   type: vless
-  server: 104.21.6.42
-  port: 443
-  uuid: 7e26fd8f-d75a-473d-84ba-9f4e3f47d086
-  udp: true
-  network: ws
-  tls: true
-  servername: 5-m20.b8b57933-52ee-4a3d-9ef1-be3e98e94f9b.kdns.fr
-  ws-opts:
-    path: /8qMLgNapWf6SBxo8fhQlVPYO
-    headers:
-      Host: 5-m20.b8b57933-52ee-4a3d-9ef1-be3e98e94f9b.kdns.fr
-- name: 🇬🇧GB_1|2.6MB/s
-  type: ss
-  server: 35.178.132.176
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: ❓未知丨yoyapai.com
-  type: vless
-  server: 185.148.107.40
+  server: 192.200.160.50
   port: 8880
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   udp: true
   network: ws
   ws-opts:
-    path: /
+    path: /?ed=2560&https://t.me/WangCai2🇨🇳
     headers:
-      Host: vms.lifetime55.workers.dev
-- name: 🇸🇬 Join+Telegram:@Farah_VPN 🇸🇬-2
-  type: vless
-  server: 172.64.229.189
-  port: 443
-  uuid: a30a3f37-1ab2-46bd-8c6b-a26d7c775f2a
-  udp: true
-  network: ws
-  tls: true
-  servername: grc.ccwu.cc
-  ws-opts:
-    path: /?ed=2560fp=chrome
-    headers:
-      Host: grc.ccwu.cc
-- name: 美国+CloudFlare节点-6
-  type: trojan
-  server: 104.16.174.44
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers: {}
-- name: By EbraSha ⚔️
-  type: vless
-  server: 199.232.86.11
-  port: 80
-  uuid: 3b940e86-7b0d-40da-acf1-12d334e41023
-  udp: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: Fastapi.Org
-- name: EPODONIOS-9
-  type: vless
-  server: 172.67.141.220
-  port: 80
-  uuid: 13ad36e6-c091-43f2-8505-47d868dd544c
-  udp: true
-  network: ws
-  ws-opts:
-    path: /XR8So0uqFVa3vY9ZbxgW4
-    headers:
-      Host: ghju.apocalypse.cc.cd
-- name: 美国(yudou789.top 玉豆免费节点)-9
-  type: vless
-  server: 162.159.45.175
-  port: 2053
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  udp: true
-  network: ws
-  tls: true
-  servername: fu.baiproxy.us.ci
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: fu.baiproxy.us.ci
-- name: 🏁RELAY-104.21.48.161-0839
-  type: vmess
-  server: 104.21.48.161
-  port: 443
-  uuid: 3b5e258e-8c5e-45d3-b7d2-02c8f5fc0bb2
-  alterId: 64
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-opts:
-    path: /
-    headers:
-      Host: cdnde.irteyz.today
-- name: 🏳️_未知_219
-  type: vless
-  server: 172.67.185.131
-  port: 443
-  uuid: 7e26fd8f-d75a-473d-84ba-9f4e3f47d086
-  udp: true
-  network: ws
-  tls: true
-  servername: 4-m20.20260721-a5c2-48bd-bb63-efdae93240e3.ccwu.cc
-  ws-opts:
-    path: /8qMLgNapWf6SBxo8fhQlVPYO
-    headers:
-      Host: 4-m20.20260721-a5c2-48bd-bb63-efdae93240e3.ccwu.cc
+      Host: vms.lifetime43.workers.dev
 - name: 🇫🇷 法国丨yoyapai.com
   type: vless
   server: 199.232.239.2
@@ -868,21 +161,40 @@ proxies:
   tls: true
   servername: accounts.fastly.com
   client-fingerprint: chrome
-- name: '@Hope_Net-join-us-on-Telegram-6'
+- name: 🏳️_未知_353
   type: vless
-  server: 160.123.255.67
+  server: 104.21.62.234
   port: 443
-  uuid: a13df940-020c-465f-bc89-ee5279b5cd6a
+  uuid: a90c264d-3853-4eef-9a3d-628b2d02d15e
   udp: true
   network: ws
   tls: true
-  servername: kkg.ylks.link
+  servername: 5-M19.sudaN-parK.ccwU.cC
+  client-fingerprint: chrome
   ws-opts:
-    path: /blue
-    headers: {}
-- name: 美国+CloudFlare节点-7
+    path: /CjBjB9sn5pCvaSwScc
+    headers:
+      Host: 5-M19.sUdaN-PArK.ccWu.CC
+- name: 🇺🇸US-64.94.95.118-5044
   type: trojan
-  server: 104.16.174.143
+  server: 64.94.95.118
+  port: 57142
+  password: kkzh2prsyr2ik47as615
+  udp: true
+  sni: 64.94.95.118
+- name: US_speednode_0142
+  type: vless
+  server: 155.117.199.13
+  port: 39211
+  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
+  udp: true
+  tls: true
+  servername: cdnjs.cloudflare.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision-udp443
+- name: 美国+CloudFlare节点-2
+  type: trojan
+  server: 104.18.22.63
   port: 443
   password: humanity
   udp: true
@@ -892,224 +204,519 @@ proxies:
     path: /assignment
     headers:
       Host: www.ignitelimit.com
-- name: By EbraSha 🚬
+- name: By EbraSha 🌍-2
   type: vless
-  server: 199.232.196.204
+  server: 151.101.194.228
   port: 80
-  uuid: 6ef79989-6321-5e6b-b39e-602fc95ecf3e
+  uuid: a1de8ce5-1a51-4dad-8993-1839447adef4
   udp: true
   network: ws
   ws-opts:
-    path: /
-    headers: {}
-- name: EPODONIOS-10
+    path: /@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy?ed=2048
+    headers:
+      Host: joinshhproxybedeeeeeee.ir
+- name: EPODONIOS-3
   type: vless
-  server: 104.19.250.20
+  server: 151.101.56.6
   port: 443
-  uuid: 24d49ddd-67c1-4821-b5b9-f12107366978
+  uuid: 08ffff12-93bb-42eb-8c83-6489644a1d04
   udp: true
   network: ws
   tls: true
-  servername: bahari.kiamobilepart.com
+  servername: ssl.fastly.com
   client-fingerprint: chrome
   ws-opts:
-    path: /api
+    path: /?TELEGRAM--BYA--CHANEL---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN--@JKVPN---@JKVPN---@JKVPN---@JKVPN
     headers:
-      Host: bahari.kiamobilepart.com
-- name: 美国(yudou789.top 玉豆免费节点)-10
-  type: vless
-  server: 162.159.44.198
-  port: 443
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  udp: true
-  network: ws
-  tls: true
-  servername: fu.baiproxy.us.ci
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: fu.baiproxy.us.ci
-- name: 🏁RELAY-104.21.53.12-0670
+      Host: c12.com
+- name: CA 🇨🇦 | @Raydikalx | 94CBFB
   type: vmess
-  server: 104.21.53.12
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 1
-  cipher: auto
-  udp: true
-  network: ws
-  tls: true
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: ophelia.mom
-- name: 🏳️_未知_245
-  type: vless
-  server: 172.67.178.166
-  port: 443
-  uuid: 7700ff6d-cefb-4768-a806-ec4f63fe3b38
-  udp: true
-  network: ws
-  tls: true
-  servername: 4-M13.2243867C-5fEE-4b94-803f-85790942d471.KDns.fr
-  ws-opts:
-    path: /ED3ZQPu7lqyeDGD58KabZ
-    headers:
-      Host: 4-m13.2243867c-5fEe-4B94-803f-85790942D471.kdnS.FR
-- name: 🇦🇲亞美尼亞丨yoyapai.com
-  type: vless
-  server: 77.105.163.46
-  port: 443
-  uuid: 1f964d0e-7e33-42b0-9c9f-c2c1a8b157c6
-  udp: true
-  network: ws
-  tls: true
-  servername: ov186.ochmaybrooooo.online
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: ov186.ochmaybrooooo.online
-- name: '@Hope_Net-join-us-on-Telegram-7'
-  type: vless
-  server: 172.67.180.5
-  port: 443
-  uuid: 94b3cbba-e6ac-485a-9481-976a0916eab9
-  udp: true
-  network: ws
-  tls: true
-  servername: ESetSECURitYLIcENSe.urNUvsg.wORKerS.DEv
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: esETsecUrItyLIceNSe.urnUVsg.wOrkerS.DeV
-- name: 荷兰+V2CROSS.COM
-  type: vless
-  server: 188.164.248.123
-  port: 8443
-  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
-  udp: true
-  network: ws
-  tls: true
-  servername: vp21.cc.cd
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: vp21.cc.cd
-- name: By EbraSha 🌐
-  type: vless
-  server: 151.101.56.9
-  port: 80
-  uuid: d8b3f1c4-94c7-423e-a03a-bfa7f6af0ea1
-  udp: true
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: freekabotar.global.ssl.fastly.net
-- name: EPODONIOS-11
-  type: vless
-  server: 188.244.122.179
-  port: 443
-  uuid: 2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5
-  udp: true
-  network: ws
-  tls: true
-  servername: cfed.tgzdyz2.top
-  ws-opts:
-    path: tg@zdyz2
-    headers: {}
-- name: 美国(yudou789.top 玉豆免费节点)-11
-  type: vless
-  server: 162.159.44.100
-  port: 2087
-  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-  udp: true
-  network: ws
-  tls: true
-  servername: fu.baiproxy.us.ci
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      Host: fu.baiproxy.us.ci
-- name: CA 🇨🇦 | @Raydikalx | 0F47DC
-  type: vmess
-  server: 104.19.45.11
-  port: 2086
-  uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
+  server: 104.19.45.194
+  port: 2095
+  uuid: 7a737f41-b792-4260-94ff-3d864da67b80
   alterId: 0
   cipher: auto
   udp: true
   network: ws
   ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip2.1457230.xyz
-- name: 🏳️_未知_218
-  type: vless
-  server: 172.67.198.209
-  port: 443
-  uuid: 2240d8f8-898f-4988-8c08-ac724aa06ddb
-  udp: true
-  network: ws
-  tls: true
-  servername: 5-m9.56e2241d-b6f5-4eb7-8ed9-c89e0e22d6b4.kdns.fr
-  ws-opts:
-    path: /BzuntJ8qZN0TRKbC8TveMxJ0
-    headers:
-      Host: 5-m9.56e2241d-b6f5-4eb7-8ed9-c89e0e22d6b4.kdns.fr
-- name: 美国(yudou789.top 玉豆免费节点)-12
-  type: vless
-  server: 104.21.86.179
-  port: 443
-  uuid: a1a6a3be-2bf9-46a2-bc24-328306e49ab7
-  udp: true
-  network: ws
-  tls: true
-  servername: 5-M17.jOrDan-LINK.KDnS.fR
-  ws-opts:
-    path: /fVs1qv0xm8dxmnwuaPwokxgY4XlP
-    headers:
-      Host: 5-m17.joRdAn-LinK.KDNS.Fr
-- name: 🇨🇦 Join+Telegram:@Farah_VPN 🇨🇦
-  type: vless
-  server: 104.16.151.21
-  port: 2087
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  udp: true
-  network: ws
-  tls: true
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
     path: /
     headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-- name: 美国+V2CROSS.COM-2
+      Host: onea.flha.ru
+- name: 美国(yudou789.top 玉豆免费节点)-3
   type: vless
-  server: 45.40.145.30
+  server: 109.176.239.50
   port: 8880
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   udp: true
   network: ws
   ws-opts:
-    path: /
+    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
     headers:
-      Host: vms.lifetime35.workers.dev
-- name: EPODONIOS-12
+      Host: vms.lifetime03.workers.dev
+- name: 🇭🇰HK香港節點丨yoyapai.com-2
   type: vless
-  server: 104.24.196.67
-  port: 80
-  uuid: 2e3471c1-9eb0-4810-aec3-09c1118d2dfc
+  server: 91.193.58.195
+  port: 443
+  uuid: 9419f782-b18e-4c4b-ae95-a7a279fd021f
+  udp: true
+  network: ws
+  tls: true
+  servername: jamph131-1228.pages.dev
+  ws-opts:
+    path: Telegram-WangCai2🇨🇳
+    headers:
+      Host: jamph131-1228.pages.dev
+- name: 🏳️_未知_363
+  type: vless
+  server: 104.21.78.105
+  port: 443
+  uuid: a1a6a3be-2bf9-46a2-bc24-328306e49ab7
+  udp: true
+  network: ws
+  tls: true
+  servername: 2-M17.KUWAIt.kdNS.fr
+  ws-opts:
+    path: /fVs1qv0xm8dxmnwuaPwokxgY4XlP
+    headers:
+      Host: 2-M17.KUWaiT.KdNs.fR
+- name: '>>@v2nodes::US'
+  type: vless
+  server: 162.159.43.187
+  port: 2086
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   udp: true
   network: ws
   ws-opts:
-    path: /?ed=2560
+    path: /?ed=2560security=tls
     headers:
-      Host: morning-wildflower-70dd-ppal03.xotocip989.workers.dev
-- name: 美国(yudou789.top 玉豆免费节点)-13
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: US_speednode_0137
+  type: vless
+  server: 155.117.199.13
+  port: 39399
+  uuid: f06c6039-a489-3d78-a676-ed43be6deca3
+  udp: true
+  tls: true
+  servername: cdnjs.cloudflare.com
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision-udp443
+- name: 美国+加州
+  type: trojan
+  server: 216.24.57.7
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers: {}
+- name: By EbraSha 🪐
+  type: ss
+  server: 167.82.85.155
+  port: 80
+  cipher: "۝�\x7F���׹��7߯�y�~�\x1Du��u�5"
+  password: "۝�\x7F���׹��7߯�y�~�\x1Du��u�5"
+  udp: true
+- name: EPODONIOS-4
+  type: vless
+  server: 151.101.128.223
+  port: 80
+  uuid: 7293c95d-fd27-4f57-a360-a55d909f4bcc
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: echopress-bot-1444-ad1.global.ssl.fastly.net
+- name: CA 🇨🇦 | @Raydikalx | DAF507
+  type: vmess
+  server: 162.159.130.208
+  port: 8080
+  uuid: 55021a7c-bd6c-418e-be95-ceac8ba27b45
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: 55021a7c-bd6c-418e-be95-ceac8ba27b45-vm
+    headers:
+      Host: widescreen-instruction-breakdown-postage.trycloudflare.com
+- name: 美国(yudou789.top 玉豆免费节点)-4
+  type: vless
+  server: 188.164.248.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+    headers:
+      Host: vms.lifetime26.workers.dev
+- name: 🇩🇪DE德国丨yoyapai.com
+  type: vless
+  server: 217.163.76.118
+  port: 2086
+  uuid: b7977b65-cfd8-4db9-a029-6ef014a4ae4a
+  udp: true
+  network: xhttp
+- name: 🇺🇸_美国_23
+  type: vless
+  server: 45.63.54.9
+  port: 443
+  uuid: 31294712-d44d-466d-bc10-aa8794dc4977
+  udp: true
+  tls: true
+  servername: www.bing.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: A70B4rdgHpClFfZiiU7X-DjNMw9DzVtiTRJHx76Ts0w
+    short-id: 6944f2a0
+- name: '>>@v2rayNG_Matsuri::US'
+  type: vless
+  server: 5.78.48.21
+  port: 39824
+  uuid: 3d15500f-f7f9-4ae0-a5f9-10df9ce32083
+  udp: true
+- name: 🇨🇦CA_1|1.0MB/s
+  type: ss
+  server: 16.52.44.169
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 美国+CloudFlare节点-3
+  type: vless
+  server: 104.18.46.234
+  port: 2095
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+- name: By EbraSha 🧊
+  type: ss
+  server: 151.101.130.216
+  port: 80
+  cipher: "�z�N[�m���Z����>\x7Fo_{^��G�"
+  password: "�z�N[�m���Z����>\x7Fo_{^��G�"
+  udp: true
+- name: EPODONIOS-5
+  type: ss
+  server: 156.146.38.167
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🏁RELAY-188.114.99.10-0805
+  type: vmess
+  server: 188.114.99.10
+  port: 443
+  uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /5QNROSRV
+    headers:
+      Host: oplg1.zhujicn2.com
+- name: 美国(yudou789.top 玉豆免费节点)-5
+  type: vless
+  server: 91.206.71.50
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+    headers:
+      Host: vms.lifetime15.workers.dev
+- name: US美国(mibei77.com 米贝节点分享)
+  type: vless
+  server: 172.67.202.63
+  port: 443
+  uuid: 7700ff6d-cefb-4768-a806-ec4f63fe3b38
+  udp: true
+  network: ws
+  tls: true
+  servername: 1-m13.286bF07B-D934-42d2-918f-a749478cf4BF.kdNs.FR
+  ws-opts:
+    path: /ED3ZQPu7lqyeDGD58KabZ
+    headers:
+      Host: 1-M13.286bf07b-D934-42D2-918f-a749478CF4bf.KDns.fR
+- name: 🇨🇳_中国_17
+  type: vless
+  server: 106.75.143.18
+  port: 5005
+  uuid: 6f5c634e-20c1-4cb5-9c67-2278bc80fcc0
+  udp: true
+  tls: true
+  servername: buylite.tv.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: r5a56eKjx1Zga_qJW7jgqWBB3WvEtWrgA0xfLVIXHgk
+    short-id: 465f2d7c
+- name: '>>@v2rayNG_Matsuri::US-2'
+  type: ss
+  server: 15.204.246.107
+  port: 8888
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: 🇨🇦CA_2|3.4MB/s
+  type: ss
+  server: 15.156.204.87
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 美国+CloudFlare节点-4
+  type: trojan
+  server: 104.18.23.63
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers: {}
+- name: By EbraSha 🚨
+  type: vless
+  server: 151.101.2.219
+  port: 443
+  uuid: 0da65197-aee5-42e0-8676-bd090f95dd6c
+  udp: true
+  network: ws
+  tls: true
+  servername: speedtest.net
+  ws-opts:
+    path: /Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray?ed=2048
+    headers:
+      Host: barkatc17.ir
+- name: EPODONIOS-6
+  type: vless
+  server: 151.101.192.223
+  port: 80
+  uuid: 7293c95d-fd27-4f57-a360-a55d909f4bcc
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: echopress-bot-1444-ad1.global.ssl.fastly.net
+- name: 🏁RELAY-172.67.125.28-0731
+  type: vmess
+  server: 172.67.125.28
+  port: 443
+  uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 38.72img.xyz
+- name: 美国(yudou789.top 玉豆免费节点)-6
+  type: vless
+  server: 188.164.248.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+    headers:
+      Host: vms.lifetime26.workers.dev
+- name: US美国(mibei77.com 米贝节点分享)-2
+  type: vless
+  server: 104.21.5.103
+  port: 443
+  uuid: a90c264d-3853-4eef-9a3d-628b2d02d15e
+  udp: true
+  network: ws
+  tls: true
+  servername: 1-m19.LoP.CCWu.CC
+  client-fingerprint: chrome
+  ws-opts:
+    path: /CjBjB9sn5pCvaSwScc
+    headers:
+      Host: 1-m19.Lop.ccwU.CC
+- name: 🇨🇳_中国_19
+  type: vless
+  server: 106.75.143.18
+  port: 5007
+  uuid: 6f5c634e-20c1-4cb5-9c67-2278bc80fcc0
+  udp: true
+  tls: true
+  servername: buylite.tv.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: W1tIXK5sUUU0Zrj2OENNl-Zc5QijpG52JKTPvqSvNX8
+    short-id: 7d3decd6
+- name: 🇨🇦CA-3.97.16.160-0438
+  type: ss
+  server: 3.97.16.160
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇨🇦CA_3|1.6MB/s
+  type: ss
+  server: 35.182.118.89
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 美国+CloudFlare节点-5
+  type: trojan
+  server: 104.26.14.137
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers: {}
+- name: By EbraSha ♣️
+  type: vless
+  server: 151.101.65.6
+  port: 80
+  uuid: 19282dc7-eed7-5656-b489-93b5ddf266c9
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: Join-shokhmiplus.ir
+- name: EPODONIOS-7
+  type: vless
+  server: 199.232.78.140
+  port: 443
+  uuid: 75a24f38-6942-41fe-a42b-ff1dd873c40f
+  udp: true
+  network: xhttp
+  tls: true
+  servername: global.fastly.com
+  client-fingerprint: chrome
+- name: CA 🇨🇦 | @Raydikalx | 9B9DDA
+  type: vmess
+  server: 104.26.7.152
+  port: 2052
+  uuid: d6b6d982-d52f-465a-b988-85670b23f64a
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cdn3.freegradely.xyz
+- name: 美国(yudou789.top 玉豆免费节点)-7
+  type: vless
+  server: 188.164.248.50
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+    headers:
+      Host: vms.lifetime26.workers.dev
+- name: 🇺🇸美國丨yoyapai.com
+  type: vless
+  server: 45.40.150.4
+  port: 80
+  uuid: 72c2b7cc-fcd9-494f-8a2e-21dcd062ff11
+  udp: true
+  network: ws
+  ws-opts:
+    path: /pyip=Telegram🇨🇳++
+    headers:
+      Host: holy-breeze-0bac.47-dec.workers.dev
+- name: 🇨🇳_中国_15
+  type: vless
+  server: 106.75.143.18
+  port: 5003
+  uuid: 6f5c634e-20c1-4cb5-9c67-2278bc80fcc0
+  udp: true
+  tls: true
+  servername: buylite.tv.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: b-nudr-UcMPMjjUGZ0SmQwS54I5vjJ21cStsB4AFWCI
+    short-id: 4a1d37fa
+- name: '>>@v2rayNG_Matsuri::CA'
+  type: ss
+  server: 51.79.85.185
+  port: 8118
+  cipher: aes-256-gcm
+  password: cdBIDV42DCwnfIN
+  udp: true
+- name: 🇷🇺RU_1|1.1MB/s
+  type: vless
+  server: 45.9.15.206
+  port: 443
+  uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
+  udp: true
+  network: ws
+  tls: true
+  servername: ru05.abvpn.ru
+  ws-opts:
+    path: /websocketfp=edge
+    headers:
+      Host: ru05.abvpn.ru
+- name: 英国+V2CROSS.COM
+  type: trojan
+  server: 185.75.243.102
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers: {}
+- name: By EbraSha ⛓️
+  type: vless
+  server: 199.232.193.57
+  port: 80
+  uuid: 698e1d97-0594-481d-8d97-f5f6f46aa32d
+  udp: true
+  network: ws
+  ws-opts:
+    path: ViraV2ray/?ed=2560
+    headers:
+      Host: virav2ray-alsjddhkasdasdkaslj.com
+- name: EPODONIOS-8
+  type: vless
+  server: 151.101.1.57
+  port: 80
+  uuid: InternetAzadRobot
+  udp: true
+  network: xhttp
+- name: 🏁RELAY-104.16.89.44-4712
+  type: vmess
+  server: 104.16.89.44
+  port: 443
+  uuid: 9a18cbb1-81d2-4720-9f09-46ea276b6ddb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /huhublog
+    headers:
+      Host: zhuyong.hucloud-dns.xyz
+- name: 美国(yudou789.top 玉豆免费节点)-8
   type: vless
   server: 162.159.44.66
   port: 2053
@@ -1122,9 +729,28 @@ proxies:
     path: /?ed=2560
     headers:
       Host: fu.baiproxy.us.ci
-- name: 🏁RELAY-104.21.50.177-0677
+- name: 🇨🇦加拿大丨yoyapai.com
+  type: vless
+  server: 104.17.121.110
+  port: 8880
+  uuid: f3d6c244-772a-428f-b8fe-e2d632cd76e4
+  udp: true
+  network: httpupgrade
+- name: 🇨🇳_中国_18
+  type: vless
+  server: 106.75.143.18
+  port: 5006
+  uuid: 6f5c634e-20c1-4cb5-9c67-2278bc80fcc0
+  udp: true
+  tls: true
+  servername: buylite.tv.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: cOArfRrVqPfeoNKUtlGZ_eklkgB5m2kK94u4b8fu82k
+    short-id: 9b7dc8a6
+- name: 🇨🇦CA-23.162.200.227-1092
   type: vmess
-  server: 104.21.50.177
+  server: 23.162.200.227
   port: 443
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
@@ -1133,217 +759,524 @@ proxies:
   network: ws
   tls: true
   ws-opts:
-    path: linkvws
+    path: /linkvws
     headers:
-      Host: alvvin.click
+      Host: vk.com
+- name: 英国+V2CROSS.COM-2
+  type: vless
+  server: 31.76.71.140
+  port: 443
+  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
+  udp: true
+  tls: true
+  servername: rrr.windconnect.pro
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
+    short-id: 4da5d1853f04af6d
+  flow: xtls-rprx-vision
+- name: By EbraSha 🪐-2
+  type: vless
+  server: 151.101.130.228
+  port: 443
+  uuid: ad35c88b-8e6c-4dac-d29b-f04b42210d33
+  udp: true
+  network: ws
+  tls: true
+  servername: zmaoz.faculty.ucdavis.edu.
+  client-fingerprint: chrome
+  ws-opts:
+    path: /olem/ws?ed=4096
+    headers:
+      Host: fonmelo.com
+- name: EPODONIOS-9
+  type: vless
+  server: 151.101.1.242
+  port: 443
+  uuid: 0d03e44f-f60f-41b6-8ad7-13445af164fd
+  udp: true
+  network: ws
+  tls: true
+  servername: minimize-evenness.cdn-content.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /ws
+    headers:
+      Host: minimize-evenness.cdn-content.com
+- name: 🏁RELAY-141.193.213.20-1499
+  type: vmess
+  server: 141.193.213.20
+  port: 443
+  uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /IYKLD53M
+    headers:
+      Host: 141.193.213.20
+- name: 美国(yudou789.top 玉豆免费节点)-9
+  type: vless
+  server: 162.159.44.198
+  port: 443
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  udp: true
+  network: ws
+  tls: true
+  servername: fu.baiproxy.us.ci
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: fu.baiproxy.us.ci
+- name: US美国(mibei77.com 米贝节点分享)-3
+  type: vless
+  server: 50.62.198.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime39.workers.dev
+- name: 🇨🇳_中国_16
+  type: vless
+  server: 106.75.143.18
+  port: 5004
+  uuid: 6f5c634e-20c1-4cb5-9c67-2278bc80fcc0
+  udp: true
+  tls: true
+  servername: buylite.tv.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 4pqef6kcGAisRnc-b8wcDAaB0GWknHBq9ONCenilFCs
+    short-id: 57ae1667
+- name: 🇮🇪IE-3.252.205.48-0430
+  type: ss
+  server: 3.252.205.48
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 英国+V2CROSS.COM-3
+  type: vless
+  server: rrr.windconnect.pro
+  port: 443
+  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
+  udp: true
+  tls: true
+  servername: rrr.windconnect.pro
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
+    short-id: 4da5d1853f04af6d
+  flow: xtls-rprx-vision
+- name: EPODONIOS-10
+  type: vless
+  server: 140.248.186.45
+  port: 80
+  uuid: 7293c95d-fd27-4f57-a360-a55d909f4bcc
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: echopress-bot-1444-ad1.global.ssl.fastly.net
+- name: 🏁RELAY-203.30.191.8-1755
+  type: vmess
+  server: 203.30.191.8
+  port: 443
+  uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /AUIKN8AU
+    headers: {}
+- name: 美国(yudou789.top 玉豆免费节点)-10
+  type: vless
+  server: 162.159.44.100
+  port: 2087
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  udp: true
+  network: ws
+  tls: true
+  servername: fu.baiproxy.us.ci
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: fu.baiproxy.us.ci
+- name: US美国(mibei77.com 米贝节点分享)-4
+  type: vless
+  server: 172.67.132.194
+  port: 443
+  uuid: 1aa96574-c28b-4ee9-855d-ebdbbf1f7e90
+  udp: true
+  network: ws
+  tls: true
+  servername: 1-m13.AyutTHAYa-8.kDnS.FR
+  ws-opts:
+    path: /ED3ZQPu7lqyeDGD58KabZ
+    headers:
+      Host: 1-m13.aYUTThAya-8.KDNs.fR
+- name: 🇨🇳_中国_14
+  type: vless
+  server: 106.75.143.18
+  port: 5002
+  uuid: 6f5c634e-20c1-4cb5-9c67-2278bc80fcc0
+  udp: true
+  tls: true
+  servername: buylite.tv.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: CavI6KaZ1wEJkxRWhiProUaMjjdVYMhCJScYoXZqrxU
+    short-id: a2362ad4
+- name: 🇬🇧GB-13.40.94.70-0188
+  type: ss
+  server: 13.40.94.70
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: EPODONIOS-11
+  type: vless
+  server: 151.101.65.57
+  port: 80
+  uuid: 96eec36e-2c44-5b09-898e-6f0f0526e57f
+  udp: true
+  network: xhttp
+- name: 🏁RELAY-185.18.250.70-7541
+  type: vmess
+  server: 185.18.250.70
+  port: 443
+  uuid: b3a21def-5fcc-47a8-a6a0-a34e29d5288a
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /wss51068
+    headers: {}
+- name: 美国(yudou789.top 玉豆免费节点)-11
+  type: vless
+  server: 162.159.45.175
+  port: 2053
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  udp: true
+  network: ws
+  tls: true
+  servername: fu.baiproxy.us.ci
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: fu.baiproxy.us.ci
+- name: US美国(mibei77.com 米贝节点分享)-5
+  type: trojan
+  server: 172.67.221.242
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers: {}
+- name: 🇨🇳_中国_13
+  type: vless
+  server: 106.75.143.18
+  port: 5001
+  uuid: 6f5c634e-20c1-4cb5-9c67-2278bc80fcc0
+  udp: true
+  tls: true
+  servername: buylite.tv.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: EecQif_ZCfTUatHuhKQc88WhGTU18eEMuc6N-K9t2EM
+    short-id: 839cc7cf
+- name: 🇯🇵JP-54.168.242.25-0142
+  type: vmess
+  server: 54.168.242.25
+  port: 8555
+  uuid: 7aa3a024-e333-4b63-99a2-3db9d3b2054e
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: a.189.cn
+- name: EPODONIOS-12
+  type: vless
+  server: 199.232.78.150
+  port: 443
+  uuid: caf0d393-101a-4ac6-81e4-172fd8f87f5b
+  udp: true
+  network: xhttp
+  tls: true
+  servername: global.fastly.com
+  client-fingerprint: chrome
+- name: 🏁RELAY-104.17.232.114-8082
+  type: vmess
+  server: 104.17.232.114
+  port: 443
+  uuid: b3a21def-5fcc-47a8-a6a0-a34e29d5288a
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  tls: true
+  ws-opts:
+    path: /wss51068
+    headers: {}
+- name: 美国(yudou789.top 玉豆免费节点)-12
+  type: vless
+  server: 162.159.39.157
+  port: 2087
+  uuid: 4859c235-2530-4062-9a0b-ea859cbbf861
+  udp: true
+  network: ws
+  tls: true
+  servername: 1.proxy2.us.ci
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: 1.proxy2.us.ci
+- name: US美国(mibei77.com 米贝节点分享)-6
+  type: trojan
+  server: 198.41.223.96
+  port: 443
+  password: humanity
+  udp: true
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+- name: 🇳🇱NL-158.173.20.171-0150
+  type: ss
+  server: 158.173.20.171
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: By EbraSha 🪐-3
+  type: ss
+  server: 151.101.1.91
+  port: 80
+  cipher: "���㖚��_��\x1F�߽��~sm��Ǽ��\x1F"
+  password: "���㖚��_��\x1F�߽��~sm��Ǽ��\x1F"
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - By EbraSha 🔋
+  - By EbraSha 🌍
   - EPODONIOS
+  - 🏁RELAY-162.159.135.42-2544
   - 美国(yudou789.top 玉豆免费节点)
-  - 🏁RELAY-162.159.248.30-7714
-  - 🏳️_未知_236
-  - 🇺🇸US_3|3.1MB/s
-  - 未知 VLESS-1480 | free-nodes
-  - '@Hope_Net-join-us-on-Telegram'
+  - 🇭🇰HK香港節點丨yoyapai.com
+  - 🏳️_未知_50
+  - 🏁RELAY-203.30.191.191-0186
+  - US_speednode_0136
   - 美国+CloudFlare节点
   - By EbraSha 💎
   - EPODONIOS-2
+  - 🏁RELAY-154.92.9.73-7756
   - 美国(yudou789.top 玉豆免费节点)-2
-  - 🏁RELAY-104.25.227.40-8007
-  - 🏳️_未知_252
-  - US_speednode_0142
-  - 未知 VLESS-1474 | free-nodes
-  - '@Hope_Net-join-us-on-Telegram-2'
-  - 美国+CloudFlare节点-2
-  - By EbraSha 🛡️
-  - EPODONIOS-3
-  - 美国(yudou789.top 玉豆免费节点)-3
-  - 🏁RELAY-190.93.246.195-2417
-  - 🏳️_未知_223
-  - US_speednode_0136
-  - 未知 VLESS-1456 | free-nodes
-  - 🇺🇸 Join+Telegram:@Farah_VPN 🇺🇸
-  - 美国+CloudFlare节点-3
-  - By EbraSha 🛜
-  - EPODONIOS-4
-  - 美国(yudou789.top 玉豆免费节点)-4
-  - 🏁RELAY-172.64.155.200-0467
-  - 🏳️_未知_221
-  - US_speednode_0137
-  - US美国(mibei77.com 米贝节点分享)
-  - '@Hope_Net-join-us-on-Telegram-3'
-  - 美国+V2CROSS.COM
-  - By EbraSha 👑
-  - EPODONIOS-5
-  - 美国(yudou789.top 玉豆免费节点)-5
-  - 🏁RELAY-104.18.28.109-8067
-  - 🏳️_未知_242
-  - 🇺🇸US_4|3.8MB/s
-  - US美国(mibei77.com 米贝节点分享)-2
-  - 🇸🇬 Join+Telegram:@Farah_VPN 🇸🇬
-  - 美国+CloudFlare节点-4
-  - By EbraSha 🕶️
-  - EPODONIOS-6
-  - 美国(yudou789.top 玉豆免费节点)-6
-  - 🏁RELAY-23.227.38.20-0781
-  - 🏳️_未知_257
-  - 🇨🇦CA_2|3.9MB/s
-  - 🇩🇪DE德国丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-4'
-  - 立陶宛+V2CROSS.COM
-  - By EbraSha 🤖
-  - EPODONIOS-7
-  - 美国(yudou789.top 玉豆免费节点)-7
-  - 🏁RELAY-203.30.191.20-1633
-  - 🏳️_未知_220
-  - 🇮🇪IE_1|3.6MB/s
-  - 🇫🇷法國丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-5'
-  - 美国+CloudFlare节点-5
-  - By EbraSha 🦂
-  - EPODONIOS-8
-  - 美国(yudou789.top 玉豆免费节点)-8
-  - 🏁RELAY-172.67.199.34-0422
-  - 🏳️_未知_241
-  - 🇬🇧GB_1|2.6MB/s
-  - ❓未知丨yoyapai.com
-  - 🇸🇬 Join+Telegram:@Farah_VPN 🇸🇬-2
-  - 美国+CloudFlare节点-6
-  - By EbraSha ⚔️
-  - EPODONIOS-9
-  - 美国(yudou789.top 玉豆免费节点)-9
-  - 🏁RELAY-104.21.48.161-0839
-  - 🏳️_未知_219
   - 🇫🇷 法国丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-6'
-  - 美国+CloudFlare节点-7
-  - By EbraSha 🚬
+  - 🏳️_未知_353
+  - 🇺🇸US-64.94.95.118-5044
+  - US_speednode_0142
+  - 美国+CloudFlare节点-2
+  - By EbraSha 🌍-2
+  - EPODONIOS-3
+  - CA 🇨🇦 | @Raydikalx | 94CBFB
+  - 美国(yudou789.top 玉豆免费节点)-3
+  - 🇭🇰HK香港節點丨yoyapai.com-2
+  - 🏳️_未知_363
+  - '>>@v2nodes::US'
+  - US_speednode_0137
+  - 美国+加州
+  - By EbraSha 🪐
+  - EPODONIOS-4
+  - CA 🇨🇦 | @Raydikalx | DAF507
+  - 美国(yudou789.top 玉豆免费节点)-4
+  - 🇩🇪DE德国丨yoyapai.com
+  - 🇺🇸_美国_23
+  - '>>@v2rayNG_Matsuri::US'
+  - 🇨🇦CA_1|1.0MB/s
+  - 美国+CloudFlare节点-3
+  - By EbraSha 🧊
+  - EPODONIOS-5
+  - 🏁RELAY-188.114.99.10-0805
+  - 美国(yudou789.top 玉豆免费节点)-5
+  - US美国(mibei77.com 米贝节点分享)
+  - 🇨🇳_中国_17
+  - '>>@v2rayNG_Matsuri::US-2'
+  - 🇨🇦CA_2|3.4MB/s
+  - 美国+CloudFlare节点-4
+  - By EbraSha 🚨
+  - EPODONIOS-6
+  - 🏁RELAY-172.67.125.28-0731
+  - 美国(yudou789.top 玉豆免费节点)-6
+  - US美国(mibei77.com 米贝节点分享)-2
+  - 🇨🇳_中国_19
+  - 🇨🇦CA-3.97.16.160-0438
+  - 🇨🇦CA_3|1.6MB/s
+  - 美国+CloudFlare节点-5
+  - By EbraSha ♣️
+  - EPODONIOS-7
+  - CA 🇨🇦 | @Raydikalx | 9B9DDA
+  - 美国(yudou789.top 玉豆免费节点)-7
+  - 🇺🇸美國丨yoyapai.com
+  - 🇨🇳_中国_15
+  - '>>@v2rayNG_Matsuri::CA'
+  - 🇷🇺RU_1|1.1MB/s
+  - 英国+V2CROSS.COM
+  - By EbraSha ⛓️
+  - EPODONIOS-8
+  - 🏁RELAY-104.16.89.44-4712
+  - 美国(yudou789.top 玉豆免费节点)-8
+  - 🇨🇦加拿大丨yoyapai.com
+  - 🇨🇳_中国_18
+  - 🇨🇦CA-23.162.200.227-1092
+  - 英国+V2CROSS.COM-2
+  - By EbraSha 🪐-2
+  - EPODONIOS-9
+  - 🏁RELAY-141.193.213.20-1499
+  - 美国(yudou789.top 玉豆免费节点)-9
+  - US美国(mibei77.com 米贝节点分享)-3
+  - 🇨🇳_中国_16
+  - 🇮🇪IE-3.252.205.48-0430
+  - 英国+V2CROSS.COM-3
   - EPODONIOS-10
+  - 🏁RELAY-203.30.191.8-1755
   - 美国(yudou789.top 玉豆免费节点)-10
-  - 🏁RELAY-104.21.53.12-0670
-  - 🏳️_未知_245
-  - 🇦🇲亞美尼亞丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-7'
-  - 荷兰+V2CROSS.COM
-  - By EbraSha 🌐
+  - US美国(mibei77.com 米贝节点分享)-4
+  - 🇨🇳_中国_14
+  - 🇬🇧GB-13.40.94.70-0188
   - EPODONIOS-11
+  - 🏁RELAY-185.18.250.70-7541
   - 美国(yudou789.top 玉豆免费节点)-11
-  - CA 🇨🇦 | @Raydikalx | 0F47DC
-  - 🏳️_未知_218
-  - 美国(yudou789.top 玉豆免费节点)-12
-  - 🇨🇦 Join+Telegram:@Farah_VPN 🇨🇦
-  - 美国+V2CROSS.COM-2
+  - US美国(mibei77.com 米贝节点分享)-5
+  - 🇨🇳_中国_13
+  - 🇯🇵JP-54.168.242.25-0142
   - EPODONIOS-12
-  - 美国(yudou789.top 玉豆免费节点)-13
-  - 🏁RELAY-104.21.50.177-0677
+  - 🏁RELAY-104.17.232.114-8082
+  - 美国(yudou789.top 玉豆免费节点)-12
+  - US美国(mibei77.com 米贝节点分享)-6
+  - 🇳🇱NL-158.173.20.171-0150
+  - By EbraSha 🪐-3
 - name: ♻️ 自动选择
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - By EbraSha 🔋
+  - By EbraSha 🌍
   - EPODONIOS
+  - 🏁RELAY-162.159.135.42-2544
   - 美国(yudou789.top 玉豆免费节点)
-  - 🏁RELAY-162.159.248.30-7714
-  - 🏳️_未知_236
-  - 🇺🇸US_3|3.1MB/s
-  - 未知 VLESS-1480 | free-nodes
-  - '@Hope_Net-join-us-on-Telegram'
+  - 🇭🇰HK香港節點丨yoyapai.com
+  - 🏳️_未知_50
+  - 🏁RELAY-203.30.191.191-0186
+  - US_speednode_0136
   - 美国+CloudFlare节点
   - By EbraSha 💎
   - EPODONIOS-2
+  - 🏁RELAY-154.92.9.73-7756
   - 美国(yudou789.top 玉豆免费节点)-2
-  - 🏁RELAY-104.25.227.40-8007
-  - 🏳️_未知_252
-  - US_speednode_0142
-  - 未知 VLESS-1474 | free-nodes
-  - '@Hope_Net-join-us-on-Telegram-2'
-  - 美国+CloudFlare节点-2
-  - By EbraSha 🛡️
-  - EPODONIOS-3
-  - 美国(yudou789.top 玉豆免费节点)-3
-  - 🏁RELAY-190.93.246.195-2417
-  - 🏳️_未知_223
-  - US_speednode_0136
-  - 未知 VLESS-1456 | free-nodes
-  - 🇺🇸 Join+Telegram:@Farah_VPN 🇺🇸
-  - 美国+CloudFlare节点-3
-  - By EbraSha 🛜
-  - EPODONIOS-4
-  - 美国(yudou789.top 玉豆免费节点)-4
-  - 🏁RELAY-172.64.155.200-0467
-  - 🏳️_未知_221
-  - US_speednode_0137
-  - US美国(mibei77.com 米贝节点分享)
-  - '@Hope_Net-join-us-on-Telegram-3'
-  - 美国+V2CROSS.COM
-  - By EbraSha 👑
-  - EPODONIOS-5
-  - 美国(yudou789.top 玉豆免费节点)-5
-  - 🏁RELAY-104.18.28.109-8067
-  - 🏳️_未知_242
-  - 🇺🇸US_4|3.8MB/s
-  - US美国(mibei77.com 米贝节点分享)-2
-  - 🇸🇬 Join+Telegram:@Farah_VPN 🇸🇬
-  - 美国+CloudFlare节点-4
-  - By EbraSha 🕶️
-  - EPODONIOS-6
-  - 美国(yudou789.top 玉豆免费节点)-6
-  - 🏁RELAY-23.227.38.20-0781
-  - 🏳️_未知_257
-  - 🇨🇦CA_2|3.9MB/s
-  - 🇩🇪DE德国丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-4'
-  - 立陶宛+V2CROSS.COM
-  - By EbraSha 🤖
-  - EPODONIOS-7
-  - 美国(yudou789.top 玉豆免费节点)-7
-  - 🏁RELAY-203.30.191.20-1633
-  - 🏳️_未知_220
-  - 🇮🇪IE_1|3.6MB/s
-  - 🇫🇷法國丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-5'
-  - 美国+CloudFlare节点-5
-  - By EbraSha 🦂
-  - EPODONIOS-8
-  - 美国(yudou789.top 玉豆免费节点)-8
-  - 🏁RELAY-172.67.199.34-0422
-  - 🏳️_未知_241
-  - 🇬🇧GB_1|2.6MB/s
-  - ❓未知丨yoyapai.com
-  - 🇸🇬 Join+Telegram:@Farah_VPN 🇸🇬-2
-  - 美国+CloudFlare节点-6
-  - By EbraSha ⚔️
-  - EPODONIOS-9
-  - 美国(yudou789.top 玉豆免费节点)-9
-  - 🏁RELAY-104.21.48.161-0839
-  - 🏳️_未知_219
   - 🇫🇷 法国丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-6'
-  - 美国+CloudFlare节点-7
-  - By EbraSha 🚬
+  - 🏳️_未知_353
+  - 🇺🇸US-64.94.95.118-5044
+  - US_speednode_0142
+  - 美国+CloudFlare节点-2
+  - By EbraSha 🌍-2
+  - EPODONIOS-3
+  - CA 🇨🇦 | @Raydikalx | 94CBFB
+  - 美国(yudou789.top 玉豆免费节点)-3
+  - 🇭🇰HK香港節點丨yoyapai.com-2
+  - 🏳️_未知_363
+  - '>>@v2nodes::US'
+  - US_speednode_0137
+  - 美国+加州
+  - By EbraSha 🪐
+  - EPODONIOS-4
+  - CA 🇨🇦 | @Raydikalx | DAF507
+  - 美国(yudou789.top 玉豆免费节点)-4
+  - 🇩🇪DE德国丨yoyapai.com
+  - 🇺🇸_美国_23
+  - '>>@v2rayNG_Matsuri::US'
+  - 🇨🇦CA_1|1.0MB/s
+  - 美国+CloudFlare节点-3
+  - By EbraSha 🧊
+  - EPODONIOS-5
+  - 🏁RELAY-188.114.99.10-0805
+  - 美国(yudou789.top 玉豆免费节点)-5
+  - US美国(mibei77.com 米贝节点分享)
+  - 🇨🇳_中国_17
+  - '>>@v2rayNG_Matsuri::US-2'
+  - 🇨🇦CA_2|3.4MB/s
+  - 美国+CloudFlare节点-4
+  - By EbraSha 🚨
+  - EPODONIOS-6
+  - 🏁RELAY-172.67.125.28-0731
+  - 美国(yudou789.top 玉豆免费节点)-6
+  - US美国(mibei77.com 米贝节点分享)-2
+  - 🇨🇳_中国_19
+  - 🇨🇦CA-3.97.16.160-0438
+  - 🇨🇦CA_3|1.6MB/s
+  - 美国+CloudFlare节点-5
+  - By EbraSha ♣️
+  - EPODONIOS-7
+  - CA 🇨🇦 | @Raydikalx | 9B9DDA
+  - 美国(yudou789.top 玉豆免费节点)-7
+  - 🇺🇸美國丨yoyapai.com
+  - 🇨🇳_中国_15
+  - '>>@v2rayNG_Matsuri::CA'
+  - 🇷🇺RU_1|1.1MB/s
+  - 英国+V2CROSS.COM
+  - By EbraSha ⛓️
+  - EPODONIOS-8
+  - 🏁RELAY-104.16.89.44-4712
+  - 美国(yudou789.top 玉豆免费节点)-8
+  - 🇨🇦加拿大丨yoyapai.com
+  - 🇨🇳_中国_18
+  - 🇨🇦CA-23.162.200.227-1092
+  - 英国+V2CROSS.COM-2
+  - By EbraSha 🪐-2
+  - EPODONIOS-9
+  - 🏁RELAY-141.193.213.20-1499
+  - 美国(yudou789.top 玉豆免费节点)-9
+  - US美国(mibei77.com 米贝节点分享)-3
+  - 🇨🇳_中国_16
+  - 🇮🇪IE-3.252.205.48-0430
+  - 英国+V2CROSS.COM-3
   - EPODONIOS-10
+  - 🏁RELAY-203.30.191.8-1755
   - 美国(yudou789.top 玉豆免费节点)-10
-  - 🏁RELAY-104.21.53.12-0670
-  - 🏳️_未知_245
-  - 🇦🇲亞美尼亞丨yoyapai.com
-  - '@Hope_Net-join-us-on-Telegram-7'
-  - 荷兰+V2CROSS.COM
-  - By EbraSha 🌐
+  - US美国(mibei77.com 米贝节点分享)-4
+  - 🇨🇳_中国_14
+  - 🇬🇧GB-13.40.94.70-0188
   - EPODONIOS-11
+  - 🏁RELAY-185.18.250.70-7541
   - 美国(yudou789.top 玉豆免费节点)-11
-  - CA 🇨🇦 | @Raydikalx | 0F47DC
-  - 🏳️_未知_218
-  - 美国(yudou789.top 玉豆免费节点)-12
-  - 🇨🇦 Join+Telegram:@Farah_VPN 🇨🇦
-  - 美国+V2CROSS.COM-2
+  - US美国(mibei77.com 米贝节点分享)-5
+  - 🇨🇳_中国_13
+  - 🇯🇵JP-54.168.242.25-0142
   - EPODONIOS-12
-  - 美国(yudou789.top 玉豆免费节点)-13
-  - 🏁RELAY-104.21.50.177-0677
+  - 🏁RELAY-104.17.232.114-8082
+  - 美国(yudou789.top 玉豆免费节点)-12
+  - US美国(mibei77.com 米贝节点分享)-6
+  - 🇳🇱NL-158.173.20.171-0150
+  - By EbraSha 🪐-3
 rules:
 - MATCH,🚀 节点选择
